@@ -16,8 +16,6 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
 
-<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-1026717787101822"
-     crossorigin="anonymous"></script>
 <style>
 /* ═══════════════════════════════════════════
    CSS RESET & VARIABLES
@@ -113,9 +111,13 @@ button { font-family: inherit; cursor: pointer; border: none; }
    SCROLL REVEAL
    ═══════════════════════════════════════════ */
 .reveal {
+  opacity: 1;
+  transform: translateY(0);
+  transition: opacity 0.8s var(--ease-out), transform 0.8s var(--ease-out);
+}
+.reveal.will-animate {
   opacity: 0;
   transform: translateY(40px);
-  transition: opacity 0.8s var(--ease-out), transform 0.8s var(--ease-out);
 }
 .reveal.visible {
   opacity: 1;
@@ -1280,7 +1282,7 @@ button { font-family: inherit; cursor: pointer; border: none; }
 </section>
 
 <!-- ═══════════════════ PROBLEM ═══════════════════ -->
-<section class="problem section-pad reveal" id="problem">
+<section class="problem section-pad" id="problem">
   <div class="container">
     <div class="problem-header">
       <div class="section-label">The Problem</div>
@@ -1320,18 +1322,7 @@ button { font-family: inherit; cursor: pointer; border: none; }
       </div>
     </div>
   </div>
-</
-<!-- Google AdSense - Display Ad Between Sections -->
-<div style="text-align:center;padding:20px 0;background:#0C1117;">
-<ins class="adsbygoogle"
-     style="display:block"
-     data-ad-client="ca-pub-1026717787101822"
-     data-ad-slot="auto"
-     data-ad-format="auto"
-     data-full-width-responsive="true"></ins>
-<script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
-</div>
-section>
+</section>
 
 <!-- ═══════════════════ FEATURES ═══════════════════ -->
 <section class="features section-pad" id="features">
@@ -1838,16 +1829,26 @@ navLinks.querySelectorAll('a').forEach(link => {
   link.addEventListener('click', () => navLinks.classList.remove('open'));
 });
 
-// Scroll reveal with Intersection Observer
-const revealObserver = new IntersectionObserver((entries) => {
-  entries.forEach(entry => {
-    if (entry.isIntersecting) {
-      entry.target.classList.add('visible');
-    }
-  });
-}, { threshold: 0.1, rootMargin: '0px 0px -50px 0px' });
+// Scroll reveal with Intersection Observer (progressive enhancement)
+const revealEls = document.querySelectorAll('.reveal');
 
-document.querySelectorAll('.reveal').forEach(el => revealObserver.observe(el));
+if ('IntersectionObserver' in window) {
+  // Only hide elements if observer is supported
+  revealEls.forEach(el => el.classList.add('will-animate'));
+
+  const revealObserver = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('visible');
+        entry.target.classList.remove('will-animate');
+        revealObserver.unobserve(entry.target);
+      }
+    });
+  }, { threshold: 0.05, rootMargin: '0px 0px -30px 0px' });
+
+  revealEls.forEach(el => revealObserver.observe(el));
+} 
+// If IntersectionObserver not supported, elements stay visible (CSS default)
 
 // Smooth scroll for anchor links
 document.querySelectorAll('a[href^="#"]').forEach(anchor => {
