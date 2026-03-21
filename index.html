@@ -11,11 +11,11 @@
 <meta property="og:type" content="website">
 <meta property="og:url" content="https://hopemap.live">
 <title>HopeMap — Real-Time Resources for People in Need</title>
-
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
-
+<link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"/>
+<script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
 <style>
 /* ═══════════════════════════════════════════
    CSS RESET & VARIABLES
@@ -1182,10 +1182,64 @@ button { font-family: inherit; cursor: pointer; border: none; }
   .tech-grid { grid-template-columns: 1fr 1fr; }
   .proof-logos { gap: 24px; }
 }
+/* ═══ LIVE MAP PAGE ═══ */
+#hm-page{display:none;position:fixed;inset:0;background:#0a0a0f;z-index:9000;font-family:'Plus Jakarta Sans',sans-serif;overflow:hidden;}
+#hm-page *{box-sizing:border-box;}
+.hm-nav{position:absolute;top:0;left:0;right:0;height:60px;background:rgba(10,10,15,0.96);backdrop-filter:blur(14px);border-bottom:1px solid #1e2733;display:flex;align-items:center;justify-content:space-between;padding:0 20px;z-index:100;}
+.hm-back{background:rgba(255,255,255,0.07);border:1px solid #1e2733;color:#e8ecf1;padding:7px 16px;border-radius:10px;cursor:pointer;font-size:13px;font-weight:600;font-family:inherit;transition:background 0.2s;}
+.hm-back:hover{background:rgba(255,255,255,0.13);}
+.hm-logo{color:#fafbfc;font-size:18px;font-weight:800;display:flex;align-items:center;gap:8px;}
+.hm-live-badge{background:rgba(245,166,35,0.15);color:#f5a623;font-size:10px;font-weight:700;padding:3px 8px;border-radius:6px;border:1px solid rgba(245,166,35,0.3);letter-spacing:0.05em;}
+.hm-count{display:flex;align-items:center;gap:6px;color:#8a95a5;font-size:13px;}
+.hm-dot{width:8px;height:8px;border-radius:50%;background:#3ecfa0;box-shadow:0 0 8px #3ecfa0;animation:hmpulse 2s ease-in-out infinite;}
+@keyframes hmpulse{0%,100%{opacity:1}50%{opacity:0.4}}
+.hm-search-wrap{position:absolute;top:72px;left:16px;right:16px;z-index:100;}
+.hm-search-inner{background:rgba(10,10,20,0.95);border:1px solid #1e2733;border-radius:14px;display:flex;align-items:center;padding:10px 14px;gap:10px;backdrop-filter:blur(10px);}
+.hm-search-inner input{flex:1;background:none;border:none;outline:none;color:#fafbfc;font-size:14px;font-family:inherit;}
+.hm-search-inner input::placeholder{color:#8a95a5;}
+.hm-clear{background:none;border:none;color:#8a95a5;cursor:pointer;font-size:16px;display:none;padding:0;}
+.hm-cats{position:absolute;top:128px;left:0;right:0;z-index:100;padding:0 16px;display:flex;gap:8px;overflow-x:auto;scrollbar-width:none;}
+.hm-cats::-webkit-scrollbar{display:none;}
+.hm-cat{background:rgba(10,10,20,0.92);border:1px solid #1e2733;color:#8a95a5;padding:7px 14px;border-radius:20px;cursor:pointer;font-size:13px;font-weight:500;font-family:inherit;white-space:nowrap;transition:all 0.2s;}
+.hm-cat:hover{border-color:#f5a623;color:#f5a623;}
+.hm-cat.active{background:#f5a623;border-color:#f5a623;color:#0c1117;font-weight:700;}
+#hm-map{position:absolute;inset:0;top:60px;}
+.hm-legend{position:absolute;bottom:24px;right:16px;background:rgba(10,10,20,0.94);border:1px solid #1e2733;border-radius:12px;padding:12px 14px;z-index:100;display:flex;flex-direction:column;gap:7px;}
+.hm-leg-item{display:flex;align-items:center;gap:8px;}
+.hm-leg-dot{width:12px;height:12px;border-radius:50%;}
+.hm-leg-label{color:#b8c2cf;font-size:12px;}
+#hm-panel{position:absolute;top:60px;right:0;width:390px;bottom:0;background:#111820;border-left:1px solid #1e2733;z-index:200;transform:translateX(100%);transition:transform 0.35s cubic-bezier(0.16,1,0.3,1);overflow-y:auto;overflow-x:hidden;scrollbar-width:thin;scrollbar-color:#1e2733 #111820;}
+#hm-panel-content{padding:20px;}
+.hm-panel-close{background:rgba(255,255,255,0.07);border:1px solid #1e2733;color:#8a95a5;width:30px;height:30px;border-radius:50%;cursor:pointer;font-size:14px;display:flex;align-items:center;justify-content:center;flex-shrink:0;font-family:inherit;}
+.hm-panel-icon{width:56px;height:56px;border-radius:16px;background:rgba(245,166,35,0.13);display:flex;align-items:center;justify-content:center;font-size:28px;flex-shrink:0;border:1px solid rgba(245,166,35,0.2);}
+.hm-status{padding:3px 10px;border-radius:20px;font-size:11px;font-weight:700;}
+.hm-verified{background:rgba(74,173,255,0.15);color:#4aadff;font-size:10px;font-weight:700;padding:2px 7px;border-radius:6px;border:1px solid rgba(74,173,255,0.3);}
+.hm-stat-grid{display:grid;grid-template-columns:1fr 1fr;gap:8px;margin-bottom:14px;}
+.hm-stat-box{background:#0c1117;border-radius:12px;padding:12px;border:1px solid #1e2733;text-align:center;}
+.hm-stat-val{color:#f5a623;font-size:17px;font-weight:800;}
+.hm-stat-lbl{color:#8a95a5;font-size:10px;margin-top:3px;}
+.hm-stat-sub{color:#4a5a6a;font-size:9px;}
+.hm-info-box{background:#0c1117;border-radius:12px;padding:14px;margin-bottom:14px;border:1px solid #1e2733;}
+.hm-info-label{color:#f5a623;font-size:11px;font-weight:700;margin-bottom:6px;text-transform:uppercase;letter-spacing:0.5px;}
+.hm-tag-list{display:flex;gap:6px;flex-wrap:wrap;}
+.hm-tag{background:#1e2733;color:#b8c2cf;font-size:12px;padding:4px 10px;border-radius:8px;border:1px solid #2a3444;}
+.hm-btn-primary{width:100%;background:#f5a623;color:#0c1117;border:none;padding:14px;border-radius:12px;font-weight:800;font-size:15px;cursor:pointer;font-family:inherit;transition:background 0.2s;margin-bottom:8px;}
+.hm-btn-primary:hover{background:#d4871a;}
+.hm-btn-secondary{width:100%;background:#1e2733;color:#e8ecf1;border:1px solid #2a3444;padding:14px;border-radius:12px;font-weight:600;font-size:15px;cursor:pointer;font-family:inherit;transition:background 0.2s;}
+.hm-btn-secondary:hover{background:#2a3444;}
+.hm-report-box{margin-top:20px;padding:14px;background:rgba(245,166,35,0.07);border-radius:12px;border:1px dashed rgba(245,166,35,0.3);}
+.hm-report-label{color:#f5a623;font-size:12px;font-weight:700;margin-bottom:8px;}
+.hm-report-grid{display:grid;grid-template-columns:1fr 1fr;gap:6px;}
+.hm-report-btn{background:#111820;color:#b8c2cf;border:1px solid #2a3444;padding:8px;border-radius:8px;font-size:12px;cursor:pointer;font-family:inherit;transition:background 0.2s;}
+.hm-report-btn:hover{background:#1e2733;}
+.leaflet-container{background:#0d111a!important;}
+/* FAB button */
+#hm-fab{position:fixed;bottom:28px;right:28px;z-index:8000;background:linear-gradient(135deg,#f5a623,#d4871a);color:#0c1117;border:none;padding:14px 22px;border-radius:50px;font-size:15px;font-weight:800;cursor:pointer;font-family:'Plus Jakarta Sans',sans-serif;box-shadow:0 8px 32px rgba(245,166,35,0.45);transition:transform 0.2s,box-shadow 0.2s;}
+#hm-fab:hover{transform:scale(1.05);box-shadow:0 12px 40px rgba(245,166,35,0.6);}
+@media(max-width:768px){#hm-panel{width:100%;top:auto;bottom:0;height:85%;transform:translateY(100%);border-left:none;border-top:1px solid #1e2733;border-radius:20px 20px 0 0;}#hm-panel.open{transform:translateY(0)!important;}}
 </style>
 </head>
 <body>
-
 <div class="bg-glow"></div>
 
 <!-- ═══════════════════ NAVIGATION ═══════════════════ -->
@@ -1886,6 +1940,212 @@ function animateCounters() {
   });
 }
 animateCounters();
+</script>
+
+<!-- ═══ LIVE MAP PAGE ═══ -->
+<div id="hm-page">
+  <div class="hm-nav">
+    <button class="hm-back" id="hm-back">← Back</button>
+    <div class="hm-logo">📍 HopeMap <span class="hm-live-badge">LIVE MAP</span></div>
+    <div class="hm-count"><div class="hm-dot"></div><span id="hm-count-label">10 resources live</span></div>
+  </div>
+  <div class="hm-search-wrap">
+    <div class="hm-search-inner">
+      <span>🔍</span>
+      <input id="hm-search-input" placeholder="Search resources near you…" autocomplete="off"/>
+      <button class="hm-clear" id="hm-clear">✕</button>
+    </div>
+  </div>
+  <div class="hm-cats" id="hm-cats">
+    <button class="hm-cat active" data-cat="all">🗺️ All</button>
+    <button class="hm-cat" data-cat="shelter">🏠 Shelter</button>
+    <button class="hm-cat" data-cat="food">🍲 Food</button>
+    <button class="hm-cat" data-cat="mental">🧠 Mental Health</button>
+  </div>
+  <div id="hm-map"></div>
+  <div class="hm-legend">
+    <div class="hm-leg-item"><div class="hm-leg-dot" style="background:#3ecfa0"></div><span class="hm-leg-label">Open</span></div>
+    <div class="hm-leg-item"><div class="hm-leg-dot" style="background:#f5a623"></div><span class="hm-leg-label">Limited</span></div>
+    <div class="hm-leg-item"><div class="hm-leg-dot" style="background:#ff6b4a"></div><span class="hm-leg-label">Closed</span></div>
+  </div>
+  <div id="hm-panel">
+    <div id="hm-panel-content"></div>
+  </div>
+</div>
+
+<!-- FAB -->
+<button id="hm-fab">🗺️ Live Map</button>
+
+<script>
+// ── HopeMap Live Map ──────────────────────────────────────────────────
+const HM_RESOURCES = [
+  {id:1,name:'Union Rescue Mission',type:'shelter',emoji:'🏠',address:'545 S San Pedro St, Los Angeles',distance:0.3,status:'open',beds:42,totalBeds:200,waitTime:'15 min',hours:'24/7',phone:'(213) 347-6300',lat:34.0437,lng:-118.2468,verified:true,updated:'2 min ago',tags:['Men','Women','Families'],desc:'Emergency shelter, meals, and rehabilitation services for men, women, and families experiencing homelessness.'},
+  {id:2,name:'LA Regional Food Bank',type:'food',emoji:'🍲',address:'1734 E 41st St, Los Angeles',distance:1.2,status:'open',food:70,waitTime:null,hours:'Mon–Fri 8am–4pm',phone:'(323) 234-3030',lat:34.0217,lng:-118.2158,verified:true,updated:'5 min ago',tags:['Groceries','Hot Meals'],desc:'Distributes millions of pounds of food annually to those in need across Los Angeles County.'},
+  {id:3,name:'Didi Hirsch Mental Health',type:'mental',emoji:'🧠',address:'4760 S Sepulveda Blvd, Culver City',distance:4.7,status:'open',waitTime:null,hours:'Mon–Sat 9am–7pm',phone:'(800) 854-7771',lat:34.0031,lng:-118.4136,verified:true,updated:'1 hr ago',tags:['Crisis Line','Counseling','Bilingual'],desc:'Mental health, substance use disorder, and crisis services across Southern California.'},
+  {id:4,name:'PATH Homeless Services',type:'shelter',emoji:'🏠',address:'340 N Madison Ave, Los Angeles',distance:2.1,status:'limited',beds:8,totalBeds:85,waitTime:'45 min',hours:'24/7',phone:'(323) 644-2200',lat:34.0641,lng:-118.2978,verified:true,updated:'12 min ago',tags:['Men','Women','LGBTQ+'],desc:'Provides shelter, housing, and services to homeless individuals across California.'},
+  {id:5,name:'Hollywood Food Coalition',type:'food',emoji:'🍲',address:'1734 Schrader Blvd, Hollywood',distance:3.4,status:'open',food:90,waitTime:null,hours:'Daily 5pm–9pm',phone:'(323) 462-0197',lat:34.0983,lng:-118.3297,verified:false,updated:'30 min ago',tags:['Hot Meals','Daily'],desc:'Serves hot meals every evening, 365 days a year, to anyone who is hungry.'},
+  {id:6,name:"St. Joseph Center",type:'shelter',emoji:'🏠',address:'204 Hampton Dr, Venice',distance:6.2,status:'closed',beds:0,totalBeds:60,waitTime:null,hours:'Reopens at 6pm',phone:'(310) 399-3939',lat:33.9877,lng:-118.4717,verified:true,updated:'3 hr ago',tags:['Families','Veterans'],desc:'Comprehensive social services including shelter, employment, and mental health support.'},
+  {id:7,name:'Midnight Mission',type:'shelter',emoji:'🏠',address:'601 S San Pedro St, Los Angeles',distance:0.5,status:'open',beds:120,totalBeds:250,waitTime:'10 min',hours:'24/7',phone:'(213) 624-9258',lat:34.0414,lng:-118.2479,verified:true,updated:'4 min ago',tags:['Men','Recovery'],desc:'Provides a full continuum of services to homeless men and families.'},
+  {id:8,name:'Weingart Center',type:'shelter',emoji:'🏠',address:'566 S San Julian St, Los Angeles',distance:0.4,status:'limited',beds:15,totalBeds:95,waitTime:'30 min',hours:'24/7',phone:'(213) 627-0000',lat:34.0428,lng:-118.2455,verified:true,updated:'8 min ago',tags:['Men','Women'],desc:'Transitional and permanent supportive housing for formerly homeless individuals.'},
+  {id:9,name:'LARC Food Pantry',type:'food',emoji:'🥫',address:'2055 Virgil Ave, Los Angeles',distance:2.9,status:'open',food:55,waitTime:null,hours:'Tue & Thu 10am–1pm',phone:'(323) 660-1996',lat:34.0799,lng:-118.2906,verified:false,updated:'1 hr ago',tags:['Groceries','No ID Req.'],desc:'Community food pantry offering groceries twice a week to families in need.'},
+  {id:10,name:'Exodus Recovery Center',type:'mental',emoji:'🧠',address:'4330 Degnan Blvd, Los Angeles',distance:5.1,status:'open',waitTime:null,hours:'Mon–Fri 8am–5pm',phone:'(323) 290-3400',lat:34.0094,lng:-118.3426,verified:true,updated:'2 hr ago',tags:['Crisis','Substance Use'],desc:'Outpatient mental health and substance use disorder treatment services.'}
+];
+
+const PIN_COLOR={open:'#3ecfa0',limited:'#f5a623',closed:'#ff6b4a'};
+const ST_BG={open:'rgba(62,207,160,0.13)',limited:'rgba(245,166,35,0.13)',closed:'rgba(255,107,74,0.13)'};
+const ST_BD={open:'rgba(62,207,160,0.4)',limited:'rgba(245,166,35,0.4)',closed:'rgba(255,107,74,0.4)'};
+const ST_LB={open:'● Open Now',limited:'● Limited',closed:'● Closed'};
+const ST_CL={open:'#3ecfa0',limited:'#f5a623',closed:'#ff6b4a'};
+
+let _hmMap=null, _hmMarkers=[], _hmCat='all', _hmSearch='';
+
+function hmMakePin(r){
+  const c=PIN_COLOR[r.status]||'#888';
+  const s=`<svg width="44" height="54" viewBox="0 0 44 54" xmlns="http://www.w3.org/2000/svg"><circle cx="22" cy="22" r="20" fill="${c}" opacity="0.18"/><circle cx="22" cy="22" r="17" fill="${c}" stroke="rgba(255,255,255,0.25)" stroke-width="2"/><text x="22" y="28" text-anchor="middle" font-size="16">${r.emoji}</text><polygon points="22,40 15,30 29,30" fill="${c}"/></svg>`;
+  return L.divIcon({html:s,className:'',iconSize:[44,54],iconAnchor:[22,54]});
+}
+
+function hmRender(){
+  _hmMarkers.forEach(m=>_hmMap.removeLayer(m));
+  _hmMarkers=[];
+  const list=HM_RESOURCES.filter(r=>{
+    const mc=_hmCat==='all'||r.type===_hmCat;
+    const ms=!_hmSearch||r.name.toLowerCase().includes(_hmSearch)||r.address.toLowerCase().includes(_hmSearch);
+    return mc&&ms;
+  });
+  document.getElementById('hm-count-label').textContent=list.length+' resources live';
+  list.forEach(r=>{
+    const m=L.marker([r.lat,r.lng],{icon:hmMakePin(r)}).addTo(_hmMap);
+    m.on('click',function(e){L.DomEvent.stopPropagation(e);hmShowPanel(r);_hmMap.setView([r.lat,r.lng-0.04],13,{animate:true,duration:0.6});});
+    _hmMarkers.push(m);
+  });
+}
+
+function hmShowPanel(r){
+  const cap=r.beds!=null?Math.round((r.beds/r.totalBeds)*100):null;
+  const cc=cap==null?'#f5a623':cap>50?'#3ecfa0':cap>20?'#f5a623':'#ff6b4a';
+  const html=`
+    <div style="display:flex;justify-content:flex-end;margin-bottom:12px;">
+      <button class="hm-panel-close" onclick="hmClosePanel()">✕</button>
+    </div>
+    <div style="display:flex;align-items:flex-start;gap:14px;margin-bottom:16px;">
+      <div class="hm-panel-icon">${r.emoji}</div>
+      <div style="flex:1;">
+        <div style="color:#fafbfc;font-size:17px;font-weight:800;margin-bottom:4px;line-height:1.3;">${r.name}</div>
+        <div style="color:#8a95a5;font-size:12px;margin-bottom:8px;">${r.address}</div>
+        <div style="display:flex;align-items:center;gap:8px;flex-wrap:wrap;">
+          <span class="hm-status" style="background:${ST_BG[r.status]};color:${ST_CL[r.status]};border:1px solid ${ST_BD[r.status]};">${ST_LB[r.status]}</span>
+          ${r.verified?'<span class="hm-verified">✓ Verified</span>':''}
+        </div>
+      </div>
+    </div>
+    <div style="display:flex;align-items:center;gap:8px;background:#0c1117;padding:10px 14px;border-radius:10px;margin-bottom:16px;border:1px solid #1e2733;">
+      <span style="font-size:15px;">📍</span>
+      <span style="color:#f5a623;font-weight:700;font-size:14px;">${r.distance} miles away</span>
+      <span style="color:#4a5a6a;font-size:12px;margin-left:auto;">${r.hours}</span>
+    </div>
+    <div class="hm-stat-grid">
+      ${r.beds!=null?`<div class="hm-stat-box"><div class="hm-stat-val">${r.beds}</div><div class="hm-stat-lbl">Beds Available</div><div class="hm-stat-sub">of ${r.totalBeds} total</div></div>`:''}
+      ${r.waitTime?`<div class="hm-stat-box"><div class="hm-stat-val" style="font-size:14px;">${r.waitTime}</div><div class="hm-stat-lbl">Wait Time</div></div>`:''}
+      ${r.food!=null?`<div class="hm-stat-box"><div class="hm-stat-val">${r.food}%</div><div class="hm-stat-lbl">Food Supply</div></div>`:''}
+      <div class="hm-stat-box"><div class="hm-stat-val" style="font-size:13px;">${r.phone}</div><div class="hm-stat-lbl">Phone</div></div>
+    </div>
+    ${cap!=null?`<div class="hm-info-box"><div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:8px;"><span style="color:#b8c2cf;font-size:13px;font-weight:600;">Capacity</span><span style="color:${cc};font-size:13px;font-weight:700;">${r.beds}/${r.totalBeds} beds (${cap}%)</span></div><div style="height:8px;background:#1e2733;border-radius:4px;overflow:hidden;"><div style="height:100%;width:${cap}%;background:${cc};border-radius:4px;"></div></div></div>`:''}
+    <div class="hm-tag-list" style="margin-bottom:14px;">${r.tags.map(t=>`<span class="hm-tag">${t}</span>`).join('')}</div>
+    <div class="hm-info-box"><div class="hm-info-label">About</div><p style="color:#b8c2cf;font-size:13px;line-height:1.7;margin:0;">${r.desc}</p></div>
+    <div style="text-align:center;color:#4a5a6a;font-size:11px;margin-bottom:16px;">🔄 Updated ${r.updated}</div>
+    <button class="hm-btn-primary" onclick="window.open('https://maps.google.com/?daddr=${encodeURIComponent(r.address)}','_blank')">🗺️  Get Directions</button>
+    <button class="hm-btn-secondary" onclick="window.open('tel:${r.phone}')">📞  Call ${r.phone}</button>
+    <div class="hm-report-box">
+      <div class="hm-report-label">📣 Report an Update</div>
+      <div class="hm-report-grid">
+        <button class="hm-report-btn">Still Open ✓</button>
+        <button class="hm-report-btn">Now Closed ✗</button>
+        <button class="hm-report-btn">Beds Changed</button>
+        <button class="hm-report-btn">Update Hours</button>
+      </div>
+    </div>
+  `;
+  document.getElementById('hm-panel-content').innerHTML=html;
+  const panel=document.getElementById('hm-panel');
+  panel.style.transform='translateX(0)';
+  panel.classList.add('open');
+  document.getElementById('hm-map').style.right='390px';
+  if(_hmMap)setTimeout(()=>_hmMap.invalidateSize(),350);
+}
+
+function hmClosePanel(){
+  const panel=document.getElementById('hm-panel');
+  panel.style.transform='translateX(100%)';
+  panel.classList.remove('open');
+  document.getElementById('hm-map').style.right='0';
+  if(_hmMap)setTimeout(()=>_hmMap.invalidateSize(),350);
+}
+
+function hmInitMap(){
+  if(_hmMap){_hmMap.invalidateSize();return;}
+  const el=document.getElementById('hm-map');
+  _hmMap=L.map(el,{center:[34.052,-118.244],zoom:12,zoomControl:false,attributionControl:false});
+  L.tileLayer('https://{s}.basemaps.cartocdn.com/dark_all/{z}/{x}/{y}{r}.png',{maxZoom:19}).addTo(_hmMap);
+  L.control.zoom({position:'bottomleft'}).addTo(_hmMap);
+  L.control.attribution({position:'bottomleft',prefix:'© HopeMap · OpenStreetMap'}).addTo(_hmMap);
+  _hmMap.on('click',()=>hmClosePanel());
+  hmRender();
+}
+
+function hmOpen(){
+  document.getElementById('hm-page').style.display='block';
+  document.body.style.overflow='hidden';
+  setTimeout(hmInitMap,80);
+}
+
+function hmClose(){
+  document.getElementById('hm-page').style.display='none';
+  document.body.style.overflow='';
+}
+
+// Wire up controls
+document.addEventListener('DOMContentLoaded',function(){
+  document.getElementById('hm-back').addEventListener('click',hmClose);
+  document.getElementById('hm-fab').addEventListener('click',hmOpen);
+
+  document.querySelectorAll('.hm-cat').forEach(function(btn){
+    btn.addEventListener('click',function(){
+      document.querySelectorAll('.hm-cat').forEach(function(b){b.classList.remove('active');});
+      this.classList.add('active');
+      _hmCat=this.dataset.cat;
+      hmRender();
+      hmClosePanel();
+    });
+  });
+
+  var si=document.getElementById('hm-search-input');
+  var cb=document.getElementById('hm-clear');
+  si.addEventListener('input',function(){
+    _hmSearch=this.value.toLowerCase();
+    cb.style.display=this.value?'block':'none';
+    hmRender();
+  });
+  cb.addEventListener('click',function(){
+    si.value='';_hmSearch='';this.style.display='none';hmRender();
+  });
+
+  // Wire "Get Early Access" and "See How It Works" buttons to open map
+  document.querySelectorAll('.btn-primary,.btn-secondary').forEach(function(el){
+    var txt=el.textContent.trim();
+    if(txt.includes('Get Early Access')||txt.includes('See How It Works')){
+      el.addEventListener('click',function(e){e.preventDefault();hmOpen();});
+    }
+  });
+
+  // Add Live Map to navbar
+  var navLinks=document.getElementById('navLinks');
+  if(navLinks){
+    var li=document.createElement('li');
+    li.innerHTML='<a href="#" onclick="event.preventDefault();hmOpen()" style="color:#f5a623!important;font-weight:700!important;">🗺️ Live Map</a>';
+    navLinks.insertBefore(li,navLinks.firstChild);
+  }
+});
 </script>
 
 </body>
