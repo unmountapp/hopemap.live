@@ -2239,7 +2239,7 @@ function hmClosePanel(){
 function hmInitMap(){
   if(_hmMap){_hmMap.invalidateSize();return;}
   const el=document.getElementById('hm-map');
-  _hmMap=L.map(el,{center:[34.052,-118.244],zoom:12,zoomControl:false,attributionControl:false});
+  _hmMap=L.map(el,{center:[36.7783,-119.4179],zoom:6,zoomControl:false,attributionControl:false});
   L.tileLayer('https://{s}.basemaps.cartocdn.com/dark_all/{z}/{x}/{y}{r}.png',{maxZoom:19}).addTo(_hmMap);
   L.control.zoom({position:'bottomleft'}).addTo(_hmMap);
   L.control.attribution({position:'bottomleft',prefix:'© HopeMap · OpenStreetMap'}).addTo(_hmMap);
@@ -2248,7 +2248,7 @@ function hmInitMap(){
 }
 
 function hmOpen(){
-  document.getElementById('hm-page').style.display='block';
+  document.getElementById('hm-page').style.display='flex';
   document.body.style.overflow='hidden';
   setTimeout(hmInitMap,80);
 }
