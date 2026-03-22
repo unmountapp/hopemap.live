@@ -3,23 +3,23 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="description" content="HopeMap — Real-time, community-verified resources for people in crisis. Find shelters, food banks, mental health support and more, updated live by your community.">
+<meta name="description" content="HopeMap â Real-time, community-verified resources for people in crisis. Find shelters, food banks, mental health support and more, updated live by your community.">
 <meta name="keywords" content="homeless resources, shelter finder, food bank locator, crisis help, real-time resources, community support, mental health resources">
 <meta name="author" content="HopeMap">
-<meta property="og:title" content="HopeMap — Real-Time Resources for People in Need">
+<meta property="og:title" content="HopeMap â Real-Time Resources for People in Need">
 <meta property="og:description" content="Community-verified, real-time help for anyone in crisis. Find shelters, food banks, and mental health support near you.">
 <meta property="og:type" content="website">
 <meta property="og:url" content="https://hopemap.live">
-<title>HopeMap — Real-Time Resources for People in Need</title>
+<title>HopeMap â Real-Time Resources for People in Need</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"/>
 <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
 <style>
-/* ═══════════════════════════════════════════
+/* âââââââââââââââââââââââââââââââââââââââââââ
    CSS RESET & VARIABLES
-   ═══════════════════════════════════════════ */
+   âââââââââââââââââââââââââââââââââââââââââââ */
 *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
 
 :root {
@@ -56,9 +56,9 @@ a { color: inherit; text-decoration: none; }
 img { display: block; max-width: 100%; }
 button { font-family: inherit; cursor: pointer; border: none; }
 
-/* ═══════════════════════════════════════════
+/* âââââââââââââââââââââââââââââââââââââââââââ
    UTILITY & LAYOUT
-   ═══════════════════════════════════════════ */
+   âââââââââââââââââââââââââââââââââââââââââââ */
 .container { max-width: 1240px; margin: 0 auto; padding: 0 24px; }
 .section-pad { padding: 120px 0; }
 .text-gradient {
@@ -74,9 +74,9 @@ button { font-family: inherit; cursor: pointer; border: none; }
   background-clip: text;
 }
 
-/* ═══════════════════════════════════════════
+/* âââââââââââââââââââââââââââââââââââââââââââ
    ANIMATED BACKGROUND
-   ═══════════════════════════════════════════ */
+   âââââââââââââââââââââââââââââââââââââââââââ */
 .bg-glow {
   position: fixed;
   top: 0; left: 0;
@@ -107,9 +107,9 @@ button { font-family: inherit; cursor: pointer; border: none; }
   66% { transform: translate(-40px, 40px) scale(0.95); }
 }
 
-/* ═══════════════════════════════════════════
+/* âââââââââââââââââââââââââââââââââââââââââââ
    SCROLL REVEAL
-   ═══════════════════════════════════════════ */
+   âââââââââââââââââââââââââââââââââââââââââââ */
 .reveal {
   opacity: 1;
   transform: translateY(0);
@@ -128,9 +128,9 @@ button { font-family: inherit; cursor: pointer; border: none; }
 .reveal-delay-3 { transition-delay: 0.3s; }
 .reveal-delay-4 { transition-delay: 0.4s; }
 
-/* ═══════════════════════════════════════════
+/* âââââââââââââââââââââââââââââââââââââââââââ
    NAVIGATION
-   ═══════════════════════════════════════════ */
+   âââââââââââââââââââââââââââââââââââââââââââ */
 .nav {
   position: fixed;
   top: 0; left: 0; right: 0;
@@ -215,9 +215,9 @@ button { font-family: inherit; cursor: pointer; border: none; }
   transition: all 0.3s;
 }
 
-/* ═══════════════════════════════════════════
+/* âââââââââââââââââââââââââââââââââââââââââââ
    HERO SECTION
-   ═══════════════════════════════════════════ */
+   âââââââââââââââââââââââââââââââââââââââââââ */
 .hero {
   position: relative;
   min-height: 100vh;
@@ -488,9 +488,9 @@ button { font-family: inherit; cursor: pointer; border: none; }
   to { opacity: 1; transform: translateY(0); }
 }
 
-/* ═══════════════════════════════════════════
+/* âââââââââââââââââââââââââââââââââââââââââââ
    SOCIAL PROOF BAR
-   ═══════════════════════════════════════════ */
+   âââââââââââââââââââââââââââââââââââââââââââ */
 .proof-bar {
   padding: 60px 0;
   border-top: 1px solid rgba(255,255,255,0.04);
@@ -523,9 +523,9 @@ button { font-family: inherit; cursor: pointer; border: none; }
 }
 .proof-logo:hover { opacity: 0.8; }
 
-/* ═══════════════════════════════════════════
+/* âââââââââââââââââââââââââââââââââââââââââââ
    PROBLEM SECTION
-   ═══════════════════════════════════════════ */
+   âââââââââââââââââââââââââââââââââââââââââââ */
 .problem {
   position: relative;
   z-index: 1;
@@ -594,9 +594,9 @@ button { font-family: inherit; cursor: pointer; border: none; }
   line-height: 1.65;
 }
 
-/* ═══════════════════════════════════════════
+/* âââââââââââââââââââââââââââââââââââââââââââ
    FEATURES SECTION
-   ═══════════════════════════════════════════ */
+   âââââââââââââââââââââââââââââââââââââââââââ */
 .features {
   position: relative;
   z-index: 1;
@@ -669,9 +669,9 @@ button { font-family: inherit; cursor: pointer; border: none; }
   line-height: 1.7;
 }
 
-/* ═══════════════════════════════════════════
+/* âââââââââââââââââââââââââââââââââââââââââââ
    HOW IT WORKS
-   ═══════════════════════════════════════════ */
+   âââââââââââââââââââââââââââââââââââââââââââ */
 .how-it-works {
   position: relative;
   z-index: 1;
@@ -711,9 +711,9 @@ button { font-family: inherit; cursor: pointer; border: none; }
   line-height: 1.6;
 }
 
-/* ═══════════════════════════════════════════
+/* âââââââââââââââââââââââââââââââââââââââââââ
    COMPARISON TABLE
-   ═══════════════════════════════════════════ */
+   âââââââââââââââââââââââââââââââââââââââââââ */
 .comparison {
   position: relative;
   z-index: 1;
@@ -761,9 +761,9 @@ button { font-family: inherit; cursor: pointer; border: none; }
 .cross { color: rgba(255,107,74,0.6); }
 .partial { color: var(--color-muted); font-size: 0.8rem; }
 
-/* ═══════════════════════════════════════════
+/* âââââââââââââââââââââââââââââââââââââââââââ
    REVENUE / BUSINESS MODEL
-   ═══════════════════════════════════════════ */
+   âââââââââââââââââââââââââââââââââââââââââââ */
 .revenue {
   position: relative;
   z-index: 1;
@@ -811,9 +811,9 @@ button { font-family: inherit; cursor: pointer; border: none; }
   line-height: 1.6;
 }
 
-/* ═══════════════════════════════════════════
+/* âââââââââââââââââââââââââââââââââââââââââââ
    METRICS / PROJECTIONS
-   ═══════════════════════════════════════════ */
+   âââââââââââââââââââââââââââââââââââââââââââ */
 .metrics {
   position: relative;
   z-index: 1;
@@ -865,9 +865,9 @@ button { font-family: inherit; cursor: pointer; border: none; }
 .metric-detail .md-label { color: var(--color-muted); }
 .metric-detail .md-val { color: var(--color-light); font-weight: 600; }
 
-/* ═══════════════════════════════════════════
+/* âââââââââââââââââââââââââââââââââââââââââââ
    ROADMAP / PHASES
-   ═══════════════════════════════════════════ */
+   âââââââââââââââââââââââââââââââââââââââââââ */
 .roadmap {
   position: relative;
   z-index: 1;
@@ -935,15 +935,15 @@ button { font-family: inherit; cursor: pointer; border: none; }
   gap: 8px;
 }
 .phase-list li::before {
-  content: '→';
+  content: 'â';
   color: var(--color-hope);
   font-weight: 700;
   flex-shrink: 0;
 }
 
-/* ═══════════════════════════════════════════
+/* âââââââââââââââââââââââââââââââââââââââââââ
    ORGANIZATIONS CTA
-   ═══════════════════════════════════════════ */
+   âââââââââââââââââââââââââââââââââââââââââââ */
 .org-cta {
   position: relative;
   z-index: 1;
@@ -996,9 +996,9 @@ button { font-family: inherit; cursor: pointer; border: none; }
   flex-shrink: 0;
 }
 
-/* ═══════════════════════════════════════════
+/* âââââââââââââââââââââââââââââââââââââââââââ
    TECH STACK
-   ═══════════════════════════════════════════ */
+   âââââââââââââââââââââââââââââââââââââââââââ */
 .tech {
   position: relative;
   z-index: 1;
@@ -1036,9 +1036,9 @@ button { font-family: inherit; cursor: pointer; border: none; }
   color: var(--color-muted);
 }
 
-/* ═══════════════════════════════════════════
+/* âââââââââââââââââââââââââââââââââââââââââââ
    FINAL CTA
-   ═══════════════════════════════════════════ */
+   âââââââââââââââââââââââââââââââââââââââââââ */
 .final-cta {
   position: relative;
   z-index: 1;
@@ -1074,9 +1074,9 @@ button { font-family: inherit; cursor: pointer; border: none; }
   position: relative;
 }
 
-/* ═══════════════════════════════════════════
+/* âââââââââââââââââââââââââââââââââââââââââââ
    FOOTER
-   ═══════════════════════════════════════════ */
+   âââââââââââââââââââââââââââââââââââââââââââ */
 .footer {
   position: relative;
   z-index: 1;
@@ -1126,9 +1126,9 @@ button { font-family: inherit; cursor: pointer; border: none; }
   color: var(--color-muted);
 }
 
-/* ═══════════════════════════════════════════
+/* âââââââââââââââââââââââââââââââââââââââââââ
    ADSENSE PLACEHOLDER
-   ═══════════════════════════════════════════ */
+   âââââââââââââââââââââââââââââââââââââââââââ */
 .ad-slot {
   padding: 20px;
   text-align: center;
@@ -1138,9 +1138,9 @@ button { font-family: inherit; cursor: pointer; border: none; }
   */
 }
 
-/* ═══════════════════════════════════════════
+/* âââââââââââââââââââââââââââââââââââââââââââ
    RESPONSIVE
-   ═══════════════════════════════════════════ */
+   âââââââââââââââââââââââââââââââââââââââââââ */
 @media (max-width: 1024px) {
   .hero-grid { grid-template-columns: 1fr; gap: 60px; text-align: center; }
   .hero-sub { margin: 0 auto 40px; }
@@ -1182,7 +1182,7 @@ button { font-family: inherit; cursor: pointer; border: none; }
   .tech-grid { grid-template-columns: 1fr 1fr; }
   .proof-logos { gap: 24px; }
 }
-/* ═══ LIVE MAP PAGE ═══ */
+/* âââ LIVE MAP PAGE âââ */
 #hm-page{display:none;position:fixed;inset:0;background:#0a0a0f;z-index:9000;font-family:'Plus Jakarta Sans',sans-serif;overflow:hidden;}
 #hm-page *{box-sizing:border-box;}
 .hm-nav{position:absolute;top:0;left:0;right:0;height:60px;background:rgba(10,10,15,0.96);backdrop-filter:blur(14px);border-bottom:1px solid #1e2733;display:flex;align-items:center;justify-content:space-between;padding:0 20px;z-index:100;}
@@ -1242,11 +1242,11 @@ button { font-family: inherit; cursor: pointer; border: none; }
 <body>
 <div class="bg-glow"></div>
 
-<!-- ═══════════════════ NAVIGATION ═══════════════════ -->
+<!-- âââââââââââââââââââ NAVIGATION âââââââââââââââââââ -->
 <nav class="nav" id="nav">
   <div class="nav-inner">
     <a href="#" class="nav-logo">
-      <div class="logo-icon">📍</div>
+      <div class="logo-icon">ð</div>
       HopeMap
     </a>
     <ul class="nav-links" id="navLinks">
@@ -1263,7 +1263,7 @@ button { font-family: inherit; cursor: pointer; border: none; }
   </div>
 </nav>
 
-<!-- ═══════════════════ HERO ═══════════════════ -->
+<!-- âââââââââââââââââââ HERO âââââââââââââââââââ -->
 <section class="hero" id="hero">
   <div class="container">
     <div class="hero-grid">
@@ -1273,11 +1273,11 @@ button { font-family: inherit; cursor: pointer; border: none; }
           Launching in Los Angeles, 2026
         </div>
         <h1>Real-Time Help.<br><span class="text-gradient">When It Matters Most.</span></h1>
-        <p class="hero-sub">Community-verified shelters, food banks, mental health support, and more — all on a live map updated by the people who know. Think Waze, but for survival.</p>
+        <p class="hero-sub">Community-verified shelters, food banks, mental health support, and more â all on a live map updated by the people who know. Think Waze, but for survival.</p>
         <div class="hero-actions">
-          <a href="#contact" class="btn-primary">Get Early Access <span>→</span></a>
+          <a href="#contact" class="btn-primary">Get Early Access <span>â</span></a>
           <a href="#features" class="btn-secondary">
-            <span>▶</span> See How It Works
+            <span>â¶</span> See How It Works
           </a>
         </div>
       </div>
@@ -1285,21 +1285,21 @@ button { font-family: inherit; cursor: pointer; border: none; }
         <div class="hero-phone">
           <div class="phone-screen">
             <div class="phone-header">
-              <h3>📍 HopeMap</h3>
+              <h3>ð HopeMap</h3>
               <span style="color:var(--color-muted);font-size:0.8rem;">LA</span>
             </div>
-            <div class="phone-search">🔍 Search resources near you...</div>
+            <div class="phone-search">ð Search resources near you...</div>
             <div class="phone-map">
               <div class="map-grid-lines"></div>
-              <div class="map-pin pin-food"><span>🍲</span></div>
-              <div class="map-pin pin-shelter"><span>🏠</span></div>
-              <div class="map-pin pin-health"><span>🧠</span></div>
-              <div class="map-pin pin-alert"><span>🔔</span></div>
-              <div class="map-pin pin-food2"><span>🥫</span></div>
+              <div class="map-pin pin-food"><span>ð²</span></div>
+              <div class="map-pin pin-shelter"><span>ð </span></div>
+              <div class="map-pin pin-health"><span>ð§ </span></div>
+              <div class="map-pin pin-alert"><span>ð</span></div>
+              <div class="map-pin pin-food2"><span>ð¥«</span></div>
               <div class="phone-card">
                 <div class="phone-card-title">Union Rescue Mission</div>
                 <div class="phone-card-meta">
-                  <span class="open">● Open Now</span>
+                  <span class="open">â Open Now</span>
                   <span>0.3 mi</span>
                   <span>42 beds left</span>
                 </div>
@@ -1320,7 +1320,7 @@ button { font-family: inherit; cursor: pointer; border: none; }
   </div>
 </section>
 
-<!-- ═══════════════════ SOCIAL PROOF BAR ═══════════════════ -->
+<!-- âââââââââââââââââââ SOCIAL PROOF BAR âââââââââââââââââââ -->
 <section class="proof-bar reveal">
   <div class="container">
     <div class="proof-label">Targeting Partnerships With</div>
@@ -1335,7 +1335,7 @@ button { font-family: inherit; cursor: pointer; border: none; }
   </div>
 </section>
 
-<!-- ═══════════════════ PROBLEM ═══════════════════ -->
+<!-- âââââââââââââââââââ PROBLEM âââââââââââââââââââ -->
 <section class="problem section-pad" id="problem">
   <div class="container">
     <div class="problem-header">
@@ -1345,32 +1345,32 @@ button { font-family: inherit; cursor: pointer; border: none; }
     </div>
     <div class="problem-grid">
       <div class="problem-card reveal reveal-delay-1">
-        <div class="problem-icon" style="background:rgba(255,107,74,0.1);">⏰</div>
+        <div class="problem-icon" style="background:rgba(255,107,74,0.1);">â°</div>
         <h3>Stale Data</h3>
         <p>Shelter hours change weekly. Food drives pop up and vanish. Static directories can't keep pace with reality on the ground.</p>
       </div>
       <div class="problem-card reveal reveal-delay-2">
-        <div class="problem-icon" style="background:rgba(74,173,255,0.1);">🗺️</div>
+        <div class="problem-icon" style="background:rgba(74,173,255,0.1);">ðºï¸</div>
         <h3>No Nationwide Solution</h3>
         <p>Existing apps cover a handful of cities at best. There's no single platform with real-time, coast-to-coast coverage.</p>
       </div>
       <div class="problem-card reveal reveal-delay-3">
-        <div class="problem-icon" style="background:rgba(167,139,250,0.1);">🧠</div>
+        <div class="problem-icon" style="background:rgba(167,139,250,0.1);">ð§ </div>
         <h3>Mental Health Buried</h3>
         <p>Crisis hotlines, counseling centers, and text-based support are scattered across dozens of websites. Finding help shouldn't take a search engine expert.</p>
       </div>
       <div class="problem-card reveal reveal-delay-1">
-        <div class="problem-icon" style="background:rgba(62,207,160,0.1);">🌍</div>
+        <div class="problem-icon" style="background:rgba(62,207,160,0.1);">ð</div>
         <h3>Language Barriers</h3>
         <p>Non-English speakers are effectively locked out of most existing resource tools, compounding an already desperate situation.</p>
       </div>
       <div class="problem-card reveal reveal-delay-2">
-        <div class="problem-icon" style="background:rgba(245,166,35,0.1);">📵</div>
+        <div class="problem-icon" style="background:rgba(245,166,35,0.1);">ðµ</div>
         <h3>No Offline Access</h3>
         <p>Many people in crisis rely on prepaid phones with limited data. If an app requires a constant connection, it fails the people who need it most.</p>
       </div>
       <div class="problem-card reveal reveal-delay-3">
-        <div class="problem-icon" style="background:rgba(255,107,74,0.1);">❓</div>
+        <div class="problem-icon" style="background:rgba(255,107,74,0.1);">â</div>
         <h3>Capacity Unknown</h3>
         <p>There's no way to know if a shelter has beds or a food bank has supplies before making the trip. Every wasted journey costs time, energy, and hope.</p>
       </div>
@@ -1378,7 +1378,7 @@ button { font-family: inherit; cursor: pointer; border: none; }
   </div>
 </section>
 
-<!-- ═══════════════════ FEATURES ═══════════════════ -->
+<!-- âââââââââââââââââââ FEATURES âââââââââââââââââââ -->
 <section class="features section-pad" id="features">
   <div class="container">
     <div class="problem-header reveal">
@@ -1388,42 +1388,42 @@ button { font-family: inherit; cursor: pointer; border: none; }
     </div>
     <div class="features-grid">
       <div class="feature-card reveal reveal-delay-1">
-        <div class="feature-icon fi-map">📍</div>
+        <div class="feature-icon fi-map">ð</div>
         <h3>Real-Time Community Map</h3>
         <p>Users and verified organizations report live status: open/closed, bed count, food remaining, wait times. Color-coded pins show urgency at a glance.</p>
       </div>
       <div class="feature-card reveal reveal-delay-2">
-        <div class="feature-icon fi-ai">🤖</div>
+        <div class="feature-icon fi-ai">ð¤</div>
         <h3>AI-Powered Resource Matching</h3>
         <p>Describe your situation in plain language. AI routes you to the most relevant open resources nearby, ranked by distance and availability.</p>
       </div>
       <div class="feature-card reveal reveal-delay-1">
-        <div class="feature-icon fi-alert">🔔</div>
+        <div class="feature-icon fi-alert">ð</div>
         <h3>Smart Alerts & Notifications</h3>
         <p>Push alerts for nearby food drives, shelter openings, weather emergency resources, and new mental health hotlines in your area.</p>
       </div>
       <div class="feature-card reveal reveal-delay-2">
-        <div class="feature-icon fi-mental">💬</div>
+        <div class="feature-icon fi-mental">ð¬</div>
         <h3>Mental Health Quick Access</h3>
-        <p>One-tap access to crisis lines, text-based counseling, and local mental health centers — available 24/7 with verified hours.</p>
+        <p>One-tap access to crisis lines, text-based counseling, and local mental health centers â available 24/7 with verified hours.</p>
       </div>
       <div class="feature-card reveal reveal-delay-1">
-        <div class="feature-icon fi-lang">🌐</div>
+        <div class="feature-icon fi-lang">ð</div>
         <h3>Multilingual Support</h3>
         <p>Full UI in English, Spanish, French, Haitian Creole, and more. Auto-detection based on your device language so help is never lost in translation.</p>
       </div>
       <div class="feature-card reveal reveal-delay-2">
-        <div class="feature-icon fi-offline">📵</div>
+        <div class="feature-icon fi-offline">ðµ</div>
         <h3>Offline Mode</h3>
-        <p>Core resource data cached locally. Works with no data connection — critical for users with prepaid or limited data plans.</p>
+        <p>Core resource data cached locally. Works with no data connection â critical for users with prepaid or limited data plans.</p>
       </div>
       <div class="feature-card reveal reveal-delay-1">
-        <div class="feature-icon fi-org">🏢</div>
+        <div class="feature-icon fi-org">ð¢</div>
         <h3>Organization Dashboard</h3>
         <p>Nonprofits, shelters, and food banks get a free dashboard to manage their listing, push updates, and see usage analytics.</p>
       </div>
       <div class="feature-card reveal reveal-delay-2">
-        <div class="feature-icon fi-trust">⭐</div>
+        <div class="feature-icon fi-trust">â­</div>
         <h3>Trust & Karma System</h3>
         <p>Community members earn trust points for accurate updates. Higher-trust reporters' updates carry more weight in the algorithm.</p>
       </div>
@@ -1431,13 +1431,13 @@ button { font-family: inherit; cursor: pointer; border: none; }
   </div>
 </section>
 
-<!-- ═══════════════════ HOW IT WORKS ═══════════════════ -->
+<!-- âââââââââââââââââââ HOW IT WORKS âââââââââââââââââââ -->
 <section class="how-it-works section-pad" id="how-it-works">
   <div class="container">
     <div class="problem-header reveal">
       <div class="section-label">How It Works</div>
       <h2 class="section-title">Help in <span class="text-gradient">four steps.</span></h2>
-      <p class="section-desc">No accounts required. No complicated setup. Just open, search, and find real help — verified by your community.</p>
+      <p class="section-desc">No accounts required. No complicated setup. Just open, search, and find real help â verified by your community.</p>
     </div>
     <div class="steps-row">
       <div class="step-card reveal reveal-delay-1">
@@ -1453,7 +1453,7 @@ button { font-family: inherit; cursor: pointer; border: none; }
       <div class="step-card reveal reveal-delay-3">
         <div class="step-num">3</div>
         <h3>Check Live Status</h3>
-        <p>See real-time updates: beds available, wait times, food supply — all reported by users and organizations.</p>
+        <p>See real-time updates: beds available, wait times, food supply â all reported by users and organizations.</p>
       </div>
       <div class="step-card reveal reveal-delay-4">
         <div class="step-num">4</div>
@@ -1464,7 +1464,7 @@ button { font-family: inherit; cursor: pointer; border: none; }
   </div>
 </section>
 
-<!-- ═══════════════════ COMPARISON ═══════════════════ -->
+<!-- âââââââââââââââââââ COMPARISON âââââââââââââââââââ -->
 <section class="comparison section-pad" id="comparison">
   <div class="container">
     <div class="problem-header reveal">
@@ -1486,52 +1486,52 @@ button { font-family: inherit; cursor: pointer; border: none; }
         <tbody>
           <tr>
             <td>Real-Time Updates</td>
-            <td class="highlight"><span class="check">✔</span></td>
-            <td><span class="cross">✘</span></td>
+            <td class="highlight"><span class="check">â</span></td>
+            <td><span class="cross">â</span></td>
             <td><span class="partial">Partial</span></td>
-            <td><span class="cross">✘</span></td>
+            <td><span class="cross">â</span></td>
           </tr>
           <tr>
             <td>Nationwide Coverage</td>
-            <td class="highlight"><span class="check">✔</span></td>
-            <td><span class="cross">✘</span></td>
-            <td><span class="check">✔</span></td>
-            <td><span class="check">✔</span></td>
+            <td class="highlight"><span class="check">â</span></td>
+            <td><span class="cross">â</span></td>
+            <td><span class="check">â</span></td>
+            <td><span class="check">â</span></td>
           </tr>
           <tr>
             <td>Mental Health Resources</td>
-            <td class="highlight"><span class="check">✔</span></td>
-            <td><span class="check">✔</span></td>
+            <td class="highlight"><span class="check">â</span></td>
+            <td><span class="check">â</span></td>
             <td><span class="partial">Partial</span></td>
             <td><span class="partial">Partial</span></td>
           </tr>
           <tr>
             <td>Multilingual</td>
-            <td class="highlight"><span class="check">✔</span></td>
-            <td><span class="cross">✘</span></td>
-            <td><span class="cross">✘</span></td>
+            <td class="highlight"><span class="check">â</span></td>
+            <td><span class="cross">â</span></td>
+            <td><span class="cross">â</span></td>
             <td><span class="partial">Partial</span></td>
           </tr>
           <tr>
             <td>Offline Mode</td>
-            <td class="highlight"><span class="check">✔</span></td>
-            <td><span class="cross">✘</span></td>
-            <td><span class="check">✔</span></td>
-            <td><span class="cross">✘</span></td>
+            <td class="highlight"><span class="check">â</span></td>
+            <td><span class="cross">â</span></td>
+            <td><span class="check">â</span></td>
+            <td><span class="cross">â</span></td>
           </tr>
           <tr>
             <td>Org Dashboard</td>
-            <td class="highlight"><span class="check">✔</span></td>
+            <td class="highlight"><span class="check">â</span></td>
             <td><span class="partial">Partial</span></td>
-            <td><span class="cross">✘</span></td>
-            <td><span class="cross">✘</span></td>
+            <td><span class="cross">â</span></td>
+            <td><span class="cross">â</span></td>
           </tr>
           <tr>
             <td>AI Resource Matching</td>
-            <td class="highlight"><span class="check">✔</span></td>
+            <td class="highlight"><span class="check">â</span></td>
             <td><span class="partial">Basic</span></td>
-            <td><span class="cross">✘</span></td>
-            <td><span class="cross">✘</span></td>
+            <td><span class="cross">â</span></td>
+            <td><span class="cross">â</span></td>
           </tr>
         </tbody>
       </table>
@@ -1539,24 +1539,24 @@ button { font-family: inherit; cursor: pointer; border: none; }
   </div>
 </section>
 
-<!-- ═══════════════════ REVENUE MODEL ═══════════════════ -->
+<!-- âââââââââââââââââââ REVENUE MODEL âââââââââââââââââââ -->
 <section class="revenue section-pad" id="revenue">
   <div class="container">
     <div class="problem-header reveal">
       <div class="section-label">Business Model</div>
       <h2 class="section-title">Built to sustain the <span class="text-gradient">mission.</span></h2>
-      <p class="section-desc">Free for people in need. Revenue from organizations, institutions, and data — never from vulnerable users.</p>
+      <p class="section-desc">Free for people in need. Revenue from organizations, institutions, and data â never from vulnerable users.</p>
     </div>
     <div class="revenue-grid">
       <div class="rev-card reveal reveal-delay-1">
         <span class="rev-tag high">High Potential</span>
         <h3>Organization Pro Tier</h3>
-        <p>$49–$199/mo premium dashboard with analytics, priority listing, SMS alerts, and custom branding for shelters and food banks.</p>
+        <p>$49â$199/mo premium dashboard with analytics, priority listing, SMS alerts, and custom branding for shelters and food banks.</p>
       </div>
       <div class="rev-card reveal reveal-delay-2">
         <span class="rev-tag very-high">Very High Potential</span>
         <h3>Government Contracts</h3>
-        <p>$10K–$100K+ annual licensing for cities and counties to integrate HopeMap data into 211 systems and emergency response.</p>
+        <p>$10Kâ$100K+ annual licensing for cities and counties to integrate HopeMap data into 211 systems and emergency response.</p>
       </div>
       <div class="rev-card reveal reveal-delay-3">
         <span class="rev-tag medium">Medium Potential</span>
@@ -1566,7 +1566,7 @@ button { font-family: inherit; cursor: pointer; border: none; }
       <div class="rev-card reveal reveal-delay-1">
         <span class="rev-tag high">High Potential</span>
         <h3>Corporate CSR Partners</h3>
-        <p>Companies sponsor resource categories — grocery chains sponsor food bank listings, healthcare companies sponsor mental health.</p>
+        <p>Companies sponsor resource categories â grocery chains sponsor food bank listings, healthcare companies sponsor mental health.</p>
       </div>
       <div class="rev-card reveal reveal-delay-2">
         <span class="rev-tag medium">Medium Potential</span>
@@ -1576,13 +1576,13 @@ button { font-family: inherit; cursor: pointer; border: none; }
       <div class="rev-card reveal reveal-delay-3">
         <span class="rev-tag medium">Medium Potential</span>
         <h3>Volunteer Platform Fee</h3>
-        <p>Small 2–3% transaction fee on donations and volunteer sign-ups processed through the app.</p>
+        <p>Small 2â3% transaction fee on donations and volunteer sign-ups processed through the app.</p>
       </div>
     </div>
   </div>
 </section>
 
-<!-- ═══════════════════ METRICS ═══════════════════ -->
+<!-- âââââââââââââââââââ METRICS âââââââââââââââââââ -->
 <section class="metrics section-pad" id="metrics">
   <div class="container">
     <div class="problem-header reveal">
@@ -1651,7 +1651,7 @@ button { font-family: inherit; cursor: pointer; border: none; }
   </div>
 </section>
 
-<!-- ═══════════════════ ROADMAP ═══════════════════ -->
+<!-- âââââââââââââââââââ ROADMAP âââââââââââââââââââ -->
 <section class="roadmap section-pad" id="roadmap">
   <div class="container">
     <div class="problem-header reveal">
@@ -1661,9 +1661,9 @@ button { font-family: inherit; cursor: pointer; border: none; }
     </div>
     <div class="phases">
       <div class="phase-card reveal reveal-delay-1">
-        <span class="phase-tag">Phase 1 — Months 1–6</span>
+        <span class="phase-tag">Phase 1 â Months 1â6</span>
         <h3>Launch: Los Angeles</h3>
-        <p>LA has the largest unsheltered homeless population in the US and a mature nonprofit ecosystem — making it the ideal proving ground.</p>
+        <p>LA has the largest unsheltered homeless population in the US and a mature nonprofit ecosystem â making it the ideal proving ground.</p>
         <ul class="phase-list">
           <li>Anchor in Skid Row, Venice Beach, Hollywood, San Fernando Valley</li>
           <li>Sign 10 LA anchor partners including LAHSA & 211 LA</li>
@@ -1672,7 +1672,7 @@ button { font-family: inherit; cursor: pointer; border: none; }
         </ul>
       </div>
       <div class="phase-card reveal reveal-delay-2">
-        <span class="phase-tag">Phase 2 — Months 7–18</span>
+        <span class="phase-tag">Phase 2 â Months 7â18</span>
         <h3>National Expansion</h3>
         <p>Replicate the LA playbook across 25 cities using the city contract model and hospital system integrations.</p>
         <ul class="phase-list">
@@ -1683,9 +1683,9 @@ button { font-family: inherit; cursor: pointer; border: none; }
         </ul>
       </div>
       <div class="phase-card reveal reveal-delay-3">
-        <span class="phase-tag">Phase 3 — Year 2+</span>
+        <span class="phase-tag">Phase 3 â Year 2+</span>
         <h3>Platform & Scale</h3>
-        <p>Transform HopeMap from an app into critical public infrastructure — the default real-time layer for social services.</p>
+        <p>Transform HopeMap from an app into critical public infrastructure â the default real-time layer for social services.</p>
         <ul class="phase-list">
           <li>White-label dashboard for city 311/211 systems</li>
           <li>International expansion: Canada, UK</li>
@@ -1697,7 +1697,7 @@ button { font-family: inherit; cursor: pointer; border: none; }
   </div>
 </section>
 
-<!-- ═══════════════════ ORGANIZATIONS CTA ═══════════════════ -->
+<!-- âââââââââââââââââââ ORGANIZATIONS CTA âââââââââââââââââââ -->
 <section class="org-cta section-pad" id="organizations">
   <div class="container">
     <div class="org-box reveal">
@@ -1705,27 +1705,27 @@ button { font-family: inherit; cursor: pointer; border: none; }
         <div class="section-label">For Organizations</div>
         <h2>Your services deserve to<br>be <span class="text-gradient-cool">found.</span></h2>
         <p>Claim your free dashboard and let the people who need you most find you in real time. Upgrade to Pro for analytics, priority placement, and direct SMS alerts.</p>
-        <a href="#contact" class="btn-primary">Claim Your Listing <span>→</span></a>
+        <a href="#contact" class="btn-primary">Claim Your Listing <span>â</span></a>
       </div>
       <div class="org-features">
         <div class="org-feat">
-          <div class="org-feat-icon">📊</div>
+          <div class="org-feat-icon">ð</div>
           <span>Real-time analytics on who's accessing your services</span>
         </div>
         <div class="org-feat">
-          <div class="org-feat-icon">📢</div>
+          <div class="org-feat-icon">ð¢</div>
           <span>Push live updates: bed count, food supply, hours changes</span>
         </div>
         <div class="org-feat">
-          <div class="org-feat-icon">📱</div>
+          <div class="org-feat-icon">ð±</div>
           <span>SMS alerts directly to nearby users when resources open</span>
         </div>
         <div class="org-feat">
-          <div class="org-feat-icon">🏷️</div>
+          <div class="org-feat-icon">ð·ï¸</div>
           <span>Verified Partner badge builds trust with your community</span>
         </div>
         <div class="org-feat">
-          <div class="org-feat-icon">🎨</div>
+          <div class="org-feat-icon">ð¨</div>
           <span>Custom branding on your listing with Pro tier</span>
         </div>
       </div>
@@ -1733,7 +1733,7 @@ button { font-family: inherit; cursor: pointer; border: none; }
   </div>
 </section>
 
-<!-- ═══════════════════ TECH STACK ═══════════════════ -->
+<!-- âââââââââââââââââââ TECH STACK âââââââââââââââââââ -->
 <section class="tech section-pad" id="tech">
   <div class="container">
     <div class="problem-header reveal">
@@ -1743,42 +1743,42 @@ button { font-family: inherit; cursor: pointer; border: none; }
     </div>
     <div class="tech-grid">
       <div class="tech-item reveal reveal-delay-1">
-        <div class="tech-emoji">⚛️</div>
+        <div class="tech-emoji">âï¸</div>
         <h4>React Native</h4>
-        <p>Expo SDK — iOS + Android</p>
+        <p>Expo SDK â iOS + Android</p>
       </div>
       <div class="tech-item reveal reveal-delay-2">
-        <div class="tech-emoji">🌐</div>
+        <div class="tech-emoji">ð</div>
         <h4>React.js</h4>
         <p>Web Application</p>
       </div>
       <div class="tech-item reveal reveal-delay-3">
-        <div class="tech-emoji">🗄️</div>
+        <div class="tech-emoji">ðï¸</div>
         <h4>PostgreSQL + PostGIS</h4>
         <p>Geospatial Queries</p>
       </div>
       <div class="tech-item reveal reveal-delay-4">
-        <div class="tech-emoji">🤖</div>
+        <div class="tech-emoji">ð¤</div>
         <h4>Claude API</h4>
         <p>AI Resource Matching</p>
       </div>
       <div class="tech-item reveal reveal-delay-1">
-        <div class="tech-emoji">🔥</div>
+        <div class="tech-emoji">ð¥</div>
         <h4>Firebase</h4>
         <p>Real-Time Push Updates</p>
       </div>
       <div class="tech-item reveal reveal-delay-2">
-        <div class="tech-emoji">⚡</div>
+        <div class="tech-emoji">â¡</div>
         <h4>Redis</h4>
         <p>Live Status Caching</p>
       </div>
       <div class="tech-item reveal reveal-delay-3">
-        <div class="tech-emoji">☁️</div>
+        <div class="tech-emoji">âï¸</div>
         <h4>AWS</h4>
         <p>ECS + RDS + S3</p>
       </div>
       <div class="tech-item reveal reveal-delay-4">
-        <div class="tech-emoji">🛡️</div>
+        <div class="tech-emoji">ð¡ï¸</div>
         <h4>Cloudflare</h4>
         <p>CDN & DDoS Protection</p>
       </div>
@@ -1786,25 +1786,25 @@ button { font-family: inherit; cursor: pointer; border: none; }
   </div>
 </section>
 
-<!-- ═══════════════════ FINAL CTA ═══════════════════ -->
+<!-- âââââââââââââââââââ FINAL CTA âââââââââââââââââââ -->
 <section class="final-cta" id="contact">
   <div class="container">
     <div class="reveal">
       <h2>Turning Community<br>Into a <span class="text-gradient">Lifeline.</span></h2>
-      <p>HopeMap launches in Los Angeles in 2026. Join the movement — whether you're someone who needs help, someone who gives it, or someone who builds the tools to connect the two.</p>
+      <p>HopeMap launches in Los Angeles in 2026. Join the movement â whether you're someone who needs help, someone who gives it, or someone who builds the tools to connect the two.</p>
       <div class="hero-actions">
-        <a href="mailto:customercareblackaiser@gmail.com" class="btn-primary">Partner With Us <span>→</span></a>
-        <a href="#hero" class="btn-secondary">Back to Top ↑</a>
+        <a href="mailto:customercareblackaiser@gmail.com" class="btn-primary">Partner With Us <span>â</span></a>
+        <a href="#hero" class="btn-secondary">Back to Top â</a>
       </div>
     </div>
   </div>
 </section>
 
-<!-- ═══════════════════ AD SLOT (Google AdSense Placeholder) ═══════════════════ -->
+<!-- âââââââââââââââââââ AD SLOT (Google AdSense Placeholder) âââââââââââââââââââ -->
 <div class="ad-slot" id="ad-slot-footer">
   <!-- 
     GOOGLE ADSENSE INTEGRATION
-    ════════════════════════════
+    ââââââââââââââââââââââââââââ
     Replace this comment block with your AdSense ad unit code:
     
     <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-XXXXXXXXXXXXXXXX" crossorigin="anonymous"></script>
@@ -1825,13 +1825,13 @@ button { font-family: inherit; cursor: pointer; border: none; }
   -->
 </div>
 
-<!-- ═══════════════════ FOOTER ═══════════════════ -->
+<!-- âââââââââââââââââââ FOOTER âââââââââââââââââââ -->
 <footer class="footer">
   <div class="container">
     <div class="footer-grid">
       <div class="footer-brand">
         <a href="#" class="nav-logo">
-          <div class="logo-icon">📍</div>
+          <div class="logo-icon">ð</div>
           HopeMap
         </a>
         <p>Real-time, community-verified resources for people in crisis. Launching in Los Angeles, 2026.</p>
@@ -1865,7 +1865,7 @@ button { font-family: inherit; cursor: pointer; border: none; }
   </div>
 </footer>
 
-<!-- ═══════════════════ SCRIPTS ═══════════════════ -->
+<!-- âââââââââââââââââââ SCRIPTS âââââââââââââââââââ -->
 <script>
 // Navigation scroll effect
 const nav = document.getElementById('nav');
@@ -1942,25 +1942,25 @@ function animateCounters() {
 animateCounters();
 </script>
 
-<!-- ═══ LIVE MAP PAGE ═══ -->
+<!-- âââ LIVE MAP PAGE âââ -->
 <div id="hm-page">
   <div class="hm-nav">
-    <button class="hm-back" id="hm-back">← Back</button>
-    <div class="hm-logo">📍 HopeMap <span class="hm-live-badge">LIVE MAP</span></div>
+    <button class="hm-back" id="hm-back">â Back</button>
+    <div class="hm-logo">ð HopeMap <span class="hm-live-badge">LIVE MAP</span></div>
     <div class="hm-count"><div class="hm-dot"></div><span id="hm-count-label">10 resources live</span></div>
   </div>
   <div class="hm-search-wrap">
     <div class="hm-search-inner">
-      <span>🔍</span>
-      <input id="hm-search-input" placeholder="Search resources near you…" autocomplete="off"/>
-      <button class="hm-clear" id="hm-clear">✕</button>
+      <span>ð</span>
+      <input id="hm-search-input" placeholder="Search resources near youâ¦" autocomplete="off"/>
+      <button class="hm-clear" id="hm-clear">â</button>
     </div>
   </div>
   <div class="hm-cats" id="hm-cats">
-    <button class="hm-cat active" data-cat="all">🗺️ All</button>
-    <button class="hm-cat" data-cat="shelter">🏠 Shelter</button>
-    <button class="hm-cat" data-cat="food">🍲 Food</button>
-    <button class="hm-cat" data-cat="mental">🧠 Mental Health</button>
+    <button class="hm-cat active" data-cat="all">ðºï¸ All</button>
+    <button class="hm-cat" data-cat="shelter">ð  Shelter</button>
+    <button class="hm-cat" data-cat="food">ð² Food</button>
+    <button class="hm-cat" data-cat="mental">ð§  Mental Health</button>
   </div>
   <div id="hm-map"></div>
   <div class="hm-legend">
@@ -1974,105 +1974,181 @@ animateCounters();
 </div>
 
 <!-- FAB -->
-<button id="hm-fab">🗺️ Live Map</button>
+<button id="hm-fab">ðºï¸ Live Map</button>
 
 <script>
-// ── HopeMap Live Map ──────────────────────────────────────────────────
+// ââ HopeMap Live Map ââââââââââââââââââââââââââââââââââââââââââââââââââ
 const HM_RESOURCES = [
-  // ── LOS ANGELES ──────────────────────────────────────────────────────
-  {id:1,name:'Union Rescue Mission',type:'shelter',emoji:'🏠',address:'545 S San Pedro St, Los Angeles, CA',city:'Los Angeles',distance:0.3,status:'open',beds:42,totalBeds:200,waitTime:'15 min',hours:'24/7',phone:'(213) 347-6300',lat:34.0437,lng:-118.2468,verified:true,updated:'2 min ago',tags:['Men','Women','Families'],desc:'One of the largest shelters in the US — emergency shelter, meals, rehabilitation, and housing for men, women, and families.'},
-  {id:2,name:'LA Regional Food Bank',type:'food',emoji:'🍲',address:'1734 E 41st St, Los Angeles, CA',city:'Los Angeles',distance:1.2,status:'open',food:70,waitTime:null,hours:'Mon–Fri 8am–4pm',phone:'(323) 234-3030',lat:34.0217,lng:-118.2158,verified:true,updated:'5 min ago',tags:['Groceries','Hot Meals'],desc:'Distributes millions of pounds of food annually to those in need across Los Angeles County.'},
-  {id:3,name:'Didi Hirsch Mental Health Services',type:'mental',emoji:'🧠',address:'4760 S Sepulveda Blvd, Culver City, CA',city:'Los Angeles',distance:4.7,status:'open',waitTime:null,hours:'Mon–Sat 9am–7pm',phone:'(800) 854-7771',lat:34.0031,lng:-118.4136,verified:true,updated:'1 hr ago',tags:['Crisis Line','Counseling','Bilingual'],desc:'Mental health, substance use disorder, and crisis services across Southern California. 988-affiliated provider.'},
-  {id:4,name:'PATH Homeless Services',type:'shelter',emoji:'🏠',address:'340 N Madison Ave, Los Angeles, CA',city:'Los Angeles',distance:2.1,status:'limited',beds:8,totalBeds:85,waitTime:'45 min',hours:'24/7',phone:'(323) 644-2200',lat:34.0641,lng:-118.2978,verified:true,updated:'12 min ago',tags:['Men','Women','LGBTQ+'],desc:'Provides shelter, housing, and services to homeless individuals and families across California.'},
-  {id:5,name:'Hollywood Food Coalition',type:'food',emoji:'🍲',address:'1734 Schrader Blvd, Hollywood, CA',city:'Los Angeles',distance:3.4,status:'open',food:90,waitTime:null,hours:'Daily 5pm–9pm',phone:'(323) 462-0197',lat:34.0983,lng:-118.3297,verified:true,updated:'30 min ago',tags:['Hot Meals','Daily','No ID Req.'],desc:'Serves hot meals every evening, 365 days a year, to anyone who is hungry. No questions asked.'},
-  {id:6,name:"St. Joseph Center",type:'shelter',emoji:'🏠',address:'204 Hampton Dr, Venice, CA',city:'Los Angeles',distance:6.2,status:'open',beds:35,totalBeds:60,waitTime:'20 min',hours:'Mon–Fri 8am–6pm',phone:'(310) 399-3939',lat:33.9877,lng:-118.4717,verified:true,updated:'1 hr ago',tags:['Families','Veterans'],desc:'Comprehensive social services including shelter, employment, and mental health support for Venice/West LA.'},
-  {id:7,name:'Midnight Mission',type:'shelter',emoji:'🏠',address:'601 S San Pedro St, Los Angeles, CA',city:'Los Angeles',distance:0.5,status:'open',beds:120,totalBeds:250,waitTime:'10 min',hours:'24/7',phone:'(213) 624-9258',lat:34.0414,lng:-118.2479,verified:true,updated:'4 min ago',tags:['Men','Recovery'],desc:'Provides a full continuum of services to homeless men and families in Skid Row. Recovery programs available.'},
-  {id:8,name:'Weingart Center',type:'shelter',emoji:'🏠',address:'566 S San Julian St, Los Angeles, CA',city:'Los Angeles',distance:0.4,status:'limited',beds:15,totalBeds:95,waitTime:'30 min',hours:'24/7',phone:'(213) 627-0000',lat:34.0428,lng:-118.2455,verified:true,updated:'8 min ago',tags:['Men','Women'],desc:'Transitional and permanent supportive housing for formerly homeless individuals in the heart of Skid Row.'},
-  {id:9,name:'LARC Food Pantry',type:'food',emoji:'🥫',address:'2055 Virgil Ave, Los Angeles, CA',city:'Los Angeles',distance:2.9,status:'open',food:55,waitTime:null,hours:'Tue & Thu 10am–1pm',phone:'(323) 660-1996',lat:34.0799,lng:-118.2906,verified:true,updated:'1 hr ago',tags:['Groceries','No ID Req.'],desc:'Community food pantry offering groceries twice a week to families in need in the Silver Lake area.'},
-  {id:10,name:'Exodus Recovery Center',type:'mental',emoji:'🧠',address:'4330 Degnan Blvd, Los Angeles, CA',city:'Los Angeles',distance:5.1,status:'open',waitTime:null,hours:'Mon–Fri 8am–5pm',phone:'(323) 290-3400',lat:34.0094,lng:-118.3426,verified:true,updated:'2 hr ago',tags:['Crisis','Substance Use'],desc:'Outpatient mental health and substance use disorder treatment services. Walk-ins welcome Mon–Fri.'},
-  {id:11,name:'Skid Row Housing Trust',type:'shelter',emoji:'🏠',address:'1317 E 7th St, Los Angeles, CA',city:'Los Angeles',distance:0.6,status:'open',beds:80,totalBeds:200,waitTime:'25 min',hours:'24/7',phone:'(213) 683-0333',lat:34.0403,lng:-118.2376,verified:true,updated:'15 min ago',tags:['Adults','Permanent Housing'],desc:'Provides permanent supportive housing and services for the most vulnerable people on Skid Row.'},
-  {id:12,name:'Chrysalis Center',type:'shelter',emoji:'🏠',address:'522 S Main St, Los Angeles, CA',city:'Los Angeles',distance:0.8,status:'open',beds:0,totalBeds:0,waitTime:null,hours:'Mon–Fri 8am–5pm',phone:'(213) 553-1800',lat:34.0441,lng:-118.2487,verified:true,updated:'3 hr ago',tags:['Employment','Day Services'],desc:'Helps homeless and low-income individuals find jobs. Day resource center with showers, meals, case management.'},
-  {id:13,name:'LA Christian Health Centers',type:'mental',emoji:'🧠',address:'1625 Valencia St, Los Angeles, CA',city:'Los Angeles',distance:3.2,status:'open',waitTime:null,hours:'Mon–Fri 8am–6pm',phone:'(323) 539-0800',lat:34.0275,lng:-118.2233,verified:true,updated:'45 min ago',tags:['Mental Health','Medical','Bilingual'],desc:'Federally qualified health center offering mental health, primary care, and substance use services on a sliding-scale fee.'},
-  {id:14,name:'Volunteers of America Los Angeles',type:'shelter',emoji:'🏠',address:'3580 Wilshire Blvd, Los Angeles, CA',city:'Los Angeles',distance:2.8,status:'open',beds:60,totalBeds:150,waitTime:'30 min',hours:'24/7',phone:'(213) 389-1500',lat:34.0615,lng:-118.3041,verified:true,updated:'20 min ago',tags:['Families','Veterans','Women'],desc:'Comprehensive shelter and support programs for veterans, families, and individuals experiencing homelessness.'},
-  {id:15,name:'Watts/Willowbrook Boys & Girls Club Food Pantry',type:'food',emoji:'🍲',address:'1000 E 96th St, Los Angeles, CA',city:'Los Angeles',distance:8.1,status:'open',food:65,waitTime:null,hours:'Wed & Fri 10am–2pm',phone:'(323) 564-3571',lat:33.9411,lng:-118.2476,verified:true,updated:'2 hr ago',tags:['Families','Groceries'],desc:'Free grocery distribution for families in the Watts and Willowbrook communities every Wednesday and Friday.'},
+  // ââ LOS ANGELES ââââââââââââââââââââââââââââââââââââââââââââââââââââââ
+  {id:1,name:'Union Rescue Mission',type:'shelter',emoji:'ð ',address:'545 S San Pedro St, Los Angeles, CA',city:'Los Angeles',distance:0.3,status:'open',beds:42,totalBeds:200,waitTime:'15 min',hours:'24/7',phone:'(213) 347-6300',lat:34.0437,lng:-118.2468,verified:true,updated:'2 min ago',tags:['Men','Women','Families'],desc:'One of the largest shelters in the US â emergency shelter, meals, rehabilitation, and housing for men, women, and families.'},
+  {id:2,name:'LA Regional Food Bank',type:'food',emoji:'ð²',address:'1734 E 41st St, Los Angeles, CA',city:'Los Angeles',distance:1.2,status:'open',food:70,waitTime:null,hours:'MonâFri 8amâ4pm',phone:'(323) 234-3030',lat:34.0217,lng:-118.2158,verified:true,updated:'5 min ago',tags:['Groceries','Hot Meals'],desc:'Distributes millions of pounds of food annually to those in need across Los Angeles County.'},
+  {id:3,name:'Didi Hirsch Mental Health Services',type:'mental',emoji:'ð§ ',address:'4760 S Sepulveda Blvd, Culver City, CA',city:'Los Angeles',distance:4.7,status:'open',waitTime:null,hours:'MonâSat 9amâ7pm',phone:'(800) 854-7771',lat:34.0031,lng:-118.4136,verified:true,updated:'1 hr ago',tags:['Crisis Line','Counseling','Bilingual'],desc:'Mental health, substance use disorder, and crisis services across Southern California. 988-affiliated provider.'},
+  {id:4,name:'PATH Homeless Services',type:'shelter',emoji:'ð ',address:'340 N Madison Ave, Los Angeles, CA',city:'Los Angeles',distance:2.1,status:'limited',beds:8,totalBeds:85,waitTime:'45 min',hours:'24/7',phone:'(323) 644-2200',lat:34.0641,lng:-118.2978,verified:true,updated:'12 min ago',tags:['Men','Women','LGBTQ+'],desc:'Provides shelter, housing, and services to homeless individuals and families across California.'},
+  {id:5,name:'Hollywood Food Coalition',type:'food',emoji:'ð²',address:'1734 Schrader Blvd, Hollywood, CA',city:'Los Angeles',distance:3.4,status:'open',food:90,waitTime:null,hours:'Daily 5pmâ9pm',phone:'(323) 462-0197',lat:34.0983,lng:-118.3297,verified:true,updated:'30 min ago',tags:['Hot Meals','Daily','No ID Req.'],desc:'Serves hot meals every evening, 365 days a year, to anyone who is hungry. No questions asked.'},
+  {id:6,name:"St. Joseph Center",type:'shelter',emoji:'ð ',address:'204 Hampton Dr, Venice, CA',city:'Los Angeles',distance:6.2,status:'open',beds:35,totalBeds:60,waitTime:'20 min',hours:'MonâFri 8amâ6pm',phone:'(310) 399-3939',lat:33.9877,lng:-118.4717,verified:true,updated:'1 hr ago',tags:['Families','Veterans'],desc:'Comprehensive social services including shelter, employment, and mental health support for Venice/West LA.'},
+  {id:7,name:'Midnight Mission',type:'shelter',emoji:'ð ',address:'601 S San Pedro St, Los Angeles, CA',city:'Los Angeles',distance:0.5,status:'open',beds:120,totalBeds:250,waitTime:'10 min',hours:'24/7',phone:'(213) 624-9258',lat:34.0414,lng:-118.2479,verified:true,updated:'4 min ago',tags:['Men','Recovery'],desc:'Provides a full continuum of services to homeless men and families in Skid Row. Recovery programs available.'},
+  {id:8,name:'Weingart Center',type:'shelter',emoji:'ð ',address:'566 S San Julian St, Los Angeles, CA',city:'Los Angeles',distance:0.4,status:'limited',beds:15,totalBeds:95,waitTime:'30 min',hours:'24/7',phone:'(213) 627-0000',lat:34.0428,lng:-118.2455,verified:true,updated:'8 min ago',tags:['Men','Women'],desc:'Transitional and permanent supportive housing for formerly homeless individuals in the heart of Skid Row.'},
+  {id:9,name:'LARC Food Pantry',type:'food',emoji:'ð¥«',address:'2055 Virgil Ave, Los Angeles, CA',city:'Los Angeles',distance:2.9,status:'open',food:55,waitTime:null,hours:'Tue & Thu 10amâ1pm',phone:'(323) 660-1996',lat:34.0799,lng:-118.2906,verified:true,updated:'1 hr ago',tags:['Groceries','No ID Req.'],desc:'Community food pantry offering groceries twice a week to families in need in the Silver Lake area.'},
+  {id:10,name:'Exodus Recovery Center',type:'mental',emoji:'ð§ ',address:'4330 Degnan Blvd, Los Angeles, CA',city:'Los Angeles',distance:5.1,status:'open',waitTime:null,hours:'MonâFri 8amâ5pm',phone:'(323) 290-3400',lat:34.0094,lng:-118.3426,verified:true,updated:'2 hr ago',tags:['Crisis','Substance Use'],desc:'Outpatient mental health and substance use disorder treatment services. Walk-ins welcome MonâFri.'},
+  {id:11,name:'Skid Row Housing Trust',type:'shelter',emoji:'ð ',address:'1317 E 7th St, Los Angeles, CA',city:'Los Angeles',distance:0.6,status:'open',beds:80,totalBeds:200,waitTime:'25 min',hours:'24/7',phone:'(213) 683-0333',lat:34.0403,lng:-118.2376,verified:true,updated:'15 min ago',tags:['Adults','Permanent Housing'],desc:'Provides permanent supportive housing and services for the most vulnerable people on Skid Row.'},
+  {id:12,name:'Chrysalis Center',type:'shelter',emoji:'ð ',address:'522 S Main St, Los Angeles, CA',city:'Los Angeles',distance:0.8,status:'open',beds:0,totalBeds:0,waitTime:null,hours:'MonâFri 8amâ5pm',phone:'(213) 553-1800',lat:34.0441,lng:-118.2487,verified:true,updated:'3 hr ago',tags:['Employment','Day Services'],desc:'Helps homeless and low-income individuals find jobs. Day resource center with showers, meals, case management.'},
+  {id:13,name:'LA Christian Health Centers',type:'mental',emoji:'ð§ ',address:'1625 Valencia St, Los Angeles, CA',city:'Los Angeles',distance:3.2,status:'open',waitTime:null,hours:'MonâFri 8amâ6pm',phone:'(323) 539-0800',lat:34.0275,lng:-118.2233,verified:true,updated:'45 min ago',tags:['Mental Health','Medical','Bilingual'],desc:'Federally qualified health center offering mental health, primary care, and substance use services on a sliding-scale fee.'},
+  {id:14,name:'Volunteers of America Los Angeles',type:'shelter',emoji:'ð ',address:'3580 Wilshire Blvd, Los Angeles, CA',city:'Los Angeles',distance:2.8,status:'open',beds:60,totalBeds:150,waitTime:'30 min',hours:'24/7',phone:'(213) 389-1500',lat:34.0615,lng:-118.3041,verified:true,updated:'20 min ago',tags:['Families','Veterans','Women'],desc:'Comprehensive shelter and support programs for veterans, families, and individuals experiencing homelessness.'},
+  {id:15,name:'Watts/Willowbrook Boys & Girls Club Food Pantry',type:'food',emoji:'ð²',address:'1000 E 96th St, Los Angeles, CA',city:'Los Angeles',distance:8.1,status:'open',food:65,waitTime:null,hours:'Wed & Fri 10amâ2pm',phone:'(323) 564-3571',lat:33.9411,lng:-118.2476,verified:true,updated:'2 hr ago',tags:['Families','Groceries'],desc:'Free grocery distribution for families in the Watts and Willowbrook communities every Wednesday and Friday.'},
 
-  // ── SAN FRANCISCO ────────────────────────────────────────────────────
-  {id:16,name:'SF-Marin Food Bank',type:'food',emoji:'🍲',address:'900 Pennsylvania Ave, San Francisco, CA',city:'San Francisco',distance:null,status:'open',food:80,waitTime:null,hours:'Mon–Sat 9am–5pm',phone:'(415) 282-1900',lat:37.7558,lng:-122.3892,verified:true,updated:'10 min ago',tags:['Groceries','No ID Req.','Bilingual'],desc:'Provides food to over 45,000 people every week across San Francisco and Marin counties. No documentation required.'},
-  {id:17,name:'Glide Memorial Church Food Program',type:'food',emoji:'🍲',address:'330 Ellis St, San Francisco, CA',city:'San Francisco',distance:null,status:'open',food:95,waitTime:null,hours:'Daily 8am–1pm',phone:'(415) 674-6000',lat:37.7835,lng:-122.4128,verified:true,updated:'5 min ago',tags:['Hot Meals','Daily','No ID Req.'],desc:'Serves over 1 million free meals per year. Three free hot meals daily, no questions asked. One of SF's most iconic resource sites.'},
-  {id:18,name:'Next Door Shelter (SF)',type:'shelter',emoji:'🏠',address:'1001 Polk St, San Francisco, CA',city:'San Francisco',distance:null,status:'open',beds:114,totalBeds:300,waitTime:'40 min',hours:'24/7',phone:'(415) 621-2929',lat:37.7831,lng:-122.4194,verified:true,updated:'18 min ago',tags:['Men','Women','LGBTQ+'],desc:'Navigation center offering low-barrier shelter, meals, and comprehensive case management in the Tenderloin.'},
-  {id:19,name:'St. Anthony Foundation',type:'food',emoji:'🍲',address:'150 Golden Gate Ave, San Francisco, CA',city:'San Francisco',distance:null,status:'open',food:88,waitTime:null,hours:'Mon–Fri 11am–12:30pm',phone:'(415) 241-2600',lat:37.7821,lng:-122.4143,verified:true,updated:'1 hr ago',tags:['Hot Meals','Groceries','Bilingual'],desc:'Free dining room serving 2,800+ meals daily plus free clothing, dental care, and social work services in the Tenderloin.'},
-  {id:20,name:'Dolores Street Community Services',type:'mental',emoji:'🧠',address:'938 Valencia St, San Francisco, CA',city:'San Francisco',distance:null,status:'open',waitTime:null,hours:'Mon–Fri 9am–5pm',phone:'(415) 282-6209',lat:37.7595,lng:-122.4213,verified:true,updated:'2 hr ago',tags:['Mental Health','Immigration','Bilingual'],desc:'Behavioral health and crisis services for Mission District residents, with a focus on immigrant and LGBTQ+ communities.'},
-  {id:21,name:'Salvation Army Kroc Center SF',type:'shelter',emoji:'🏠',address:'240 Turk St, San Francisco, CA',city:'San Francisco',distance:null,status:'limited',beds:40,totalBeds:120,waitTime:'1 hr',hours:'24/7',phone:'(415) 503-3000',lat:37.7822,lng:-122.4157,verified:true,updated:'35 min ago',tags:['Men','Women','Meals'],desc:'Emergency shelter with meals, case management, and addiction recovery services in the Tenderloin neighborhood.'},
-  {id:22,name:'Larkin Street Youth Services',type:'shelter',emoji:'🏠',address:'701 Larkin St, San Francisco, CA',city:'San Francisco',distance:null,status:'open',beds:55,totalBeds:90,waitTime:'20 min',hours:'24/7',phone:'(415) 673-0911',lat:37.7826,lng:-122.4186,verified:true,updated:'8 min ago',tags:['Youth 12–24','LGBTQ+','Meals'],desc:'Provides shelter, education, and employment services exclusively for youth ages 12–24 experiencing homelessness.'},
-  {id:23,name:'Baker Places Mental Health (SF)',type:'mental',emoji:'🧠',address:'1000 Guerrero St, San Francisco, CA',city:'San Francisco',distance:null,status:'open',waitTime:null,hours:'Mon–Fri 8:30am–5pm',phone:'(415) 437-3400',lat:37.7586,lng:-122.4225,verified:true,updated:'3 hr ago',tags:['Mental Health','Substance Use','Outpatient'],desc:'Licensed mental health and substance use treatment for low-income adults in San Francisco. Sliding-scale fees.'},
+  // ââ SAN FRANCISCO ââââââââââââââââââââââââââââââââââââââââââââââââââââ
+  {id:16,name:'SF-Marin Food Bank',type:'food',emoji:'ð²',address:'900 Pennsylvania Ave, San Francisco, CA',city:'San Francisco',distance:null,status:'open',food:80,waitTime:null,hours:'MonâSat 9amâ5pm',phone:'(415) 282-1900',lat:37.7558,lng:-122.3892,verified:true,updated:'10 min ago',tags:['Groceries','No ID Req.','Bilingual'],desc:'Provides food to over 45,000 people every week across San Francisco and Marin counties. No documentation required.'},
+  {id:17,name:'Glide Memorial Church Food Program',type:'food',emoji:'ð²',address:'330 Ellis St, San Francisco, CA',city:'San Francisco',distance:null,status:'open',food:95,waitTime:null,hours:'Daily 8amâ1pm',phone:'(415) 674-6000',lat:37.7835,lng:-122.4128,verified:true,updated:'5 min ago',tags:['Hot Meals','Daily','No ID Req.'],desc:'Serves over 1 million free meals per year. Three free hot meals daily, no questions asked. One of SF's most iconic resource sites.'},
+  {id:18,name:'Next Door Shelter (SF)',type:'shelter',emoji:'ð ',address:'1001 Polk St, San Francisco, CA',city:'San Francisco',distance:null,status:'open',beds:114,totalBeds:300,waitTime:'40 min',hours:'24/7',phone:'(415) 621-2929',lat:37.7831,lng:-122.4194,verified:true,updated:'18 min ago',tags:['Men','Women','LGBTQ+'],desc:'Navigation center offering low-barrier shelter, meals, and comprehensive case management in the Tenderloin.'},
+  {id:19,name:'St. Anthony Foundation',type:'food',emoji:'ð²',address:'150 Golden Gate Ave, San Francisco, CA',city:'San Francisco',distance:null,status:'open',food:88,waitTime:null,hours:'MonâFri 11amâ12:30pm',phone:'(415) 241-2600',lat:37.7821,lng:-122.4143,verified:true,updated:'1 hr ago',tags:['Hot Meals','Groceries','Bilingual'],desc:'Free dining room serving 2,800+ meals daily plus free clothing, dental care, and social work services in the Tenderloin.'},
+  {id:20,name:'Dolores Street Community Services',type:'mental',emoji:'ð§ ',address:'938 Valencia St, San Francisco, CA',city:'San Francisco',distance:null,status:'open',waitTime:null,hours:'MonâFri 9amâ5pm',phone:'(415) 282-6209',lat:37.7595,lng:-122.4213,verified:true,updated:'2 hr ago',tags:['Mental Health','Immigration','Bilingual'],desc:'Behavioral health and crisis services for Mission District residents, with a focus on immigrant and LGBTQ+ communities.'},
+  {id:21,name:'Salvation Army Kroc Center SF',type:'shelter',emoji:'ð ',address:'240 Turk St, San Francisco, CA',city:'San Francisco',distance:null,status:'limited',beds:40,totalBeds:120,waitTime:'1 hr',hours:'24/7',phone:'(415) 503-3000',lat:37.7822,lng:-122.4157,verified:true,updated:'35 min ago',tags:['Men','Women','Meals'],desc:'Emergency shelter with meals, case management, and addiction recovery services in the Tenderloin neighborhood.'},
+  {id:22,name:'Larkin Street Youth Services',type:'shelter',emoji:'ð ',address:'701 Larkin St, San Francisco, CA',city:'San Francisco',distance:null,status:'open',beds:55,totalBeds:90,waitTime:'20 min',hours:'24/7',phone:'(415) 673-0911',lat:37.7826,lng:-122.4186,verified:true,updated:'8 min ago',tags:['Youth 12â24','LGBTQ+','Meals'],desc:'Provides shelter, education, and employment services exclusively for youth ages 12â24 experiencing homelessness.'},
+  {id:23,name:'Baker Places Mental Health (SF)',type:'mental',emoji:'ð§ ',address:'1000 Guerrero St, San Francisco, CA',city:'San Francisco',distance:null,status:'open',waitTime:null,hours:'MonâFri 8:30amâ5pm',phone:'(415) 437-3400',lat:37.7586,lng:-122.4225,verified:true,updated:'3 hr ago',tags:['Mental Health','Substance Use','Outpatient'],desc:'Licensed mental health and substance use treatment for low-income adults in San Francisco. Sliding-scale fees.'},
 
-  // ── SAN DIEGO ────────────────────────────────────────────────────────
-  {id:24,name:'Father Joe's Villages',type:'shelter',emoji:'🏠',address:'3350 E St, San Diego, CA',city:'San Diego',distance:null,status:'open',beds:200,totalBeds:400,waitTime:'30 min',hours:'24/7',phone:'(619) 446-2100',lat:32.7153,lng:-117.1258,verified:true,updated:'7 min ago',tags:['Men','Women','Families','Meals'],desc:'San Diego's largest provider of homeless services — emergency shelter, meals, healthcare, and permanent housing.'},
-  {id:25,name:'Jacobs & Cushman SD Food Bank',type:'food',emoji:'🍲',address:'9850 Distribution Ave, San Diego, CA',city:'San Diego',distance:null,status:'open',food:75,waitTime:null,hours:'Mon–Fri 8am–4pm',phone:'(858) 527-1419',lat:32.8760,lng:-117.1531,verified:true,updated:'30 min ago',tags:['Groceries','Families'],desc:'Distributes over 50 million pounds of food annually across San Diego County through hundreds of partner agencies.'},
-  {id:26,name:'Mental Health Systems San Diego',type:'mental',emoji:'🧠',address:'8322 Clairemont Mesa Blvd, San Diego, CA',city:'San Diego',distance:null,status:'open',waitTime:null,hours:'Mon–Fri 8am–5pm',phone:'(619) 668-4160',lat:32.8166,lng:-117.1541,verified:true,updated:'1 hr ago',tags:['Mental Health','Crisis','Outpatient'],desc:'Community mental health services including crisis intervention, outpatient therapy, and case management for San Diego County.'},
-  {id:27,name:'Alpha Project San Diego',type:'shelter',emoji:'🏠',address:'3737 Fifth Ave, San Diego, CA',city:'San Diego',distance:null,status:'limited',beds:50,totalBeds:160,waitTime:'1 hr',hours:'24/7',phone:'(619) 542-1877',lat:32.7413,lng:-117.1571,verified:true,updated:'22 min ago',tags:['Men','Women','Meals'],desc:'Emergency shelter and supportive housing with case management and job training for homeless adults in San Diego.'},
-  {id:28,name:'South Bay Community Services',type:'mental',emoji:'🧠',address:'315 Fourth Ave, Chula Vista, CA',city:'San Diego',distance:null,status:'open',waitTime:null,hours:'Mon–Fri 8am–6pm',phone:'(619) 420-3620',lat:32.6400,lng:-117.0842,verified:true,updated:'2 hr ago',tags:['Mental Health','Youth','Bilingual'],desc:'Behavioral health, family services, and crisis intervention for South San Diego County. Spanish-speaking staff available.'},
-  {id:29,name:'Rachel's Women's Center',type:'shelter',emoji:'🏠',address:'1031 Third Ave, San Diego, CA',city:'San Diego',distance:null,status:'open',beds:30,totalBeds:50,waitTime:'15 min',hours:'Mon–Fri 8am–4pm',phone:'(619) 696-2744',lat:32.7157,lng:-117.1600,verified:true,updated:'45 min ago',tags:['Women Only','Day Center','Showers'],desc:'Day services center for homeless women offering showers, meals, laundry, case management, and health services.'},
+  // ââ SAN DIEGO ââââââââââââââââââââââââââââââââââââââââââââââââââââââââ
+  {id:24,name:'Father Joe's Villages',type:'shelter',emoji:'ð ',address:'3350 E St, San Diego, CA',city:'San Diego',distance:null,status:'open',beds:200,totalBeds:400,waitTime:'30 min',hours:'24/7',phone:'(619) 446-2100',lat:32.7153,lng:-117.1258,verified:true,updated:'7 min ago',tags:['Men','Women','Families','Meals'],desc:'San Diego's largest provider of homeless services â emergency shelter, meals, healthcare, and permanent housing.'},
+  {id:25,name:'Jacobs & Cushman SD Food Bank',type:'food',emoji:'ð²',address:'9850 Distribution Ave, San Diego, CA',city:'San Diego',distance:null,status:'open',food:75,waitTime:null,hours:'MonâFri 8amâ4pm',phone:'(858) 527-1419',lat:32.8760,lng:-117.1531,verified:true,updated:'30 min ago',tags:['Groceries','Families'],desc:'Distributes over 50 million pounds of food annually across San Diego County through hundreds of partner agencies.'},
+  {id:26,name:'Mental Health Systems San Diego',type:'mental',emoji:'ð§ ',address:'8322 Clairemont Mesa Blvd, San Diego, CA',city:'San Diego',distance:null,status:'open',waitTime:null,hours:'MonâFri 8amâ5pm',phone:'(619) 668-4160',lat:32.8166,lng:-117.1541,verified:true,updated:'1 hr ago',tags:['Mental Health','Crisis','Outpatient'],desc:'Community mental health services including crisis intervention, outpatient therapy, and case management for San Diego County.'},
+  {id:27,name:'Alpha Project San Diego',type:'shelter',emoji:'ð ',address:'3737 Fifth Ave, San Diego, CA',city:'San Diego',distance:null,status:'limited',beds:50,totalBeds:160,waitTime:'1 hr',hours:'24/7',phone:'(619) 542-1877',lat:32.7413,lng:-117.1571,verified:true,updated:'22 min ago',tags:['Men','Women','Meals'],desc:'Emergency shelter and supportive housing with case management and job training for homeless adults in San Diego.'},
+  {id:28,name:'South Bay Community Services',type:'mental',emoji:'ð§ ',address:'315 Fourth Ave, Chula Vista, CA',city:'San Diego',distance:null,status:'open',waitTime:null,hours:'MonâFri 8amâ6pm',phone:'(619) 420-3620',lat:32.6400,lng:-117.0842,verified:true,updated:'2 hr ago',tags:['Mental Health','Youth','Bilingual'],desc:'Behavioral health, family services, and crisis intervention for South San Diego County. Spanish-speaking staff available.'},
+  {id:29,name:'Rachel's Women's Center',type:'shelter',emoji:'ð ',address:'1031 Third Ave, San Diego, CA',city:'San Diego',distance:null,status:'open',beds:30,totalBeds:50,waitTime:'15 min',hours:'MonâFri 8amâ4pm',phone:'(619) 696-2744',lat:32.7157,lng:-117.1600,verified:true,updated:'45 min ago',tags:['Women Only','Day Center','Showers'],desc:'Day services center for homeless women offering showers, meals, laundry, case management, and health services.'},
 
-  // ── SACRAMENTO ───────────────────────────────────────────────────────
-  {id:30,name:'Sacramento Loaves & Fishes',type:'food',emoji:'🍲',address:'1321 North C St, Sacramento, CA',city:'Sacramento',distance:null,status:'open',food:85,waitTime:null,hours:'Daily 9am–1pm',phone:'(916) 446-0874',lat:38.5788,lng:-121.4988,verified:true,updated:'15 min ago',tags:['Hot Meals','Daily','No ID Req.'],desc:'Provides a dignified place for Sacramento's homeless to receive a hot meal, showers, laundry, and social services daily.'},
-  {id:31,name:'Sacramento Steps Forward',type:'shelter',emoji:'🏠',address:'1400 North Market Blvd, Sacramento, CA',city:'Sacramento',distance:null,status:'open',beds:150,totalBeds:400,waitTime:'35 min',hours:'24/7',phone:'(916) 455-5190',lat:38.5975,lng:-121.4289,verified:true,updated:'20 min ago',tags:['Men','Women','Families'],desc:'Manages the Coordinated Entry System for Sacramento — connecting homeless individuals to shelter, housing, and support.'},
-  {id:32,name:'Sacramento Food Bank & Family Services',type:'food',emoji:'🥫',address:'3333 Third Ave, Sacramento, CA',city:'Sacramento',distance:null,status:'open',food:60,waitTime:null,hours:'Tue–Thu 9am–12pm',phone:'(916) 456-1980',lat:38.5551,lng:-121.4776,verified:true,updated:'1 hr ago',tags:['Groceries','Families','Bilingual'],desc:'Serves over 150,000 meals per month and distributes groceries to 100,000+ people in need in the Sacramento area.'},
-  {id:33,name:'WIND Youth Services',type:'shelter',emoji:'🏠',address:'1321 T St, Sacramento, CA',city:'Sacramento',distance:null,status:'open',beds:25,totalBeds:40,waitTime:'20 min',hours:'24/7',phone:'(916) 822-0778',lat:38.5652,lng:-121.4882,verified:true,updated:'40 min ago',tags:['Youth 18–24','LGBTQ+','Meals'],desc:'Emergency shelter and support services for LGBTQ+ and homeless youth ages 18–24 in the Sacramento region.'},
-  {id:34,name:'Sacramento County Behavioral Health',type:'mental',emoji:'🧠',address:'7001-A East Parkway, Sacramento, CA',city:'Sacramento',distance:null,status:'open',waitTime:null,hours:'Mon–Fri 8am–5pm',phone:'(916) 875-5730',lat:38.5508,lng:-121.3756,verified:true,updated:'3 hr ago',tags:['Mental Health','Crisis','Bilingual'],desc:'County-run outpatient mental health center serving Sacramento residents with free and low-cost counseling and crisis services.'},
+  // ââ SACRAMENTO âââââââââââââââââââââââââââââââââââââââââââââââââââââââ
+  {id:30,name:'Sacramento Loaves & Fishes',type:'food',emoji:'ð²',address:'1321 North C St, Sacramento, CA',city:'Sacramento',distance:null,status:'open',food:85,waitTime:null,hours:'Daily 9amâ1pm',phone:'(916) 446-0874',lat:38.5788,lng:-121.4988,verified:true,updated:'15 min ago',tags:['Hot Meals','Daily','No ID Req.'],desc:'Provides a dignified place for Sacramento's homeless to receive a hot meal, showers, laundry, and social services daily.'},
+  {id:31,name:'Sacramento Steps Forward',type:'shelter',emoji:'ð ',address:'1400 North Market Blvd, Sacramento, CA',city:'Sacramento',distance:null,status:'open',beds:150,totalBeds:400,waitTime:'35 min',hours:'24/7',phone:'(916) 455-5190',lat:38.5975,lng:-121.4289,verified:true,updated:'20 min ago',tags:['Men','Women','Families'],desc:'Manages the Coordinated Entry System for Sacramento â connecting homeless individuals to shelter, housing, and support.'},
+  {id:32,name:'Sacramento Food Bank & Family Services',type:'food',emoji:'ð¥«',address:'3333 Third Ave, Sacramento, CA',city:'Sacramento',distance:null,status:'open',food:60,waitTime:null,hours:'TueâThu 9amâ12pm',phone:'(916) 456-1980',lat:38.5551,lng:-121.4776,verified:true,updated:'1 hr ago',tags:['Groceries','Families','Bilingual'],desc:'Serves over 150,000 meals per month and distributes groceries to 100,000+ people in need in the Sacramento area.'},
+  {id:33,name:'WIND Youth Services',type:'shelter',emoji:'ð ',address:'1321 T St, Sacramento, CA',city:'Sacramento',distance:null,status:'open',beds:25,totalBeds:40,waitTime:'20 min',hours:'24/7',phone:'(916) 822-0778',lat:38.5652,lng:-121.4882,verified:true,updated:'40 min ago',tags:['Youth 18â24','LGBTQ+','Meals'],desc:'Emergency shelter and support services for LGBTQ+ and homeless youth ages 18â24 in the Sacramento region.'},
+  {id:34,name:'Sacramento County Behavioral Health',type:'mental',emoji:'ð§ ',address:'7001-A East Parkway, Sacramento, CA',city:'Sacramento',distance:null,status:'open',waitTime:null,hours:'MonâFri 8amâ5pm',phone:'(916) 875-5730',lat:38.5508,lng:-121.3756,verified:true,updated:'3 hr ago',tags:['Mental Health','Crisis','Bilingual'],desc:'County-run outpatient mental health center serving Sacramento residents with free and low-cost counseling and crisis services.'},
 
-  // ── OAKLAND / EAST BAY ───────────────────────────────────────────────
-  {id:35,name:'Alameda County Community Food Bank',type:'food',emoji:'🍲',address:'7900 Edgewater Dr, Oakland, CA',city:'Oakland',distance:null,status:'open',food:72,waitTime:null,hours:'Mon–Fri 8am–5pm',phone:'(510) 635-3663',lat:37.7491,lng:-122.2170,verified:true,updated:'12 min ago',tags:['Groceries','Bilingual','No ID Req.'],desc:'Distributes over 60 million pounds of food annually to Alameda County residents. Network of 280+ partner agencies.'},
-  {id:36,name:'Henry Robinson Multi-Service Center',type:'shelter',emoji:'🏠',address:'1433 Jefferson St, Oakland, CA',city:'Oakland',distance:null,status:'open',beds:90,totalBeds:200,waitTime:'45 min',hours:'24/7',phone:'(510) 891-1015',lat:37.8053,lng:-122.2717,verified:true,updated:'25 min ago',tags:['Men','Women','Families'],desc:'Oakland's largest emergency shelter providing beds, meals, showers, case management, and employment services.'},
-  {id:37,name:'East Bay Community Recovery Project',type:'mental',emoji:'🧠',address:'1931 Telegraph Ave, Oakland, CA',city:'Oakland',distance:null,status:'open',waitTime:null,hours:'Mon–Fri 8:30am–5pm',phone:'(510) 534-2554',lat:37.8082,lng:-122.2690,verified:true,updated:'2 hr ago',tags:['Substance Use','Mental Health','Recovery'],desc:'Addiction recovery and mental health services for Oakland residents. Outpatient, residential, and crisis services available.'},
-  {id:38,name:'Building Opportunities for Self-Sufficiency (BOSS)',type:'shelter',emoji:'🏠',address:'1918 University Ave, Berkeley, CA',city:'Oakland',distance:null,status:'limited',beds:30,totalBeds:75,waitTime:'1 hr',hours:'24/7',phone:'(510) 649-1930',lat:37.8717,lng:-122.2727,verified:true,updated:'1 hr ago',tags:['Adults','Recovery','Women'],desc:'Comprehensive services for homeless adults in the East Bay including shelter, transitional housing, and mental health.'},
-  {id:39,name:'Bay Area Rescue Mission',type:'shelter',emoji:'🏠',address:'321 Macdonald Ave, Richmond, CA',city:'Oakland',distance:null,status:'open',beds:70,totalBeds:130,waitTime:'15 min',hours:'24/7',phone:'(510) 215-4815',lat:37.9358,lng:-122.3477,verified:true,updated:'30 min ago',tags:['Men','Meals','Recovery'],desc:'Emergency shelter, hot meals, and life recovery programs for men in Contra Costa and Alameda counties.'},
+  // ââ OAKLAND / EAST BAY âââââââââââââââââââââââââââââââââââââââââââââââ
+  {id:35,name:'Alameda County Community Food Bank',type:'food',emoji:'ð²',address:'7900 Edgewater Dr, Oakland, CA',city:'Oakland',distance:null,status:'open',food:72,waitTime:null,hours:'MonâFri 8amâ5pm',phone:'(510) 635-3663',lat:37.7491,lng:-122.2170,verified:true,updated:'12 min ago',tags:['Groceries','Bilingual','No ID Req.'],desc:'Distributes over 60 million pounds of food annually to Alameda County residents. Network of 280+ partner agencies.'},
+  {id:36,name:'Henry Robinson Multi-Service Center',type:'shelter',emoji:'ð ',address:'1433 Jefferson St, Oakland, CA',city:'Oakland',distance:null,status:'open',beds:90,totalBeds:200,waitTime:'45 min',hours:'24/7',phone:'(510) 891-1015',lat:37.8053,lng:-122.2717,verified:true,updated:'25 min ago',tags:['Men','Women','Families'],desc:'Oakland's largest emergency shelter providing beds, meals, showers, case management, and employment services.'},
+  {id:37,name:'East Bay Community Recovery Project',type:'mental',emoji:'ð§ ',address:'1931 Telegraph Ave, Oakland, CA',city:'Oakland',distance:null,status:'open',waitTime:null,hours:'MonâFri 8:30amâ5pm',phone:'(510) 534-2554',lat:37.8082,lng:-122.2690,verified:true,updated:'2 hr ago',tags:['Substance Use','Mental Health','Recovery'],desc:'Addiction recovery and mental health services for Oakland residents. Outpatient, residential, and crisis services available.'},
+  {id:38,name:'Building Opportunities for Self-Sufficiency (BOSS)',type:'shelter',emoji:'ð ',address:'1918 University Ave, Berkeley, CA',city:'Oakland',distance:null,status:'limited',beds:30,totalBeds:75,waitTime:'1 hr',hours:'24/7',phone:'(510) 649-1930',lat:37.8717,lng:-122.2727,verified:true,updated:'1 hr ago',tags:['Adults','Recovery','Women'],desc:'Comprehensive services for homeless adults in the East Bay including shelter, transitional housing, and mental health.'},
+  {id:39,name:'Bay Area Rescue Mission',type:'shelter',emoji:'ð ',address:'321 Macdonald Ave, Richmond, CA',city:'Oakland',distance:null,status:'open',beds:70,totalBeds:130,waitTime:'15 min',hours:'24/7',phone:'(510) 215-4815',lat:37.9358,lng:-122.3477,verified:true,updated:'30 min ago',tags:['Men','Meals','Recovery'],desc:'Emergency shelter, hot meals, and life recovery programs for men in Contra Costa and Alameda counties.'},
 
-  // ── SAN JOSE / SILICON VALLEY ─────────────────────────────────────────
-  {id:40,name:'Second Harvest of Silicon Valley',type:'food',emoji:'🍲',address:'4001 N First St, San Jose, CA',city:'San Jose',distance:null,status:'open',food:80,waitTime:null,hours:'Mon–Fri 8am–5pm',phone:'(408) 266-8866',lat:37.4127,lng:-121.9738,verified:true,updated:'20 min ago',tags:['Groceries','Families','Bilingual'],desc:'Distributes 100+ million pounds of food annually — the largest food bank on the West Coast by volume.'},
-  {id:41,name:'HomeFirst Services Santa Clara',type:'shelter',emoji:'🏠',address:'2011 Little Orchard St, San Jose, CA',city:'San Jose',distance:null,status:'open',beds:120,totalBeds:350,waitTime:'40 min',hours:'24/7',phone:'(408) 539-2143',lat:37.3096,lng:-121.8731,verified:true,updated:'15 min ago',tags:['Men','Women','Families','Veterans'],desc:'Santa Clara County's primary emergency shelter operator with programs for veterans, families, and youth.'},
-  {id:42,name:'Bill Wilson Center',type:'mental',emoji:'🧠',address:'3490 The Alameda, Santa Clara, CA',city:'San Jose',distance:null,status:'open',waitTime:null,hours:'Mon–Fri 8am–6pm',phone:'(408) 243-0222',lat:37.3591,lng:-121.9507,verified:true,updated:'3 hr ago',tags:['Youth','Mental Health','Crisis'],desc:'Mental health, crisis intervention, and housing services for youth and young adults in Santa Clara County.'},
-  {id:43,name:'InnVision Shelter Network',type:'shelter',emoji:'🏠',address:'181 N San Pedro St, San Jose, CA',city:'San Jose',distance:null,status:'limited',beds:45,totalBeds:100,waitTime:'1 hr',hours:'24/7',phone:'(408) 271-5160',lat:37.3417,lng:-121.9001,verified:true,updated:'50 min ago',tags:['Families','Women','Veterans'],desc:'Provides emergency and transitional shelter, case management, and housing placement services in Silicon Valley.'},
+  // ââ SAN JOSE / SILICON VALLEY âââââââââââââââââââââââââââââââââââââââââ
+  {id:40,name:'Second Harvest of Silicon Valley',type:'food',emoji:'ð²',address:'4001 N First St, San Jose, CA',city:'San Jose',distance:null,status:'open',food:80,waitTime:null,hours:'MonâFri 8amâ5pm',phone:'(408) 266-8866',lat:37.4127,lng:-121.9738,verified:true,updated:'20 min ago',tags:['Groceries','Families','Bilingual'],desc:'Distributes 100+ million pounds of food annually â the largest food bank on the West Coast by volume.'},
+  {id:41,name:'HomeFirst Services Santa Clara',type:'shelter',emoji:'ð ',address:'2011 Little Orchard St, San Jose, CA',city:'San Jose',distance:null,status:'open',beds:120,totalBeds:350,waitTime:'40 min',hours:'24/7',phone:'(408) 539-2143',lat:37.3096,lng:-121.8731,verified:true,updated:'15 min ago',tags:['Men','Women','Families','Veterans'],desc:'Santa Clara County's primary emergency shelter operator with programs for veterans, families, and youth.'},
+  {id:42,name:'Bill Wilson Center',type:'mental',emoji:'ð§ ',address:'3490 The Alameda, Santa Clara, CA',city:'San Jose',distance:null,status:'open',waitTime:null,hours:'MonâFri 8amâ6pm',phone:'(408) 243-0222',lat:37.3591,lng:-121.9507,verified:true,updated:'3 hr ago',tags:['Youth','Mental Health','Crisis'],desc:'Mental health, crisis intervention, and housing services for youth and young adults in Santa Clara County.'},
+  {id:43,name:'InnVision Shelter Network',type:'shelter',emoji:'ð ',address:'181 N San Pedro St, San Jose, CA',city:'San Jose',distance:null,status:'limited',beds:45,totalBeds:100,waitTime:'1 hr',hours:'24/7',phone:'(408) 271-5160',lat:37.3417,lng:-121.9001,verified:true,updated:'50 min ago',tags:['Families','Women','Veterans'],desc:'Provides emergency and transitional shelter, case management, and housing placement services in Silicon Valley.'},
 
-  // ── FRESNO ───────────────────────────────────────────────────────────
-  {id:44,name:'Poverello House Fresno',type:'shelter',emoji:'🏠',address:'412 F St, Fresno, CA',city:'Fresno',distance:null,status:'open',beds:100,totalBeds:280,waitTime:'20 min',hours:'24/7',phone:'(559) 498-6988',lat:36.7378,lng:-119.7938,verified:true,updated:'18 min ago',tags:['Men','Women','Families','Meals'],desc:'Serves Fresno's homeless with emergency shelter, three hot meals daily, showers, laundry, and case management.'},
-  {id:45,name:'Central California Food Bank',type:'food',emoji:'🍲',address:'4010 E Amendola Dr, Fresno, CA',city:'Fresno',distance:null,status:'open',food:70,waitTime:null,hours:'Mon–Fri 8am–4pm',phone:'(559) 237-3663',lat:36.7542,lng:-119.7244,verified:true,updated:'1 hr ago',tags:['Groceries','Families'],desc:'Distributes 45+ million pounds of food per year across 9 counties in central California. Walk-in distributions available.'},
-  {id:46,name:'Fresno County Behavioral Health',type:'mental',emoji:'🧠',address:'3033 Fresno St, Fresno, CA',city:'Fresno',distance:null,status:'open',waitTime:null,hours:'Mon–Fri 8am–5pm',phone:'(559) 600-1840',lat:36.7532,lng:-119.7874,verified:true,updated:'2 hr ago',tags:['Mental Health','Crisis','Bilingual'],desc:'County mental health services for Fresno residents including crisis intervention, outpatient therapy, and case management. Free for eligible residents.'},
-  {id:47,name:'Gospel Rescue Mission Fresno',type:'shelter',emoji:'🏠',address:'400 E Weber Ave, Fresno, CA',city:'Fresno',distance:null,status:'open',beds:65,totalBeds:140,waitTime:'25 min',hours:'24/7',phone:'(559) 268-0839',lat:36.7335,lng:-119.7862,verified:true,updated:'35 min ago',tags:['Men','Meals','Recovery'],desc:'Emergency shelter, hot meals, and Christ-centered recovery programs for homeless men in Fresno.'},
+  // ââ FRESNO âââââââââââââââââââââââââââââââââââââââââââââââââââââââââââ
+  {id:44,name:'Poverello House Fresno',type:'shelter',emoji:'ð ',address:'412 F St, Fresno, CA',city:'Fresno',distance:null,status:'open',beds:100,totalBeds:280,waitTime:'20 min',hours:'24/7',phone:'(559) 498-6988',lat:36.7378,lng:-119.7938,verified:true,updated:'18 min ago',tags:['Men','Women','Families','Meals'],desc:'Serves Fresno's homeless with emergency shelter, three hot meals daily, showers, laundry, and case management.'},
+  {id:45,name:'Central California Food Bank',type:'food',emoji:'ð²',address:'4010 E Amendola Dr, Fresno, CA',city:'Fresno',distance:null,status:'open',food:70,waitTime:null,hours:'MonâFri 8amâ4pm',phone:'(559) 237-3663',lat:36.7542,lng:-119.7244,verified:true,updated:'1 hr ago',tags:['Groceries','Families'],desc:'Distributes 45+ million pounds of food per year across 9 counties in central California. Walk-in distributions available.'},
+  {id:46,name:'Fresno County Behavioral Health',type:'mental',emoji:'ð§ ',address:'3033 Fresno St, Fresno, CA',city:'Fresno',distance:null,status:'open',waitTime:null,hours:'MonâFri 8amâ5pm',phone:'(559) 600-1840',lat:36.7532,lng:-119.7874,verified:true,updated:'2 hr ago',tags:['Mental Health','Crisis','Bilingual'],desc:'County mental health services for Fresno residents including crisis intervention, outpatient therapy, and case management. Free for eligible residents.'},
+  {id:47,name:'Gospel Rescue Mission Fresno',type:'shelter',emoji:'ð ',address:'400 E Weber Ave, Fresno, CA',city:'Fresno',distance:null,status:'open',beds:65,totalBeds:140,waitTime:'25 min',hours:'24/7',phone:'(559) 268-0839',lat:36.7335,lng:-119.7862,verified:true,updated:'35 min ago',tags:['Men','Meals','Recovery'],desc:'Emergency shelter, hot meals, and Christ-centered recovery programs for homeless men in Fresno.'},
 
-  // ── LONG BEACH ───────────────────────────────────────────────────────
-  {id:48,name:'Long Beach Rescue Mission',type:'shelter',emoji:'🏠',address:'1 Anchor Ave, Long Beach, CA',city:'Long Beach',distance:null,status:'open',beds:80,totalBeds:175,waitTime:'30 min',hours:'24/7',phone:'(562) 591-1292',lat:33.7701,lng:-118.2001,verified:true,updated:'10 min ago',tags:['Men','Women','Families','Meals'],desc:'Emergency shelter, three meals daily, and comprehensive social services for homeless individuals and families in Long Beach.'},
-  {id:49,name:'Food Bank of Southern California',type:'food',emoji:'🥫',address:'1444 San Francisco Ave, Long Beach, CA',city:'Long Beach',distance:null,status:'open',food:65,waitTime:null,hours:'Tue & Thu 9am–1pm',phone:'(562) 435-3577',lat:33.8094,lng:-118.1794,verified:true,updated:'2 hr ago',tags:['Groceries','Families'],desc:'Provides emergency groceries and supplemental food assistance to families and individuals in Los Angeles County.'},
-  {id:50,name:'SBMA Health (Long Beach)',type:'mental',emoji:'🧠',address:'2700 E Willow St, Signal Hill, CA',city:'Long Beach',distance:null,status:'open',waitTime:null,hours:'Mon–Fri 9am–5pm',phone:'(562) 299-6500',lat:33.7974,lng:-118.1609,verified:true,updated:'3 hr ago',tags:['Mental Health','Bilingual','Substance Use'],desc:'Outpatient behavioral health services including therapy, crisis support, and substance use treatment for Long Beach area residents.'},
+  // ââ LONG BEACH âââââââââââââââââââââââââââââââââââââââââââââââââââââââ
+  {id:48,name:'Long Beach Rescue Mission',type:'shelter',emoji:'ð ',address:'1 Anchor Ave, Long Beach, CA',city:'Long Beach',distance:null,status:'open',beds:80,totalBeds:175,waitTime:'30 min',hours:'24/7',phone:'(562) 591-1292',lat:33.7701,lng:-118.2001,verified:true,updated:'10 min ago',tags:['Men','Women','Families','Meals'],desc:'Emergency shelter, three meals daily, and comprehensive social services for homeless individuals and families in Long Beach.'},
+  {id:49,name:'Food Bank of Southern California',type:'food',emoji:'ð¥«',address:'1444 San Francisco Ave, Long Beach, CA',city:'Long Beach',distance:null,status:'open',food:65,waitTime:null,hours:'Tue & Thu 9amâ1pm',phone:'(562) 435-3577',lat:33.8094,lng:-118.1794,verified:true,updated:'2 hr ago',tags:['Groceries','Families'],desc:'Provides emergency groceries and supplemental food assistance to families and individuals in Los Angeles County.'},
+  {id:50,name:'SBMA Health (Long Beach)',type:'mental',emoji:'ð§ ',address:'2700 E Willow St, Signal Hill, CA',city:'Long Beach',distance:null,status:'open',waitTime:null,hours:'MonâFri 9amâ5pm',phone:'(562) 299-6500',lat:33.7974,lng:-118.1609,verified:true,updated:'3 hr ago',tags:['Mental Health','Bilingual','Substance Use'],desc:'Outpatient behavioral health services including therapy, crisis support, and substance use treatment for Long Beach area residents.'},
 
-  // ── RIVERSIDE / INLAND EMPIRE ────────────────────────────────────────
-  {id:51,name:'Path of Life Ministries',type:'shelter',emoji:'🏠',address:'3850 Ramona Dr, Riverside, CA',city:'Riverside',distance:null,status:'open',beds:90,totalBeds:200,waitTime:'30 min',hours:'24/7',phone:'(951) 686-7284',lat:33.9381,lng:-117.3948,verified:true,updated:'22 min ago',tags:['Men','Women','Families','Meals'],desc:'Riverside County's largest emergency shelter providing beds, meals, showers, and comprehensive case management services.'},
-  {id:52,name:'Feeding America Riverside | San Bernardino',type:'food',emoji:'🍲',address:'2950 Jefferson St, Riverside, CA',city:'Riverside',distance:null,status:'open',food:78,waitTime:null,hours:'Mon–Fri 8am–4pm',phone:'(951) 359-4757',lat:33.9762,lng:-117.3894,verified:true,updated:'45 min ago',tags:['Groceries','Bilingual'],desc:'Distributes food to over 300,000 individuals monthly in Riverside and San Bernardino counties through partner pantries.'},
-  {id:53,name:'Riverside University Health System – Behavioral Health',type:'mental',emoji:'🧠',address:'9890 County Farm Rd, Riverside, CA',city:'Riverside',distance:null,status:'open',waitTime:null,hours:'Mon–Fri 8am–5pm',phone:'(951) 955-7140',lat:33.8729,lng:-117.2798,verified:true,updated:'1 hr ago',tags:['Mental Health','Crisis','Bilingual'],desc:'County-run mental health services for Riverside County including psychiatric care, crisis intervention, and outpatient counseling.'},
+  // ââ RIVERSIDE / INLAND EMPIRE ââââââââââââââââââââââââââââââââââââââââ
+  {id:51,name:'Path of Life Ministries',type:'shelter',emoji:'ð ',address:'3850 Ramona Dr, Riverside, CA',city:'Riverside',distance:null,status:'open',beds:90,totalBeds:200,waitTime:'30 min',hours:'24/7',phone:'(951) 686-7284',lat:33.9381,lng:-117.3948,verified:true,updated:'22 min ago',tags:['Men','Women','Families','Meals'],desc:'Riverside County's largest emergency shelter providing beds, meals, showers, and comprehensive case management services.'},
+  {id:52,name:'Feeding America Riverside | San Bernardino',type:'food',emoji:'ð²',address:'2950 Jefferson St, Riverside, CA',city:'Riverside',distance:null,status:'open',food:78,waitTime:null,hours:'MonâFri 8amâ4pm',phone:'(951) 359-4757',lat:33.9762,lng:-117.3894,verified:true,updated:'45 min ago',tags:['Groceries','Bilingual'],desc:'Distributes food to over 300,000 individuals monthly in Riverside and San Bernardino counties through partner pantries.'},
+  {id:53,name:'Riverside University Health System â Behavioral Health',type:'mental',emoji:'ð§ ',address:'9890 County Farm Rd, Riverside, CA',city:'Riverside',distance:null,status:'open',waitTime:null,hours:'MonâFri 8amâ5pm',phone:'(951) 955-7140',lat:33.8729,lng:-117.2798,verified:true,updated:'1 hr ago',tags:['Mental Health','Crisis','Bilingual'],desc:'County-run mental health services for Riverside County including psychiatric care, crisis intervention, and outpatient counseling.'},
 
-  // ── BAKERSFIELD ──────────────────────────────────────────────────────
-  {id:54,name:'Bakersfield Rescue Mission',type:'shelter',emoji:'🏠',address:'816 E Truxtun Ave, Bakersfield, CA',city:'Bakersfield',distance:null,status:'open',beds:75,totalBeds:175,waitTime:'20 min',hours:'24/7',phone:'(661) 325-0863',lat:35.3737,lng:-119.0104,verified:true,updated:'28 min ago',tags:['Men','Women','Meals'],desc:'Emergency shelter with three hot meals daily, showers, spiritual care, and recovery programs for Kern County residents.'},
-  {id:55,name:'Community Action Partnership of Kern',type:'food',emoji:'🥫',address:'5005 Business Park North, Bakersfield, CA',city:'Bakersfield',distance:null,status:'open',food:70,waitTime:null,hours:'Mon–Fri 8am–5pm',phone:'(661) 336-5236',lat:35.3742,lng:-119.0619,verified:true,updated:'2 hr ago',tags:['Groceries','Families','Bilingual'],desc:'Distributes food and provides anti-poverty services to Kern County's most vulnerable residents. Multiple distribution sites.'},
-  {id:56,name:'Kern Behavioral Health',type:'mental',emoji:'🧠',address:'3300 Manor Dr, Bakersfield, CA',city:'Bakersfield',distance:null,status:'open',waitTime:null,hours:'Mon–Fri 8am–5pm',phone:'(661) 868-6400',lat:35.3854,lng:-119.0543,verified:true,updated:'3 hr ago',tags:['Mental Health','Crisis','Substance Use'],desc:'Kern County's primary mental health authority offering crisis stabilization, outpatient therapy, and substance use services.'},
+  // ââ BAKERSFIELD ââââââââââââââââââââââââââââââââââââââââââââââââââââââ
+  {id:54,name:'Bakersfield Rescue Mission',type:'shelter',emoji:'ð ',address:'816 E Truxtun Ave, Bakersfield, CA',city:'Bakersfield',distance:null,status:'open',beds:75,totalBeds:175,waitTime:'20 min',hours:'24/7',phone:'(661) 325-0863',lat:35.3737,lng:-119.0104,verified:true,updated:'28 min ago',tags:['Men','Women','Meals'],desc:'Emergency shelter with three hot meals daily, showers, spiritual care, and recovery programs for Kern County residents.'},
+  {id:55,name:'Community Action Partnership of Kern',type:'food',emoji:'ð¥«',address:'5005 Business Park North, Bakersfield, CA',city:'Bakersfield',distance:null,status:'open',food:70,waitTime:null,hours:'MonâFri 8amâ5pm',phone:'(661) 336-5236',lat:35.3742,lng:-119.0619,verified:true,updated:'2 hr ago',tags:['Groceries','Families','Bilingual'],desc:'Distributes food and provides anti-poverty services to Kern County's most vulnerable residents. Multiple distribution sites.'},
+  {id:56,name:'Kern Behavioral Health',type:'mental',emoji:'ð§ ',address:'3300 Manor Dr, Bakersfield, CA',city:'Bakersfield',distance:null,status:'open',waitTime:null,hours:'MonâFri 8amâ5pm',phone:'(661) 868-6400',lat:35.3854,lng:-119.0543,verified:true,updated:'3 hr ago',tags:['Mental Health','Crisis','Substance Use'],desc:'Kern County's primary mental health authority offering crisis stabilization, outpatient therapy, and substance use services.'},
 
-  // ── STOCKTON ─────────────────────────────────────────────────────────
-  {id:57,name:'Gospel Center Rescue Mission',type:'shelter',emoji:'🏠',address:'445 S San Joaquin St, Stockton, CA',city:'Stockton',distance:null,status:'open',beds:50,totalBeds:120,waitTime:'20 min',hours:'24/7',phone:'(209) 466-2138',lat:37.9577,lng:-121.2908,verified:true,updated:'1 hr ago',tags:['Men','Meals','Recovery'],desc:'Emergency shelter, hot meals, and recovery programs for homeless individuals in Stockton. Faith-based services.'},
-  {id:58,name:'Emergency Food Bank Stockton',type:'food',emoji:'🍲',address:'7 W Scotts Ave, Stockton, CA',city:'Stockton',distance:null,status:'open',food:60,waitTime:null,hours:'Mon–Fri 9am–3pm',phone:'(209) 464-7369',lat:37.9647,lng:-121.3063,verified:true,updated:'1 hr ago',tags:['Groceries','Families','Bilingual'],desc:'Provides emergency food assistance to over 100,000 people per year in San Joaquin County.'},
+  // ââ STOCKTON âââââââââââââââââââââââââââââââââââââââââââââââââââââââââ
+  {id:57,name:'Gospel Center Rescue Mission',type:'shelter',emoji:'ð ',address:'445 S San Joaquin St, Stockton, CA',city:'Stockton',distance:null,status:'open',beds:50,totalBeds:120,waitTime:'20 min',hours:'24/7',phone:'(209) 466-2138',lat:37.9577,lng:-121.2908,verified:true,updated:'1 hr ago',tags:['Men','Meals','Recovery'],desc:'Emergency shelter, hot meals, and recovery programs for homeless individuals in Stockton. Faith-based services.'},
+  {id:58,name:'Emergency Food Bank Stockton',type:'food',emoji:'ð²',address:'7 W Scotts Ave, Stockton, CA',city:'Stockton',distance:null,status:'open',food:60,waitTime:null,hours:'MonâFri 9amâ3pm',phone:'(209) 464-7369',lat:37.9647,lng:-121.3063,verified:true,updated:'1 hr ago',tags:['Groceries','Families','Bilingual'],desc:'Provides emergency food assistance to over 100,000 people per year in San Joaquin County.'},
 
-  // ── ANAHEIM / ORANGE COUNTY ──────────────────────────────────────────
-  {id:59,name:'Illumination Foundation',type:'shelter',emoji:'🏠',address:'1500 E La Veta Ave, Orange, CA',city:'Anaheim',distance:null,status:'open',beds:60,totalBeds:150,waitTime:'45 min',hours:'24/7',phone:'(714) 744-5041',lat:33.7878,lng:-117.8494,verified:true,updated:'20 min ago',tags:['Families','Medical','Meals'],desc:'Orange County's medical-respite and family shelter program, providing healthcare and stability for homeless families.'},
-  {id:60,name:'Second Harvest Food Bank OC',type:'food',emoji:'🍲',address:'8014 Marine Way, Irvine, CA',city:'Anaheim',distance:null,status:'open',food:82,waitTime:null,hours:'Mon–Fri 8am–5pm',phone:'(949) 653-2900',lat:33.6694,lng:-117.7949,verified:true,updated:'30 min ago',tags:['Groceries','Families'],desc:'Distributes over 26 million pounds of food per year to Orange County residents through 200+ community partner agencies.'},
-  {id:61,name:'Telecare OC Behavioral Health',type:'mental',emoji:'🧠',address:'2222 S Elm St, Santa Ana, CA',city:'Anaheim',distance:null,status:'open',waitTime:null,hours:'24/7',phone:'(714) 541-0454',lat:33.7201,lng:-117.8823,verified:true,updated:'2 hr ago',tags:['Mental Health','Crisis','24/7'],desc:'24-hour crisis and mental health services for Orange County residents. Walk-in crisis center and mobile outreach available.'},
+  // ââ ANAHEIM / ORANGE COUNTY ââââââââââââââââââââââââââââââââââââââââââ
+  {id:59,name:'Illumination Foundation',type:'shelter',emoji:'ð ',address:'1500 E La Veta Ave, Orange, CA',city:'Anaheim',distance:null,status:'open',beds:60,totalBeds:150,waitTime:'45 min',hours:'24/7',phone:'(714) 744-5041',lat:33.7878,lng:-117.8494,verified:true,updated:'20 min ago',tags:['Families','Medical','Meals'],desc:'Orange County's medical-respite and family shelter program, providing healthcare and stability for homeless families.'},
+  {id:60,name:'Second Harvest Food Bank OC',type:'food',emoji:'ð²',address:'8014 Marine Way, Irvine, CA',city:'Anaheim',distance:null,status:'open',food:82,waitTime:null,hours:'MonâFri 8amâ5pm',phone:'(949) 653-2900',lat:33.6694,lng:-117.7949,verified:true,updated:'30 min ago',tags:['Groceries','Families'],desc:'Distributes over 26 million pounds of food per year to Orange County residents through 200+ community partner agencies.'},
+  {id:61,name:'Telecare OC Behavioral Health',type:'mental',emoji:'ð§ ',address:'2222 S Elm St, Santa Ana, CA',city:'Anaheim',distance:null,status:'open',waitTime:null,hours:'24/7',phone:'(714) 541-0454',lat:33.7201,lng:-117.8823,verified:true,updated:'2 hr ago',tags:['Mental Health','Crisis','24/7'],desc:'24-hour crisis and mental health services for Orange County residents. Walk-in crisis center and mobile outreach available.'},
 
-  // ── SAN BERNARDINO ───────────────────────────────────────────────────
-  {id:62,name:'Arrowhead United Way 211',type:'mental',emoji:'🧠',address:'1457 N D St, San Bernardino, CA',city:'San Bernardino',distance:null,status:'open',waitTime:null,hours:'24/7',phone:'(888) 435-7565',lat:34.1083,lng:-117.2917,verified:true,updated:'1 hr ago',tags:['Hotline','Mental Health','Referrals'],desc:'24/7 crisis hotline and information/referral service for San Bernardino County. Call or text 211 for immediate help.'},
-  {id:63,name:'Central City Lutheran Mission',type:'shelter',emoji:'🏠',address:'1354 N G St, San Bernardino, CA',city:'San Bernardino',distance:null,status:'open',beds:55,totalBeds:110,waitTime:'30 min',hours:'24/7',phone:'(909) 381-6921',lat:34.1141,lng:-117.2891,verified:true,updated:'45 min ago',tags:['Men','Women','Meals'],desc:'Emergency shelter, food pantry, and social services for the homeless in San Bernardino. No ID required for meals.'}
+  // ââ SAN BERNARDINO âââââââââââââââââââââââââââââââââââââââââââââââââââ
+  {id:62,name:'Arrowhead United Way 211',type:'mental',emoji:'ð§ ',address:'1457 N D St, San Bernardino, CA',city:'San Bernardino',distance:null,status:'open',waitTime:null,hours:'24/7',phone:'(888) 435-7565',lat:34.1083,lng:-117.2917,verified:true,updated:'1 hr ago',tags:['Hotline','Mental Health','Referrals'],desc:'24/7 crisis hotline and information/referral service for San Bernardino County. Call or text 211 for immediate help.'},
+  {id:63,name:'Central City Lutheran Mission',type:'shelter',emoji:'ð ',address:'1354 N G St, San Bernardino, CA',city:'San Bernardino',distance:null,status:'open',beds:55,totalBeds:110,waitTime:'30 min',hours:'24/7',phone:'(909) 381-6921',lat:34.1141,lng:-117.2891,verified:true,updated:'45 min ago',tags:['Men','Women','Meals'],desc:'Emergency shelter, food pantry, and social services for the homeless in San Bernardino. No ID required for meals.'}
+
+  // ── OAKLAND ───────────────────────────────────────────────────────────
+  {id:64,name:'Henry Robinson Multi-Service Center',type:'shelter',emoji:'🏠',address:'1501 Martin Luther King Jr Way, Oakland, CA',city:'Oakland',distance:null,status:'open',beds:90,totalBeds:180,waitTime:'20 min',hours:'24/7',phone:'(510) 597-3999',lat:37.8044,lng:-122.2712,verified:true,updated:'10 min ago',tags:['Men','Women','Families'],desc:'Oakland largest emergency shelter providing meals, case management, and supportive services to homeless adults and families.'},
+  {id:65,name:'Alameda County Community Food Bank',type:'food',emoji:'🍲',address:'7900 Edgewater Dr, Oakland, CA',city:'Oakland',distance:null,status:'open',food:80,waitTime:null,hours:'Mon-Fri 8am-4:30pm',phone:'(510) 635-3663',lat:37.7739,lng:-122.2145,verified:true,updated:'30 min ago',tags:['Groceries','Hot Meals','No ID Req.'],desc:'Distributes over 60 million pounds of food annually across Alameda County, serving individuals and families in need.'},
+  {id:66,name:'Telecare East Oakland Mental Health Center',type:'mental',emoji:'🧠',address:'2521 Elm St, Oakland, CA',city:'Oakland',distance:null,status:'open',waitTime:'1-2 days',hours:'Mon-Fri 8am-5pm',phone:'(510) 533-2500',lat:37.7867,lng:-122.2206,verified:true,updated:'1 hr ago',tags:['Mental Health','Crisis','Adults'],desc:'Community mental health center offering crisis stabilization, outpatient therapy, and psychiatric services for low-income adults.'},
+  {id:67,name:'St. Vincent de Paul Oakland',type:'food',emoji:'🥫',address:'675 23rd St, Oakland, CA',city:'Oakland',distance:null,status:'open',food:65,waitTime:null,hours:'Mon-Sat 9am-12pm',phone:'(510) 444-6191',lat:37.8117,lng:-122.2681,verified:true,updated:'2 hr ago',tags:['Hot Meals','Groceries'],desc:'Daily hot meals and food pantry serving Oakland homeless and low-income residents for over 80 years.'},
+  // ── SAN JOSE ──────────────────────────────────────────────────────────
+  {id:68,name:'Emergency Housing Consortium',type:'shelter',emoji:'🏠',address:'2302 Zanker Rd, San Jose, CA',city:'San Jose',distance:null,status:'open',beds:120,totalBeds:220,waitTime:'25 min',hours:'24/7',phone:'(408) 539-2100',lat:37.3897,lng:-121.9260,verified:true,updated:'15 min ago',tags:['Men','Women','Families','Veterans'],desc:'Provides emergency and transitional shelter, rapid rehousing, and services to homeless individuals and families in Santa Clara County.'},
+  {id:69,name:'Second Harvest of Silicon Valley',type:'food',emoji:'🍲',address:'750 Curtner Ave, San Jose, CA',city:'San Jose',distance:null,status:'open',food:85,waitTime:null,hours:'Mon-Fri 8am-5pm',phone:'(408) 266-8866',lat:37.2975,lng:-121.8780,verified:true,updated:'20 min ago',tags:['Groceries','No ID Req.','Families'],desc:'One of the largest food banks in the US, providing nutritious food to over 500,000 people annually in Santa Clara and San Mateo counties.'},
+  {id:70,name:'Bill Wilson Center',type:'mental',emoji:'🧠',address:'3490 The Alameda, Santa Clara, CA',city:'San Jose',distance:null,status:'open',waitTime:'3-5 days',hours:'Mon-Fri 9am-6pm',phone:'(408) 243-0222',lat:37.3544,lng:-121.9427,verified:true,updated:'45 min ago',tags:['Youth','Mental Health','Housing'],desc:'Serving at-risk and homeless youth with mental health services, crisis counseling, housing, and transitional support in the South Bay.'},
+  {id:71,name:'HomeFirst Services San Jose',type:'shelter',emoji:'🏠',address:'2011 Little Orchard St, San Jose, CA',city:'San Jose',distance:null,status:'limited',beds:40,totalBeds:100,waitTime:'45 min',hours:'24/7',phone:'(408) 539-2100',lat:37.3068,lng:-121.8872,verified:true,updated:'1 hr ago',tags:['Men','Women','Veterans'],desc:'Emergency shelter and navigation center for adults, with a focus on veterans and individuals experiencing chronic homelessness.'},
+  // ── RIVERSIDE ─────────────────────────────────────────────────────────
+  {id:72,name:'Path of Life Ministries',type:'shelter',emoji:'🏠',address:'3099 Gilman Rd, Riverside, CA',city:'Riverside',distance:null,status:'open',beds:70,totalBeds:140,waitTime:'20 min',hours:'24/7',phone:'(951) 509-5082',lat:33.9806,lng:-117.3755,verified:true,updated:'30 min ago',tags:['Men','Women','Families','Meals'],desc:'Emergency shelter, transitional housing, and support services for homeless individuals and families in Riverside County.'},
+  {id:73,name:'Inland Empire United Way Food Bank',type:'food',emoji:'🥫',address:'2950 Jefferson St, Riverside, CA',city:'Riverside',distance:null,status:'open',food:75,waitTime:null,hours:'Mon-Fri 8am-4pm',phone:'(951) 359-4757',lat:33.9800,lng:-117.3836,verified:true,updated:'1 hr ago',tags:['Groceries','Hot Meals'],desc:'Food distribution center serving Riverside and San Bernardino counties, providing groceries and pantry staples to those in need.'},
+  {id:74,name:'Riverside County Dept of Mental Health',type:'mental',emoji:'🧠',address:'4095 County Circle Dr, Riverside, CA',city:'Riverside',distance:null,status:'open',waitTime:'Same day',hours:'Mon-Fri 8am-5pm',phone:'(951) 358-4500',lat:33.9458,lng:-117.3961,verified:true,updated:'2 hr ago',tags:['Crisis','Adults','Mental Health'],desc:'County-operated mental health services including crisis intervention, outpatient therapy, and medication management for all income levels.'},
+  // ── ANAHEIM ───────────────────────────────────────────────────────────
+  {id:75,name:'Anaheim Rescue Mission',type:'shelter',emoji:'🏠',address:'316 W Cypress St, Anaheim, CA',city:'Anaheim',distance:null,status:'open',beds:95,totalBeds:165,waitTime:'30 min',hours:'24/7',phone:'(714) 758-0512',lat:33.8340,lng:-117.9159,verified:true,updated:'10 min ago',tags:['Men','Women','Families','Meals'],desc:'Life transformation campus providing emergency shelter, meals, rehabilitation, and job training to homeless men, women, and families in Orange County.'},
+  {id:76,name:'Second Harvest Food Bank of OC',type:'food',emoji:'🍲',address:'8014 Marine Way, Irvine, CA',city:'Anaheim',distance:null,status:'open',food:90,waitTime:null,hours:'Mon-Fri 7am-5pm',phone:'(949) 653-2900',lat:33.6833,lng:-117.8330,verified:true,updated:'15 min ago',tags:['Groceries','No ID Req.'],desc:'Orange County largest food bank serving over 400,000 people per month through pantries, mobile distributions, and partner agencies.'},
+  {id:77,name:'NAMI Orange County',type:'mental',emoji:'🧠',address:'1000 E Santa Ana Blvd, Santa Ana, CA',city:'Anaheim',distance:null,status:'open',waitTime:'1 week',hours:'Mon-Fri 9am-5pm',phone:'(714) 544-8488',lat:33.7490,lng:-117.8678,verified:true,updated:'3 hr ago',tags:['Mental Health','Support Groups','Education'],desc:'NAMI chapter offering free support groups, education programs, and crisis support for individuals and families across Orange County.'},
+  // ── SANTA BARBARA ─────────────────────────────────────────────────────
+  {id:78,name:'Good Samaritan Shelter',type:'shelter',emoji:'🏠',address:'508 E Anapamu St, Santa Barbara, CA',city:'Santa Barbara',distance:null,status:'open',beds:45,totalBeds:80,waitTime:'20 min',hours:'24/7',phone:'(805) 884-8481',lat:34.4259,lng:-119.6929,verified:true,updated:'25 min ago',tags:['Men','Women','Families'],desc:'Emergency shelter and transitional housing for homeless adults and families in Santa Barbara, with on-site case management and social services.'},
+  {id:79,name:'Foodbank of Santa Barbara County',type:'food',emoji:'🥫',address:'4554 Hollister Ave, Santa Barbara, CA',city:'Santa Barbara',distance:null,status:'open',food:70,waitTime:null,hours:'Mon-Fri 8am-5pm',phone:'(805) 967-5741',lat:34.4389,lng:-119.8073,verified:true,updated:'1 hr ago',tags:['Groceries','Produce','Families'],desc:'Distributes millions of pounds of food annually to nearly 77,000 people in Santa Barbara and San Luis Obispo counties.'},
+  {id:80,name:'Casa Serena',type:'mental',emoji:'🧠',address:'2025 De la Vina St, Santa Barbara, CA',city:'Santa Barbara',distance:null,status:'open',waitTime:'2-3 days',hours:'Mon-Fri 9am-5pm',phone:'(805) 963-1579',lat:34.4346,lng:-119.7206,verified:true,updated:'2 hr ago',tags:['Women','Recovery','Mental Health'],desc:'Residential and outpatient substance use and mental health treatment for women and their children in Santa Barbara County.'},
+  // ── MODESTO ───────────────────────────────────────────────────────────
+  {id:81,name:'Modesto Gospel Mission',type:'shelter',emoji:'🏠',address:'1400 Yosemite Blvd, Modesto, CA',city:'Modesto',distance:null,status:'open',beds:80,totalBeds:150,waitTime:'15 min',hours:'24/7',phone:'(209) 529-8959',lat:37.6390,lng:-120.9769,verified:true,updated:'20 min ago',tags:['Men','Women','Meals'],desc:'Emergency shelter, meals, recovery programs, and job training for homeless men and women in the Central Valley for over 60 years.'},
+  {id:82,name:'Second Harvest Food Bank Stanislaus',type:'food',emoji:'🍲',address:'1704 Stirrup Way, Modesto, CA',city:'Modesto',distance:null,status:'open',food:80,waitTime:null,hours:'Mon-Fri 8am-4pm',phone:'(209) 239-2091',lat:37.6435,lng:-120.9697,verified:true,updated:'45 min ago',tags:['Groceries','No ID Req.'],desc:'Provides over 17 million meals annually in Stanislaus County, serving low-income families, seniors, and individuals in need.'},
+  {id:83,name:'Behavioral Health Recovery Services Stanislaus',type:'mental',emoji:'🧠',address:'830 Scenic Dr, Modesto, CA',city:'Modesto',distance:null,status:'open',waitTime:'Same day',hours:'Mon-Fri 8am-5pm',phone:'(209) 525-6225',lat:37.6706,lng:-120.9974,verified:true,updated:'3 hr ago',tags:['Crisis','Mental Health','Adults'],desc:'County-run mental health crisis services, outpatient therapy, and substance use treatment for Stanislaus County residents on a sliding scale.'},
+  // ── OXNARD ────────────────────────────────────────────────────────────
+  {id:84,name:'Oxnard Rescue Mission',type:'shelter',emoji:'🏠',address:'312 W 3rd St, Oxnard, CA',city:'Oxnard',distance:null,status:'open',beds:35,totalBeds:60,waitTime:'20 min',hours:'24/7',phone:'(805) 486-2654',lat:34.1976,lng:-119.1833,verified:true,updated:'40 min ago',tags:['Men','Women','Meals'],desc:'Emergency shelter and transitional housing serving homeless adults in Ventura County with meals, case management, and recovery support.'},
+  {id:85,name:'Food Share Ventura County',type:'food',emoji:'🥫',address:'4156 E Vineyard Ave, Oxnard, CA',city:'Oxnard',distance:null,status:'open',food:75,waitTime:null,hours:'Mon-Fri 8am-5pm',phone:'(805) 983-7100',lat:34.2133,lng:-119.1461,verified:true,updated:'1 hr ago',tags:['Groceries','Produce'],desc:'Ventura County food bank providing over 10 million pounds of food annually to individuals and families through a network of partner agencies.'},
+  {id:86,name:'Ventura County Behavioral Health',type:'mental',emoji:'🧠',address:'300 Hillmont Ave, Ventura, CA',city:'Oxnard',distance:null,status:'open',waitTime:'Same day crisis',hours:'24/7 Crisis Line',phone:'(866) 998-2243',lat:34.2753,lng:-119.2322,verified:true,updated:'2 hr ago',tags:['Crisis','Mental Health','24/7'],desc:'24/7 crisis line and walk-in center for Ventura County residents, offering psychiatric evaluation, crisis stabilization, and referrals.'},
+  // ── SANTA ROSA ────────────────────────────────────────────────────────
+  {id:87,name:'John Donnell Day Center',type:'shelter',emoji:'🏠',address:'155 Record St, Santa Rosa, CA',city:'Santa Rosa',distance:null,status:'open',beds:60,totalBeds:110,waitTime:'30 min',hours:'24/7',phone:'(707) 528-7385',lat:38.4404,lng:-122.7141,verified:true,updated:'35 min ago',tags:['Men','Women','Navigation'],desc:'Day center and emergency shelter navigation services for homeless adults in Sonoma County, with connections to housing and social services.'},
+  {id:88,name:'Redwood Empire Food Bank',type:'food',emoji:'🍲',address:'3990 Brickway Blvd, Santa Rosa, CA',city:'Santa Rosa',distance:null,status:'open',food:85,waitTime:null,hours:'Mon-Fri 8am-4:30pm',phone:'(707) 523-7900',lat:38.4586,lng:-122.7354,verified:true,updated:'15 min ago',tags:['Groceries','Produce','No ID Req.'],desc:'Provides nearly 10 million pounds of food annually to hungry people in Sonoma, Napa, Mendocino, Lake, and Humboldt counties.'},
+  {id:89,name:'Sonoma County Behavioral Health',type:'mental',emoji:'🧠',address:'2227 Capricorn Way, Santa Rosa, CA',city:'Santa Rosa',distance:null,status:'open',waitTime:'Same day',hours:'Mon-Fri 8am-5pm',phone:'(707) 565-6900',lat:38.4201,lng:-122.7191,verified:true,updated:'2 hr ago',tags:['Crisis','Mental Health','Adults'],desc:'County mental health services providing crisis support, outpatient therapy, and psychiatric care to Sonoma County residents on sliding-scale fees.'},
+  // ── CHICO ─────────────────────────────────────────────────────────────
+  {id:90,name:'Torres Shelter',type:'shelter',emoji:'🏠',address:'101 Silver Dollar Way, Chico, CA',city:'Chico',distance:null,status:'open',beds:100,totalBeds:200,waitTime:'20 min',hours:'24/7',phone:'(530) 342-2711',lat:39.7250,lng:-121.8352,verified:true,updated:'25 min ago',tags:['Men','Women','Families','Meals'],desc:'Largest emergency shelter in Butte County providing overnight shelter, meals, and case management for homeless adults and families.'},
+  {id:91,name:'Jesus Center Chico',type:'food',emoji:'🥫',address:'1297 Park Ave, Chico, CA',city:'Chico',distance:null,status:'open',food:70,waitTime:null,hours:'Mon-Fri 8am-12pm',phone:'(530) 345-2640',lat:39.7302,lng:-121.8359,verified:true,updated:'1 hr ago',tags:['Hot Meals','Groceries','No ID Req.'],desc:'Daily hot meals, food pantry, and comprehensive social services for homeless and low-income adults and families in Chico.'},
+  {id:92,name:'Butte County Behavioral Health',type:'mental',emoji:'🧠',address:'800 Cohasset Rd, Chico, CA',city:'Chico',distance:null,status:'open',waitTime:'1-2 days',hours:'Mon-Fri 8am-5pm',phone:'(530) 891-2810',lat:39.7618,lng:-121.8518,verified:true,updated:'3 hr ago',tags:['Mental Health','Crisis','Adults'],desc:'Butte County mental health services with crisis intervention, outpatient therapy, and substance use treatment on a sliding-scale basis.'},
+  // ── SALINAS ───────────────────────────────────────────────────────────
+  {id:93,name:'Shelter Outreach Plus Monterey',type:'shelter',emoji:'🏠',address:'21 Lower Ragsdale Dr, Monterey, CA',city:'Salinas',distance:null,status:'open',beds:45,totalBeds:80,waitTime:'30 min',hours:'24/7',phone:'(831) 655-4747',lat:36.5956,lng:-121.8746,verified:true,updated:'45 min ago',tags:['Men','Women','Veterans'],desc:'Emergency and transitional housing for homeless adults and veterans in Monterey County, with case management and housing support.'},
+  {id:94,name:'Food Bank for Monterey County',type:'food',emoji:'🍲',address:'815 W Market St, Salinas, CA',city:'Salinas',distance:null,status:'open',food:80,waitTime:null,hours:'Mon-Fri 8am-5pm',phone:'(831) 758-1523',lat:36.6821,lng:-121.6525,verified:true,updated:'30 min ago',tags:['Groceries','Produce','Families'],desc:'Serves over 50,000 people monthly in Monterey County through food pantries, mobile distributions, and partner agencies.'},
+  {id:95,name:'Montage Health Behavioral',type:'mental',emoji:'🧠',address:'576 Hartnell St, Monterey, CA',city:'Salinas',distance:null,status:'open',waitTime:'2-4 days',hours:'Mon-Fri 8am-5pm',phone:'(831) 649-7000',lat:36.5952,lng:-121.8940,verified:true,updated:'2 hr ago',tags:['Mental Health','Adults','Youth'],desc:'Comprehensive behavioral health and mental wellness services for Monterey County residents, including outpatient therapy and psychiatric care.'},
+  // ── VISALIA ───────────────────────────────────────────────────────────
+  {id:96,name:'Gospel Center Rescue Mission Visalia',type:'shelter',emoji:'🏠',address:'309 S Hall St, Visalia, CA',city:'Visalia',distance:null,status:'open',beds:50,totalBeds:90,waitTime:'20 min',hours:'24/7',phone:'(559) 734-2420',lat:36.3302,lng:-119.2921,verified:true,updated:'35 min ago',tags:['Men','Women','Meals'],desc:'Emergency shelter, hot meals, and recovery programs for homeless men and women in Tulare County.'},
+  {id:97,name:'Community Services Employment Training',type:'food',emoji:'🥫',address:'1020 N Chinowith St, Visalia, CA',city:'Visalia',distance:null,status:'open',food:65,waitTime:null,hours:'Mon-Fri 9am-4pm',phone:'(559) 627-0700',lat:36.3379,lng:-119.3072,verified:true,updated:'1 hr ago',tags:['Groceries','No ID Req.'],desc:'Community food pantry and social services hub for low-income residents of Tulare County.'},
+  {id:98,name:'Tulare County Health Human Services',type:'mental',emoji:'🧠',address:'5957 S Mooney Blvd, Visalia, CA',city:'Visalia',distance:null,status:'open',waitTime:'Same day',hours:'Mon-Fri 8am-5pm',phone:'(559) 624-8000',lat:36.2770,lng:-119.2921,verified:true,updated:'2 hr ago',tags:['Mental Health','Crisis','Adults'],desc:'County mental health crisis services, outpatient therapy, and case management for Tulare County residents on a sliding-scale basis.'},
+  // ── PALM SPRINGS ──────────────────────────────────────────────────────
+  {id:99,name:'Safe House of the Desert',type:'shelter',emoji:'🏠',address:'66085 E Palm Canyon Dr, Palm Springs, CA',city:'Palm Springs',distance:null,status:'open',beds:30,totalBeds:55,waitTime:'20 min',hours:'24/7',phone:'(760) 329-3463',lat:33.8303,lng:-116.5453,verified:true,updated:'40 min ago',tags:['Men','Women','Domestic Violence'],desc:'Emergency shelter and crisis services for homeless individuals and domestic violence survivors in the Coachella Valley.'},
+  {id:100,name:'Galilee Center',type:'food',emoji:'🍲',address:'68-250 Cll Viento, Desert Hot Springs, CA',city:'Palm Springs',distance:null,status:'open',food:70,waitTime:null,hours:'Mon-Fri 8am-12pm',phone:'(760) 329-6471',lat:33.9611,lng:-116.5013,verified:true,updated:'1 hr ago',tags:['Hot Meals','Groceries','Migrant Workers'],desc:'Serving hot meals and groceries to farmworkers, homeless, and low-income families in the eastern Coachella Valley since 1991.'},
+  {id:101,name:'Desert AIDS Project',type:'mental',emoji:'🧠',address:'1695 N Sunrise Way, Palm Springs, CA',city:'Palm Springs',distance:null,status:'open',waitTime:'1-3 days',hours:'Mon-Fri 8am-5pm',phone:'(760) 323-2118',lat:33.8398,lng:-116.5337,verified:true,updated:'2 hr ago',tags:['Mental Health','LGBTQ+','HIV/AIDS'],desc:'Comprehensive health and social services including mental health support for LGBTQ+ individuals and those living with HIV/AIDS in the Coachella Valley.'},
+  // ── EUREKA ────────────────────────────────────────────────────────────
+  {id:102,name:'Betty Kwan Chinn Homeless Foundation',type:'shelter',emoji:'🏠',address:'133 2nd St, Eureka, CA',city:'Eureka',distance:null,status:'open',beds:50,totalBeds:90,waitTime:'15 min',hours:'24/7',phone:'(707) 269-2886',lat:40.8021,lng:-124.1637,verified:true,updated:'25 min ago',tags:['Men','Women','Meals','Navigation'],desc:'Emergency shelter, daily meals, and navigation services for homeless adults in Humboldt County.'},
+  {id:103,name:'Food for People Humboldt',type:'food',emoji:'🥫',address:'307 W 14th St, Eureka, CA',city:'Eureka',distance:null,status:'open',food:75,waitTime:null,hours:'Mon-Fri 8am-5pm',phone:'(707) 445-3166',lat:40.8021,lng:-124.1637,verified:true,updated:'45 min ago',tags:['Groceries','Produce','No ID Req.'],desc:'Humboldt County food bank serving over 20,000 people monthly through pantries, mobile distributions, and child nutrition programs.'},
+  {id:104,name:'Humboldt County DHHS Mental Health',type:'mental',emoji:'🧠',address:'720 Wood St, Eureka, CA',city:'Eureka',distance:null,status:'open',waitTime:'Same day',hours:'Mon-Fri 8am-5pm',phone:'(707) 268-2990',lat:40.7969,lng:-124.1588,verified:true,updated:'2 hr ago',tags:['Mental Health','Crisis','Adults'],desc:'County-operated mental health crisis services, outpatient therapy, and case management for Humboldt County residents.'},
+  // ── SANTA CRUZ ────────────────────────────────────────────────────────
+  {id:105,name:'Encompass Community Services',type:'shelter',emoji:'🏠',address:'1220 Emeline Ave, Santa Cruz, CA',city:'Santa Cruz',distance:null,status:'open',beds:40,totalBeds:75,waitTime:'30 min',hours:'24/7',phone:'(831) 469-1700',lat:36.9741,lng:-122.0316,verified:true,updated:'30 min ago',tags:['Families','Women','Youth'],desc:'Emergency shelter, transitional housing, and comprehensive support services for homeless families, women, and youth in Santa Cruz County.'},
+  {id:106,name:'Second Harvest Food Bank Santa Cruz',type:'food',emoji:'🍲',address:'800 Ohlone Pkwy, Watsonville, CA',city:'Santa Cruz',distance:null,status:'open',food:80,waitTime:null,hours:'Mon-Fri 8am-4:30pm',phone:'(831) 722-7110',lat:36.9101,lng:-121.7577,verified:true,updated:'30 min ago',tags:['Groceries','Produce','Families'],desc:'Distributes over 10 million pounds of food annually to Santa Cruz and San Benito counties through 200+ partner agencies.'},
+  {id:107,name:'Santa Cruz County Behavioral Health',type:'mental',emoji:'🧠',address:'1400 Emeline Ave, Santa Cruz, CA',city:'Santa Cruz',distance:null,status:'open',waitTime:'1 week',hours:'Mon-Fri 9am-5pm',phone:'(831) 454-4880',lat:36.9741,lng:-121.9879,verified:true,updated:'3 hr ago',tags:['Mental Health','Sliding Scale','Adults'],desc:'County behavioral health services offering outpatient therapy, crisis support, and psychiatric services on sliding-scale fees for Santa Cruz County residents.'},
+  // ── ADDITIONAL LOS ANGELES ────────────────────────────────────────────
+  {id:108,name:'LAMP Community',type:'shelter',emoji:'🏠',address:'527 S Crocker St, Los Angeles, CA',city:'Los Angeles',distance:null,status:'open',beds:75,totalBeds:130,waitTime:'20 min',hours:'24/7',phone:'(213) 622-0006',lat:34.0437,lng:-118.2467,verified:true,updated:'12 min ago',tags:['Mental Health','Men','Women'],desc:'Provides housing, mental health services, and support for adults with serious mental illness who are homeless in Skid Row.'},
+  {id:109,name:'People Assisting the Homeless PATH',type:'shelter',emoji:'🏠',address:'340 N Madison Ave, Los Angeles, CA',city:'Los Angeles',distance:null,status:'open',beds:50,totalBeds:90,waitTime:'30 min',hours:'24/7',phone:'(213) 644-2200',lat:34.0537,lng:-118.2786,verified:true,updated:'8 min ago',tags:['Navigation','Mental Health','Veterans'],desc:'Street outreach, shelter navigation, and permanent supportive housing for homeless adults throughout greater Los Angeles.'},
+  {id:110,name:'Valley Food Bank at CSUN',type:'food',emoji:'🥫',address:'18111 Nordhoff St, Northridge, CA',city:'Los Angeles',distance:null,status:'open',food:60,waitTime:null,hours:'Mon, Wed, Fri 10am-2pm',phone:'(818) 677-2111',lat:34.2394,lng:-118.5291,verified:true,updated:'2 hr ago',tags:['Groceries','Students','No ID Req.'],desc:'Campus food pantry at CSUN serving food-insecure students and community members in the San Fernando Valley with free groceries.'},
+  {id:111,name:'Didi Hirsch Mental Health Services',type:'mental',emoji:'🧠',address:'4760 S Sepulveda Blvd, Culver City, CA',city:'Los Angeles',distance:null,status:'open',waitTime:'1-3 days',hours:'24/7 Crisis Line',phone:'(800) 854-7771',lat:33.9956,lng:-118.4036,verified:true,updated:'1 hr ago',tags:['Mental Health','Crisis','24/7','Suicide Prevention'],desc:'One of the largest mental health nonprofits in the US, offering crisis line, outpatient therapy, and suicide prevention for LA County residents.'},
+  {id:112,name:'SOVA Community Food Resource Program',type:'food',emoji:'🍲',address:'12500 Chandler Blvd, Valley Village, CA',city:'Los Angeles',distance:null,status:'open',food:70,waitTime:null,hours:'Mon-Thu 9am-12pm',phone:'(818) 988-7682',lat:34.1709,lng:-118.3989,verified:true,updated:'2 hr ago',tags:['Groceries','Culturally Appropriate','No ID Req.'],desc:'Free groceries and social services for low-income individuals and families in the San Fernando Valley, providing culturally appropriate foods.'},
+  // ── ADDITIONAL SAN FRANCISCO ──────────────────────────────────────────
+  {id:113,name:'Hamilton Family Center',type:'shelter',emoji:'🏠',address:'260 Golden Gate Ave, San Francisco, CA',city:'San Francisco',distance:null,status:'open',beds:50,totalBeds:90,waitTime:'1-2 days',hours:'24/7',phone:'(415) 292-9792',lat:37.7803,lng:-122.4156,verified:true,updated:'20 min ago',tags:['Families','Children','Navigation'],desc:'Emergency shelter and rapid rehousing services exclusively for families with children experiencing homelessness in San Francisco.'},
+  {id:114,name:'SF-Marin Food Bank',type:'food',emoji:'🍲',address:'900 Pennsylvania Ave, San Francisco, CA',city:'San Francisco',distance:null,status:'open',food:90,waitTime:null,hours:'Mon-Sat 9am-4pm',phone:'(415) 282-1900',lat:37.7551,lng:-122.3902,verified:true,updated:'10 min ago',tags:['Groceries','Produce','No ID Req.'],desc:'Distributes over 49 million pounds of food annually across San Francisco and Marin, serving 130,000+ people every week.'},
+  {id:115,name:'Felton Institute SF',type:'mental',emoji:'🧠',address:'1360 Mission St, San Francisco, CA',city:'San Francisco',distance:null,status:'open',waitTime:'2-5 days',hours:'Mon-Fri 9am-5pm',phone:'(415) 474-4122',lat:37.7764,lng:-122.4159,verified:true,updated:'3 hr ago',tags:['Mental Health','Adults','Youth','Bilingual'],desc:'Comprehensive mental health and social services for low-income adults and youth in San Francisco, including bilingual Spanish support.'},
+  // ── ADDITIONAL SAN DIEGO ──────────────────────────────────────────────
+  {id:116,name:'Alpha Project San Diego',type:'shelter',emoji:'🏠',address:'3737 5th Ave, San Diego, CA',city:'San Diego',distance:null,status:'open',beds:65,totalBeds:125,waitTime:'30 min',hours:'24/7',phone:'(619) 542-1877',lat:32.7469,lng:-117.1567,verified:true,updated:'15 min ago',tags:['Men','Women','Employment'],desc:'Emergency shelter, outreach services, and employment programs for homeless adults in San Diego County.'},
+  {id:117,name:'Feeding San Diego',type:'food',emoji:'🥫',address:'9477 Waples St, San Diego, CA',city:'San Diego',distance:null,status:'open',food:80,waitTime:null,hours:'Mon-Fri 8am-4pm',phone:'(858) 452-3663',lat:32.8766,lng:-117.2069,verified:true,updated:'30 min ago',tags:['Groceries','No ID Req.','Mobile'],desc:'Rescues and distributes millions of pounds of food monthly to San Diego County residents through direct distributions and partner agencies.'},
+  {id:118,name:'NAMI San Diego',type:'mental',emoji:'🧠',address:'4480 Mercury St, San Diego, CA',city:'San Diego',distance:null,status:'open',waitTime:'1 week',hours:'Mon-Fri 9am-5pm',phone:'(619) 543-1434',lat:32.8167,lng:-117.1339,verified:true,updated:'2 hr ago',tags:['Mental Health','Support Groups','Education'],desc:'Free mental health education, support groups, and peer advocacy for individuals living with mental illness and their families in San Diego County.'},
+  // ── ADDITIONAL SACRAMENTO ─────────────────────────────────────────────
+  {id:119,name:'Volunteers of America Sacramento',type:'shelter',emoji:'🏠',address:'2937 Mariposa St, Sacramento, CA',city:'Sacramento',distance:null,status:'open',beds:80,totalBeds:160,waitTime:'20 min',hours:'24/7',phone:'(916) 452-3421',lat:38.5603,lng:-121.4848,verified:true,updated:'20 min ago',tags:['Men','Women','Families','Veterans'],desc:'Emergency and transitional shelter, veteran services, and substance use treatment for homeless adults in the Sacramento region.'},
+  {id:120,name:'Sacramento Food Bank Family Services',type:'food',emoji:'🍲',address:'3333 3rd Ave, Sacramento, CA',city:'Sacramento',distance:null,status:'open',food:85,waitTime:null,hours:'Mon-Fri 8am-5pm',phone:'(916) 456-1980',lat:38.5424,lng:-121.5019,verified:true,updated:'15 min ago',tags:['Groceries','Hot Meals','No ID Req.'],desc:'Provides emergency food, clothing, and family support services to over 150,000 Sacramento County residents annually.'},
 ];
 
 const PIN_COLOR={open:'#3ecfa0',limited:'#f5a623',closed:'#ff6b4a'};
 const ST_BG={open:'rgba(62,207,160,0.13)',limited:'rgba(245,166,35,0.13)',closed:'rgba(255,107,74,0.13)'};
 const ST_BD={open:'rgba(62,207,160,0.4)',limited:'rgba(245,166,35,0.4)',closed:'rgba(255,107,74,0.4)'};
-const ST_LB={open:'● Open Now',limited:'● Limited',closed:'● Closed'};
+const ST_LB={open:'â Open Now',limited:'â Limited',closed:'â Closed'};
 const ST_CL={open:'#3ecfa0',limited:'#f5a623',closed:'#ff6b4a'};
 
 let _hmMap=null, _hmMarkers=[], _hmCat='all', _hmSearch='';
@@ -2104,7 +2180,7 @@ function hmShowPanel(r){
   const cc=cap==null?'#f5a623':cap>50?'#3ecfa0':cap>20?'#f5a623':'#ff6b4a';
   const html=`
     <div style="display:flex;justify-content:flex-end;margin-bottom:12px;">
-      <button class="hm-panel-close" onclick="hmClosePanel()">✕</button>
+      <button class="hm-panel-close" onclick="hmClosePanel()">â</button>
     </div>
     <div style="display:flex;align-items:flex-start;gap:14px;margin-bottom:16px;">
       <div class="hm-panel-icon">${r.emoji}</div>
@@ -2113,12 +2189,12 @@ function hmShowPanel(r){
         <div style="color:#8a95a5;font-size:12px;margin-bottom:8px;">${r.address}</div>
         <div style="display:flex;align-items:center;gap:8px;flex-wrap:wrap;">
           <span class="hm-status" style="background:${ST_BG[r.status]};color:${ST_CL[r.status]};border:1px solid ${ST_BD[r.status]};">${ST_LB[r.status]}</span>
-          ${r.verified?'<span class="hm-verified">✓ Verified</span>':''}
+          ${r.verified?'<span class="hm-verified">â Verified</span>':''}
         </div>
       </div>
     </div>
     <div style="display:flex;align-items:center;gap:8px;background:#0c1117;padding:10px 14px;border-radius:10px;margin-bottom:16px;border:1px solid #1e2733;">
-      <span style="font-size:15px;">📍</span>
+      <span style="font-size:15px;">ð</span>
       <span style="color:#f5a623;font-weight:700;font-size:14px;">${r.distance} miles away</span>
       <span style="color:#4a5a6a;font-size:12px;margin-left:auto;">${r.hours}</span>
     </div>
@@ -2131,14 +2207,14 @@ function hmShowPanel(r){
     ${cap!=null?`<div class="hm-info-box"><div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:8px;"><span style="color:#b8c2cf;font-size:13px;font-weight:600;">Capacity</span><span style="color:${cc};font-size:13px;font-weight:700;">${r.beds}/${r.totalBeds} beds (${cap}%)</span></div><div style="height:8px;background:#1e2733;border-radius:4px;overflow:hidden;"><div style="height:100%;width:${cap}%;background:${cc};border-radius:4px;"></div></div></div>`:''}
     <div class="hm-tag-list" style="margin-bottom:14px;">${r.tags.map(t=>`<span class="hm-tag">${t}</span>`).join('')}</div>
     <div class="hm-info-box"><div class="hm-info-label">About</div><p style="color:#b8c2cf;font-size:13px;line-height:1.7;margin:0;">${r.desc}</p></div>
-    <div style="text-align:center;color:#4a5a6a;font-size:11px;margin-bottom:16px;">🔄 Updated ${r.updated}</div>
-    <button class="hm-btn-primary" onclick="window.open('https://maps.google.com/?daddr=${encodeURIComponent(r.address)}','_blank')">🗺️  Get Directions</button>
-    <button class="hm-btn-secondary" onclick="window.open('tel:${r.phone}')">📞  Call ${r.phone}</button>
+    <div style="text-align:center;color:#4a5a6a;font-size:11px;margin-bottom:16px;">ð Updated ${r.updated}</div>
+    <button class="hm-btn-primary" onclick="window.open('https://maps.google.com/?daddr=${encodeURIComponent(r.address)}','_blank')">ðºï¸  Get Directions</button>
+    <button class="hm-btn-secondary" onclick="window.open('tel:${r.phone}')">ð  Call ${r.phone}</button>
     <div class="hm-report-box">
-      <div class="hm-report-label">📣 Report an Update</div>
+      <div class="hm-report-label">ð£ Report an Update</div>
       <div class="hm-report-grid">
-        <button class="hm-report-btn">Still Open ✓</button>
-        <button class="hm-report-btn">Now Closed ✗</button>
+        <button class="hm-report-btn">Still Open â</button>
+        <button class="hm-report-btn">Now Closed â</button>
         <button class="hm-report-btn">Beds Changed</button>
         <button class="hm-report-btn">Update Hours</button>
       </div>
@@ -2166,7 +2242,7 @@ function hmInitMap(){
   _hmMap=L.map(el,{center:[34.052,-118.244],zoom:12,zoomControl:false,attributionControl:false});
   L.tileLayer('https://{s}.basemaps.cartocdn.com/dark_all/{z}/{x}/{y}{r}.png',{maxZoom:19}).addTo(_hmMap);
   L.control.zoom({position:'bottomleft'}).addTo(_hmMap);
-  L.control.attribution({position:'bottomleft',prefix:'© HopeMap · OpenStreetMap'}).addTo(_hmMap);
+  L.control.attribution({position:'bottomleft',prefix:'Â© HopeMap Â· OpenStreetMap'}).addTo(_hmMap);
   _hmMap.on('click',()=>hmClosePanel());
   hmRender();
 }
@@ -2220,7 +2296,7 @@ document.addEventListener('DOMContentLoaded',function(){
   var navLinks=document.getElementById('navLinks');
   if(navLinks){
     var li=document.createElement('li');
-    li.innerHTML='<a href="#" onclick="event.preventDefault();hmOpen()" style="color:#f5a623!important;font-weight:700!important;">🗺️ Live Map</a>';
+    li.innerHTML='<a href="#" onclick="event.preventDefault();hmOpen()" style="color:#f5a623!important;font-weight:700!important;">ðºï¸ Live Map</a>';
     navLinks.insertBefore(li,navLinks.firstChild);
   }
 });
