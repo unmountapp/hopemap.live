@@ -1431,6 +1431,13 @@ button { font-family: inherit; cursor: pointer; border: none; }
 #hm-fab:hover{transform:scale(1.05);box-shadow:0 12px 40px rgba(245,166,35,0.6);}
 @media(max-width:768px){#hm-panel{width:100%;top:auto;bottom:0;height:85%;transform:translateY(100%);border-left:none;border-top:1px solid #1e2733;border-radius:20px 20px 0 0;}#hm-panel.open{transform:translateY(0)!important;}}
 </style>
+<link rel="canonical" href="https://hopemap.live/">
+<script type="application/ld+json">{"@context":"https://schema.org","@graph":[
+ {"@type":"Organization","@id":"https://hopemap.live/#org","name":"HopeMap","url":"https://hopemap.live/","email":"customercareblackaiser@gmail.com",
+  "description":"Community-verified, real-time map of shelters, food banks and mental health resources, launching in Los Angeles.","areaServed":{"@type":"City","name":"Los Angeles"}},
+ {"@type":"WebSite","@id":"https://hopemap.live/#site","url":"https://hopemap.live/","name":"HopeMap","publisher":{"@id":"https://hopemap.live/#org"},"inLanguage":"en"}]}</script>
+<script>window.GROWTH={site:"hopemap",ga4:"",hub:""};/* settings live at the top of growth.js. No ad pixels on this site. */</script>
+<script src="/growth.js"></script>
 </head>
 <body>
 <a href="#hero" class="skip-link" id="skip-link">Skip to main content</a>
@@ -1988,6 +1995,20 @@ button { font-family: inherit; cursor: pointer; border: none; }
           <span>Custom branding on your listing with Pro tier</span>
         </div>
       </div>
+      <form id="org-form" novalidate style="margin-top:28px;display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:12px;">
+        <input name="org" required placeholder="Organization name" aria-label="Organization name" class="signup-input" style="width:100%">
+        <input name="name" required placeholder="Your name" aria-label="Your name" class="signup-input" style="width:100%">
+        <input name="email" type="email" required placeholder="Work email" aria-label="Work email" class="signup-input" style="width:100%">
+        <select name="type" aria-label="Organization type" class="signup-input" style="width:100%">
+          <option>Shelter / housing provider</option><option>Food bank / meal program</option><option>Mental health / crisis service</option>
+          <option>Government agency or department</option><option>Continuum of Care / coordinated entry</option><option>Faith-based organization</option>
+          <option>Health clinic</option><option>Funder / foundation</option><option>Other</option></select>
+        <input name="city" required placeholder="City / county served" aria-label="City or county served" class="signup-input" style="width:100%">
+        <input name="services" placeholder="Services you offer (beds, meals, counseling...)" aria-label="Services offered" class="signup-input" style="width:100%">
+        <input type="text" name="website" tabindex="-1" autocomplete="off" aria-hidden="true" style="position:absolute;left:-9999px">
+        <button type="submit" class="signup-btn" style="grid-column:1/-1">Claim your free listing →</button>
+        <p id="org-msg" role="status" style="grid-column:1/-1;margin:0;font-size:.85rem;opacity:.8">Free for every nonprofit and public agency. We'll confirm your listing within two business days.</p>
+      </form>
     </div>
   </div>
 </section>
@@ -2219,12 +2240,18 @@ function handleSignup() {
   }
   btn.disabled = true;
   btn.textContent = 'Joining...';
-  // Simulate submit (replace with real API)
-  setTimeout(function() {
-    document.getElementById('signup-form').style.display = 'none';
-    document.querySelector('.signup-privacy').style.display = 'none';
-    document.getElementById('signup-success').style.display = 'block';
-  }, 1200);
+  var send = window.Growth ? Growth.lead({ email: email, context: 'waitlist' }) : Promise.resolve(false);
+  send.then(function (ok) {
+    if (ok) {
+      document.getElementById('signup-form').style.display = 'none';
+      document.querySelector('.signup-privacy').style.display = 'none';
+      document.getElementById('signup-success').style.display = 'block';
+    } else {
+      btn.disabled = false;
+      btn.textContent = 'Join Waitlist →';
+      alert('Sorry, that didn\'t go through. Please try again, or email customercareblackaiser@gmail.com to join.');
+    }
+  });
 }
 </script>
 
@@ -2233,7 +2260,11 @@ function handleSignup() {
   <div class="hm-nav">
     <button class="hm-back" id="hm-back">← Back</button>
     <div class="hm-logo">📍 HopeMap <span class="hm-live-badge">LIVE MAP</span></div>
-    <div class="hm-count"><div class="hm-dot"></div><span id="hm-count-label">10 resources live</span></div>
+    <div class="hm-count"><div class="hm-dot"></div><span id="hm-count-label">10 resources · preview</span></div>
+  </div>
+  <div class="hm-preview-banner" role="note" style="background:#3a2a0c;color:#ffd58a;border-bottom:1px solid #6b4d12;padding:9px 16px;font-size:12.5px;line-height:1.5;text-align:center;">
+    <strong>Preview map.</strong> Open status, bed counts, wait times and food levels shown here are <strong>sample data, not live</strong>. Always call before you go.
+    Emergency: <a href="tel:911" style="color:#fff">911</a> · Crisis line: call or text <a href="tel:988" style="color:#fff">988</a> · Shelter and services in LA County: dial <a href="tel:211" style="color:#fff">211</a>
   </div>
   <div class="hm-search-wrap">
     <div class="hm-search-inner">
@@ -2488,7 +2519,7 @@ function hmRender(){
     if(b.distance!=null) return 1;
     return 0;
   });
-  document.getElementById('hm-count-label').textContent=list.length+' resources live';
+  document.getElementById('hm-count-label').textContent=list.length+' resources · preview';
   list.forEach(r=>{
     const m=L.marker([r.lat,r.lng],{icon:hmMakePin(r)}).addTo(_hmMap);
     m.on('click',function(e){L.DomEvent.stopPropagation(e);hmShowPanel(r);_hmMap.setView([r.lat,r.lng-0.04],13,{animate:true,duration:0.6});});
@@ -2510,7 +2541,7 @@ function hmShowPanel(r){
         <div style="color:#8a95a5;font-size:12px;margin-bottom:8px;">${r.address}</div>
         <div style="display:flex;align-items:center;gap:8px;flex-wrap:wrap;">
           <span class="hm-status" style="background:${ST_BG[r.status]};color:${ST_CL[r.status]};border:1px solid ${ST_BD[r.status]};">${ST_LB[r.status]}</span>
-          ${r.verified?'<span class="hm-verified">✓ Verified</span>':''}
+          <span class="hm-verified" style="background:#3a2a0c;color:#ffd58a;border-color:#6b4d12">Sample data</span>
         </div>
       </div>
     </div>
@@ -2519,16 +2550,17 @@ function hmShowPanel(r){
       <span style="color:#f5a623;font-weight:700;font-size:14px;">${r.distance!=null?r.distance+' miles away':'Calculating...'}</span>
       <span style="color:#4a5a6a;font-size:12px;margin-left:auto;">${r.hours}</span>
     </div>
+    <div style="background:#3a2a0c;color:#ffd58a;border:1px solid #6b4d12;border-radius:10px;padding:10px 12px;font-size:12px;margin-bottom:12px;line-height:1.5;">These numbers are examples while HopeMap is in preview. Call ${r.phone} to confirm beds, hours and wait times before you travel.</div>
     <div class="hm-stat-grid">
-      ${r.beds!=null?`<div class="hm-stat-box"><div class="hm-stat-val">${r.beds}</div><div class="hm-stat-lbl">Beds Available</div><div class="hm-stat-sub">of ${r.totalBeds} total</div></div>`:''}
-      ${r.waitTime?`<div class="hm-stat-box"><div class="hm-stat-val" style="font-size:14px;">${r.waitTime}</div><div class="hm-stat-lbl">Wait Time</div></div>`:''}
-      ${r.food!=null?`<div class="hm-stat-box"><div class="hm-stat-val">${r.food}%</div><div class="hm-stat-lbl">Food Supply</div></div>`:''}
+      ${r.beds!=null?`<div class="hm-stat-box"><div class="hm-stat-val">${r.beds}</div><div class="hm-stat-lbl">Beds (sample)</div><div class="hm-stat-sub">of ${r.totalBeds} total</div></div>`:''}
+      ${r.waitTime?`<div class="hm-stat-box"><div class="hm-stat-val" style="font-size:14px;">${r.waitTime}</div><div class="hm-stat-lbl">Wait (sample)</div></div>`:''}
+      ${r.food!=null?`<div class="hm-stat-box"><div class="hm-stat-val">${r.food}%</div><div class="hm-stat-lbl">Food (sample)</div></div>`:''}
       <div class="hm-stat-box"><div class="hm-stat-val" style="font-size:13px;">${r.phone}</div><div class="hm-stat-lbl">Phone</div></div>
     </div>
     ${cap!=null?`<div class="hm-info-box"><div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:8px;"><span style="color:#b8c2cf;font-size:13px;font-weight:600;">Capacity</span><span style="color:${cc};font-size:13px;font-weight:700;">${r.beds}/${r.totalBeds} beds (${cap}%)</span></div><div style="height:8px;background:#1e2733;border-radius:4px;overflow:hidden;"><div style="height:100%;width:${cap}%;background:${cc};border-radius:4px;"></div></div></div>`:''}
     <div class="hm-tag-list" style="margin-bottom:14px;">${r.tags.map(t=>`<span class="hm-tag">${t}</span>`).join('')}</div>
     <div class="hm-info-box"><div class="hm-info-label">About</div><p style="color:#b8c2cf;font-size:13px;line-height:1.7;margin:0;">${r.desc}</p></div>
-    <div style="text-align:center;color:#4a5a6a;font-size:11px;margin-bottom:16px;">🔄 Updated ${r.updated}</div>
+    <div style="text-align:center;color:#4a5a6a;font-size:11px;margin-bottom:16px;">Sample data · call before you go</div>
     <button class="hm-btn-primary" onclick="window.open('https://maps.google.com/?daddr=${encodeURIComponent(r.address)}','_blank')">🗺️  Get Directions</button>
     <button class="hm-btn-secondary" onclick="window.open('tel:${r.phone}')">📞  Call ${r.phone}</button>
     <div class="hm-report-box">
@@ -2669,5 +2701,25 @@ document.addEventListener('DOMContentLoaded',function(){
 });
 </script>
 
+<script>
+/* Growth Engine: partner organizations -> Growth Hub */
+(function(){
+  var f=document.getElementById('org-form'); if(!f) return;
+  f.addEventListener('submit',function(e){
+    e.preventDefault();
+    var v=function(n){return String((f.elements[n]||{}).value||'').trim();};
+    var msg=document.getElementById('org-msg'), btn=f.querySelector('button');
+    if(!v('org')||!v('name')||!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(v('email'))||!v('city')){msg.textContent='Please add your organization, name, a valid email and the area you serve.';return;}
+    btn.disabled=true; btn.textContent='Sending...';
+    var orgName=v('org');
+    var send=window.Growth?Growth.lead({email:v('email'),context:'partner-org',name:v('name'),company:v('org'),website:v('website'),
+      message:'Type: '+v('type')+' | Area: '+v('city')+' | Services: '+v('services')}):Promise.resolve(false);
+    send.then(function(ok){
+      if(ok){f.innerHTML='<p style="grid-column:1/-1;font-size:1.05rem">Thank you. We\'ll contact '+orgName.replace(/[<>&"]/g,'')+' within two business days to set up your listing.</p>';}
+      else{btn.disabled=false;btn.textContent='Claim your free listing →';msg.innerHTML='That didn\'t go through. Please email <a href="mailto:customercareblackaiser@gmail.com?subject=HopeMap%20partner%20listing">customercareblackaiser@gmail.com</a>.';}
+    });
+  });
+})();
+</script>
 </body>
 </html>
