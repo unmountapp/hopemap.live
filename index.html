@@ -1474,14 +1474,14 @@ button { font-family: inherit; cursor: pointer; border: none; }
       HopeMap
     </a>
     <ul class="nav-links" id="navLinks">
-      <li><a href="#cities-section">Cities</a></li>
-      <li><a href="#features">Features</a></li>
-      <li><a href="#how-it-works">How It Works</a></li>
+      <li><a href="#cities-section" data-i18n="cities.label">Cities</a></li>
+      <li><a href="#features" data-i18n="nav.features">Features</a></li>
+      <li><a href="#how-it-works" data-i18n="howit.label">How It Works</a></li>
       <li><a href="#comparison">Why HopeMap</a></li>
-      <li><a href="#roadmap">Roadmap</a></li>
-      <li><a href="/cities">For Cities &amp; Agencies</a></li>
+      <li><a href="#roadmap" data-i18n="roadmap.label">Roadmap</a></li>
+      <li><a href="/cities" data-i18n="nav.cities">For Cities &amp; Agencies</a></li>
       <li><a href="#organizations">Organizations</a></li>
-      <li><a href="#contact" class="nav-cta">Get Involved</a></li>
+      <li><a href="#contact" class="nav-cta" data-i18n="nav.cta">Get Involved</a></li>
     </ul>
     <button class="mobile-toggle" id="mobileToggle" aria-label="Toggle navigation menu" aria-expanded="false">
       <span></span><span></span><span></span>
@@ -1497,13 +1497,13 @@ button { font-family: inherit; cursor: pointer; border: none; }
       <div class="hero-content">
         <div class="hero-badge">
           <span class="pulse"></span>
-          Now planning city pilots for 2027
+          <span data-i18n="hero.badge">Now planning city pilots for 2027</span>
         </div>
         <h1>HopeMap: find help that's open right now, <span class="text-gradient">anywhere in Greater Los Angeles.</span></h1>
-        <p class="hero-sub">Free, multilingual, works offline. Built with the cities and service providers it serves.</p>
-        <p style="font-size:0.95rem;color:var(--color-hope);font-weight:600;margin-bottom:32px;animation:fadeSlideUp 0.8s var(--ease-out) 0.55s both;">Now planning city pilots for 2027.</p>
+        <p class="hero-sub" data-i18n="hero.sub">Free, multilingual, works offline. Built with the cities and service providers it serves.</p>
+        <p style="font-size:0.95rem;color:var(--color-hope);font-weight:600;margin-bottom:32px;animation:fadeSlideUp 0.8s var(--ease-out) 0.55s both;"><span data-i18n="hero.status">Now planning city pilots for 2027.</span></p>
         <div class="hero-actions">
-          <a href="#cities-section" class="btn-primary">Explore Cities <span>→</span></a>
+          <a href="#cities-section" class="btn-primary"><span data-i18n="hero.btn1">Explore Cities</span> <span>→</span></a>
           <a href="#features" class="btn-secondary">
             <span>▶</span> See How It Works
           </a>
@@ -1537,7 +1537,7 @@ button { font-family: inherit; cursor: pointer; border: none; }
         </div>
         <div class="floating-stat stat-1">
           <div class="stat-num" style="color:var(--color-mint);">54</div>
-          <div class="stat-label">Languages</div>
+          <div class="stat-label" data-i18n="lang.label">Languages</div>
         </div>
         <div class="floating-stat stat-2">
           <div class="stat-num" style="color:var(--color-sky);">Real-Time</div>
@@ -1551,7 +1551,7 @@ button { font-family: inherit; cursor: pointer; border: none; }
 <!-- ═══════════════════ WORKING WITH CITIES ═══════════════════ -->
 <section class="proof-bar reveal">
   <div class="container">
-    <div class="proof-label">Working with cities and providers</div>
+    <div class="proof-label" data-i18n="working.title">Working with cities and providers</div>
     <p style="text-align:center;color:var(--color-muted);font-size:0.95rem;max-width:600px;margin:0 auto;">HopeMap is in pilot planning. We're talking with city departments and service providers across LA County. Partners will be listed here once they've agreed.</p>
   </div>
 </section>
@@ -1560,15 +1560,15 @@ button { font-family: inherit; cursor: pointer; border: none; }
 <section class="section-pad" id="cities-section" style="position:relative;z-index:1;">
   <div class="container">
     <div class="problem-header reveal">
-      <div class="section-label">Cities</div>
-      <h2 class="section-title">Planning pilots across <span class="text-gradient">LA County.</span></h2>
+      <div class="section-label" data-i18n="cities.label">Cities</div>
+      <h2 class="section-title"><span data-i18n="cities.title">Planning pilots across</span> <span class="text-gradient" data-i18n="cities.title2">LA County.</span></h2>
       <p class="section-desc">HopeMap is built to work with each city's own system — not around it.</p>
     </div>
     <div class="cities-grid reveal" style="display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:20px;margin-top:48px;">
       <a href="/long-beach" class="city-card" style="display:flex;flex-direction:column;align-items:center;justify-content:center;padding:36px 24px;background:linear-gradient(135deg,rgba(255,255,255,0.03),rgba(255,255,255,0.01));border:1px solid rgba(255,255,255,0.06);border-radius:20px;text-align:center;transition:all 0.3s var(--ease-out);text-decoration:none;">
         <span style="font-size:2rem;margin-bottom:12px;">🏙️</span>
         <h3 style="font-family:var(--font-display);font-size:1.15rem;color:var(--color-white);margin-bottom:6px;">Long Beach</h3>
-        <span style="font-size:0.8rem;color:var(--color-muted);">Pilot in planning</span>
+        <span style="font-size:0.8rem;color:var(--color-muted);" data-i18n="cities.pilot">Pilot in planning</span>
       </a>
       <a href="/los-angeles" class="city-card" style="display:flex;flex-direction:column;align-items:center;justify-content:center;padding:36px 24px;background:linear-gradient(135deg,rgba(255,255,255,0.03),rgba(255,255,255,0.01));border:1px solid rgba(255,255,255,0.06);border-radius:20px;text-align:center;transition:all 0.3s var(--ease-out);text-decoration:none;">
         <span style="font-size:2rem;margin-bottom:12px;">🌆</span>
@@ -1598,7 +1598,7 @@ button { font-family: inherit; cursor: pointer; border: none; }
 <section class="problem section-pad" id="problem">
   <div class="container">
     <div class="problem-header">
-      <div class="section-label">The Problem</div>
+      <div class="section-label" data-i18n="problem.label">The Problem</div>
       <h2 class="section-title">Outdated info costs lives.<br><span class="text-gradient">We're fixing that.</span></h2>
       <p class="section-desc">People in crisis waste hours traveling to shelters that are full, food banks that are closed, and clinics that have moved. Existing solutions are fragmented, phone-only, or limited to a handful of cities.</p>
     </div>
@@ -1641,50 +1641,50 @@ button { font-family: inherit; cursor: pointer; border: none; }
 <section class="features section-pad" id="features">
   <div class="container">
     <div class="problem-header reveal">
-      <div class="section-label">Core Features</div>
-      <h2 class="section-title">Everything you need.<br><span class="text-gradient-cool">Updated in real time.</span></h2>
-      <p class="section-desc">HopeMap is built around one core insight: static data kills trust. Our Waze-inspired community model means every user helps keep the map alive.</p>
+      <div class="section-label" data-i18n="features.label">Core Features</div>
+      <h2 class="section-title"><span data-i18n="features.title">Everything you need.</span><br><span class="text-gradient-cool" data-i18n="features.title2">Updated in real time.</span></h2>
+      <p class="section-desc" data-i18n="features.desc">HopeMap is built around one core insight: static data kills trust. Our Waze-inspired community model means every user helps keep the map alive.</p>
     </div>
     <div class="features-grid">
       <div class="feature-card reveal reveal-delay-1">
         <div class="feature-icon fi-map">📍</div>
-        <h3>Real-Time Community Map</h3>
-        <p>Users and verified organizations report live status: open/closed, bed count, food remaining, wait times. Color-coded pins show urgency at a glance.</p>
+        <h3 data-i18n="feat.map">Real-Time Community Map</h3>
+        <p data-i18n="feat.map.desc">Users and verified organizations report live status: open/closed, bed count, food remaining, wait times. Color-coded pins show urgency at a glance.</p>
       </div>
       <div class="feature-card reveal reveal-delay-2">
         <div class="feature-icon fi-ai">🤖</div>
-        <h3>AI-Powered Resource Matching</h3>
-        <p>Describe your situation in plain language. AI routes you to the most relevant open resources nearby, ranked by distance and availability.</p>
+        <h3 data-i18n="feat.ai">AI-Powered Resource Matching</h3>
+        <p data-i18n="feat.ai.desc">Describe your situation in plain language. AI routes you to the most relevant open resources nearby, ranked by distance and availability.</p>
       </div>
       <div class="feature-card reveal reveal-delay-1">
         <div class="feature-icon fi-alert">🔔</div>
-        <h3>Smart Alerts & Notifications</h3>
-        <p>Push alerts for nearby food drives, shelter openings, weather emergency resources, and new mental health hotlines in your area.</p>
+        <h3 data-i18n="feat.alerts">Smart Alerts & Notifications</h3>
+        <p data-i18n="feat.alerts.desc">Push alerts for nearby food drives, shelter openings, weather emergency resources, and new mental health hotlines in your area.</p>
       </div>
       <div class="feature-card reveal reveal-delay-2">
         <div class="feature-icon fi-mental">💬</div>
-        <h3>Mental Health Quick Access</h3>
-        <p>One-tap access to crisis lines, text-based counseling, and local mental health centers — available 24/7 with verified hours.</p>
+        <h3 data-i18n="feat.mental">Mental Health Quick Access</h3>
+        <p data-i18n="feat.mental.desc">One-tap access to crisis lines, text-based counseling, and local mental health centers — available 24/7 with verified hours.</p>
       </div>
       <div class="feature-card reveal reveal-delay-1">
         <div class="feature-icon fi-lang">🌐</div>
-        <h3>Multilingual Support</h3>
-        <p>Full UI launching in English, Spanish, French and Haitian Creole — with 50 more languages coming, covering the communities of Greater LA and beyond. Auto-detection based on your device language so help is never lost in translation.</p>
+        <h3 data-i18n="feat.lang">Multilingual Support</h3>
+        <p data-i18n="feat.lang.desc">Full UI launching in English, Spanish, French and Haitian Creole — with 50 more languages coming, covering the communities of Greater LA and beyond. Auto-detection based on your device language so help is never lost in translation.</p>
       </div>
       <div class="feature-card reveal reveal-delay-2">
         <div class="feature-icon fi-offline">📵</div>
-        <h3>Offline Mode</h3>
-        <p>Core resource data cached locally. Works with no data connection — critical for users with prepaid or limited data plans.</p>
+        <h3 data-i18n="feat.offline">Offline Mode</h3>
+        <p data-i18n="feat.offline.desc">Core resource data cached locally. Works with no data connection — critical for users with prepaid or limited data plans.</p>
       </div>
       <div class="feature-card reveal reveal-delay-1">
         <div class="feature-icon fi-org">🏢</div>
-        <h3>Organization Dashboard</h3>
-        <p>Nonprofits, shelters, and food banks get a free dashboard to manage their listing, push updates, and see usage analytics.</p>
+        <h3 data-i18n="feat.dashboard">Organization Dashboard</h3>
+        <p data-i18n="feat.dashboard.desc">Nonprofits, shelters, and food banks get a free dashboard to manage their listing, push updates, and see usage analytics.</p>
       </div>
       <div class="feature-card reveal reveal-delay-2">
         <div class="feature-icon fi-trust">⭐</div>
-        <h3>Trust & Karma System</h3>
-        <p>Community members earn trust points for accurate updates. Higher-trust reporters' updates carry more weight in the algorithm.</p>
+        <h3 data-i18n="feat.trust">Trust & Karma System</h3>
+        <p data-i18n="feat.trust.desc">Community members earn trust points for accurate updates. Higher-trust reporters' updates carry more weight in the algorithm.</p>
       </div>
     </div>
   </div>
@@ -1694,9 +1694,9 @@ button { font-family: inherit; cursor: pointer; border: none; }
 <section class="section-pad" id="languages" style="position:relative;z-index:1;">
   <div class="container">
     <div class="problem-header reveal">
-      <div class="section-label">Languages</div>
-      <h2 class="section-title">Help in <span class="text-gradient">your language.</span></h2>
-      <p class="section-desc">Greater LA is one of the most linguistically diverse regions on Earth. HopeMap is built for all of it — launching in 4 languages, with 50 more coming.</p>
+      <div class="section-label" data-i18n="lang.label">Languages</div>
+      <h2 class="section-title"><span data-i18n="lang.title">Help in</span> <span class="text-gradient" data-i18n="lang.title2">your language.</span></h2>
+      <p class="section-desc" data-i18n="lang.desc">Greater LA is one of the most linguistically diverse regions on Earth. HopeMap is built for all of it — launching in 4 languages, with 50 more coming.</p>
     </div>
     <div class="lang-grid reveal" style="display:grid;grid-template-columns:repeat(auto-fill,minmax(155px,1fr));gap:10px;margin-top:40px;">
       <div class="lang-chip lang-live"><span class="lang-flag">🇺🇸</span> English</div>
@@ -1755,8 +1755,8 @@ button { font-family: inherit; cursor: pointer; border: none; }
       <div class="lang-chip"><span class="lang-flag">🇬🇷</span> Greek</div>
     </div>
     <div style="display:flex;gap:20px;align-items:center;margin-top:24px;flex-wrap:wrap;" class="reveal">
-      <div style="display:flex;align-items:center;gap:8px;font-size:0.85rem;color:var(--color-soft);"><span style="display:inline-block;width:12px;height:12px;border-radius:4px;background:linear-gradient(135deg,var(--color-hope),var(--color-hope-deep));"></span> Live at launch</div>
-      <div style="display:flex;align-items:center;gap:8px;font-size:0.85rem;color:var(--color-muted);"><span style="display:inline-block;width:12px;height:12px;border-radius:4px;background:rgba(255,255,255,0.08);border:1px solid rgba(255,255,255,0.15);"></span> Coming</div>
+      <div style="display:flex;align-items:center;gap:8px;font-size:0.85rem;color:var(--color-soft);"><span style="display:inline-block;width:12px;height:12px;border-radius:4px;background:linear-gradient(135deg,var(--color-hope),var(--color-hope-deep));"></span> <span data-i18n="lang.live">Live at launch</span></div>
+      <div style="display:flex;align-items:center;gap:8px;font-size:0.85rem;color:var(--color-muted);"><span style="display:inline-block;width:12px;height:12px;border-radius:4px;background:rgba(255,255,255,0.08);border:1px solid rgba(255,255,255,0.15);"></span> <span data-i18n="lang.coming">Coming</span></div>
     </div>
   </div>
 </section>
@@ -1765,30 +1765,30 @@ button { font-family: inherit; cursor: pointer; border: none; }
 <section class="how-it-works section-pad" id="how-it-works">
   <div class="container">
     <div class="problem-header reveal">
-      <div class="section-label">How It Works</div>
-      <h2 class="section-title">Help in <span class="text-gradient">four steps.</span></h2>
-      <p class="section-desc">Searching needs no account. People who post updates can build a trust score. Just open, search, and find real help — verified by your community.</p>
+      <div class="section-label" data-i18n="howit.label">How It Works</div>
+      <h2 class="section-title"><span data-i18n="howit.title">Help in</span> <span class="text-gradient" data-i18n="howit.title2">four steps.</span></h2>
+      <p class="section-desc" data-i18n="howit.desc">Searching needs no account. People who post updates can build a trust score. Just open, search, and find real help — verified by your community.</p>
     </div>
     <div class="steps-row">
       <div class="step-card reveal reveal-delay-1">
         <div class="step-num">1</div>
-        <h3>Open the Map</h3>
-        <p>Launch HopeMap on your phone or browser. Instantly see verified resources pinned near your location.</p>
+        <h3 data-i18n="step1">Open the Map</h3>
+        <p data-i18n="step1.desc">Launch HopeMap on your phone or browser. Instantly see verified resources pinned near your location.</p>
       </div>
       <div class="step-card reveal reveal-delay-2">
         <div class="step-num">2</div>
-        <h3>Search or Ask AI</h3>
-        <p>Filter by category or describe your situation in plain language. The AI matches you with the best available resources.</p>
+        <h3 data-i18n="step2">Search or Ask AI</h3>
+        <p data-i18n="step2.desc">Filter by category or describe your situation in plain language. The AI matches you with the best available resources.</p>
       </div>
       <div class="step-card reveal reveal-delay-3">
         <div class="step-num">3</div>
-        <h3>Check Live Status</h3>
-        <p>See real-time updates: beds available, wait times, food supply — all reported by users and organizations.</p>
+        <h3 data-i18n="step3">Check Live Status</h3>
+        <p data-i18n="step3.desc">See real-time updates: beds available, wait times, food supply — all reported by users and organizations.</p>
       </div>
       <div class="step-card reveal reveal-delay-4">
         <div class="step-num">4</div>
-        <h3>Get There & Give Back</h3>
-        <p>Navigate directly to your resource. After your visit, share an update to help the next person in need.</p>
+        <h3 data-i18n="step4">Get There & Give Back</h3>
+        <p data-i18n="step4.desc">Navigate directly to your resource. After your visit, share an update to help the next person in need.</p>
       </div>
     </div>
   </div>
@@ -1800,7 +1800,7 @@ button { font-family: inherit; cursor: pointer; border: none; }
 <section class="section-pad" id="about" style="position:relative;z-index:1;">
   <div class="container">
     <div class="problem-header reveal">
-      <div class="section-label">About</div>
+      <div class="section-label" data-i18n="about.label">About</div>
       <h2 class="section-title">Built for how <span class="text-gradient">LA County</span> actually works.</h2>
       <p class="section-desc">LA County isn't one homeless system. Long Beach, Pasadena and Glendale run their own, and cities like Santa Monica run their own programs too. HopeMap is built to work with each city's system, not around it.</p>
     </div>
@@ -1890,7 +1890,7 @@ button { font-family: inherit; cursor: pointer; border: none; }
 <section class="roadmap section-pad" id="roadmap">
   <div class="container">
     <div class="problem-header reveal">
-      <div class="section-label">Roadmap</div>
+      <div class="section-label" data-i18n="roadmap.label">Roadmap</div>
       <h2 class="section-title">From Greater LA to <span class="text-gradient">everywhere.</span></h2>
       <p class="section-desc">A phased rollout that starts with city pilots across LA County and scales from there.</p>
     </div>
@@ -2060,7 +2060,7 @@ button { font-family: inherit; cursor: pointer; border: none; }
           <div class="logo-icon">📍</div>
           HopeMap
         </a>
-        <p>Free, multilingual map of shelter, food and mental-health resources across Greater Los Angeles. Now planning city pilots for 2027.</p>
+        <p data-i18n="footer.tagline">Free, multilingual map of shelter, food and mental-health resources across Greater Los Angeles. Now planning city pilots for 2027.</p>
       </div>
       <div class="footer-col">
         <h4>Product</h4>
@@ -2690,5 +2690,7 @@ document.addEventListener('DOMContentLoaded',function(){
   });
 })();
 </script>
+<script src="/translations.js"></script>
+<script src="/i18n.js"></script>
 </body>
 </html>

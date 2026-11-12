@@ -119,11 +119,11 @@ button { font-family: inherit; cursor: pointer; border: none; }
       HopeMap
     </a>
     <ul class="nav-links" id="navLinks">
-      <li><a href="/">Home</a></li>
-      <li><a href="/cities">For Cities &amp; Agencies</a></li>
-      <li><a href="/#features">Features</a></li>
+      <li><a href="/" data-i18n="nav.home">Home</a></li>
+      <li><a href="/cities" data-i18n="nav.cities">For Cities &amp; Agencies</a></li>
+      <li><a href="/#features" data-i18n="nav.features">Features</a></li>
       <li><a href="/#roadmap">Roadmap</a></li>
-      <li><a href="/#contact" class="nav-cta">Get Involved</a></li>
+      <li><a href="/#contact" class="nav-cta" data-i18n="nav.cta">Get Involved</a></li>
     </ul>
     <button class="mobile-toggle" id="mobileToggle" aria-label="Toggle navigation menu" aria-expanded="false">
       <span></span><span></span><span></span>
@@ -168,8 +168,8 @@ button { font-family: inherit; cursor: pointer; border: none; }
     <div class="footer-inner">
       <div class="footer-copy">&copy; 2026 HopeMap. All rights reserved.</div>
       <div class="footer-links">
-        <a href="/">Home</a>
-        <a href="/cities">For Cities &amp; Agencies</a>
+        <a href="/" data-i18n="nav.home">Home</a>
+        <a href="/cities" data-i18n="nav.cities">For Cities &amp; Agencies</a>
         <a href="/los-angeles">Los Angeles</a>
         <a href="/los-angeles">Los Angeles</a>
         <a href="/pasadena">Pasadena</a>
@@ -206,8 +206,10 @@ var samplePins = [
 ];
 
 samplePins.forEach(function(p) {
-  L.marker([p.lat, p.lng]).addTo(map).bindPopup('<strong>' + p.label + '</strong><br><em>Sample data</em>');
+  L.marker([p.lat, p.lng]).addTo(map).bindPopup('<strong>' + p.label + '</strong><br><em data-i18n="sample_data">Sample data</em>');
 });
 </script>
+<script src="/translations.js"></script>
+<script src="/i18n.js"></script>
 </body>
 </html>
