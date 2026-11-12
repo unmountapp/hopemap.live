@@ -1,0 +1,311 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Bring HopeMap to your city. A free dashboard, provider-verified status, and open-source code for any grant-funded work. Request a 20-minute briefing.">
+<meta property="og:title" content="HopeMap for Cities and Agencies">
+<meta property="og:description" content="A free dashboard for cities and providers. Control your own listings, open-source code for grant work, and a short briefing for your team.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://hopemap.live/cities">
+<title>HopeMap for Cities and Agencies — Bring HopeMap to your city</title>
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>📍</text></svg>">
+<meta name="theme-color" content="#0C1117">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+<style>
+*, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+:root {
+  --color-night: #0C1117;
+  --color-deep: #151C25;
+  --color-slate: #1E2733;
+  --color-muted: #8A95A5;
+  --color-soft: #B8C2CF;
+  --color-light: #E8ECF1;
+  --color-white: #FAFBFC;
+  --color-hope: #F5A623;
+  --color-hope-glow: #FFD580;
+  --color-hope-deep: #D4871A;
+  --color-warmth: #FF6B4A;
+  --color-sky: #4AADFF;
+  --color-mint: #3ECFA0;
+  --color-lavender: #A78BFA;
+  --font-display: 'DM Serif Display', Georgia, serif;
+  --font-body: 'Plus Jakarta Sans', system-ui, sans-serif;
+  --ease-out: cubic-bezier(0.16, 1, 0.3, 1);
+}
+html { scroll-behavior: smooth; font-size: 16px; }
+body {
+  font-family: var(--font-body);
+  background: var(--color-night);
+  color: var(--color-light);
+  overflow-x: hidden;
+  -webkit-font-smoothing: antialiased;
+  line-height: 1.7;
+}
+a { color: inherit; text-decoration: none; }
+button { font-family: inherit; cursor: pointer; border: none; }
+.container { max-width: 1240px; margin: 0 auto; padding: 0 24px; }
+
+/* Nav */
+.nav { position: fixed; top: 0; left: 0; right: 0; z-index: 1000; padding: 20px 0; background: rgba(12, 17, 23, 0.88); backdrop-filter: blur(20px); -webkit-backdrop-filter: blur(20px); border-bottom: 1px solid rgba(255,255,255,0.05); }
+.nav-inner { display: flex; align-items: center; justify-content: space-between; max-width: 1240px; margin: 0 auto; padding: 0 24px; }
+.nav-logo { display: flex; align-items: center; gap: 10px; font-family: var(--font-display); font-size: 1.5rem; color: var(--color-white); }
+.nav-logo .logo-icon { width: 36px; height: 36px; background: linear-gradient(135deg, var(--color-hope), var(--color-warmth)); border-radius: 10px; display: flex; align-items: center; justify-content: center; font-size: 1.1rem; box-shadow: 0 4px 20px rgba(245,166,35,0.3); }
+.nav-links { display: flex; align-items: center; gap: 36px; list-style: none; }
+.nav-links a { font-size: 0.875rem; font-weight: 500; color: var(--color-muted); transition: color 0.3s; }
+.nav-links a:hover { color: var(--color-white); }
+.nav-cta { padding: 10px 24px; background: linear-gradient(135deg, var(--color-hope), var(--color-hope-deep)); color: var(--color-night) !important; font-weight: 700 !important; border-radius: 50px; font-size: 0.875rem !important; box-shadow: 0 4px 20px rgba(245,166,35,0.25); }
+
+.mobile-toggle { display: none; flex-direction: column; gap: 5px; background: none; padding: 8px; }
+.mobile-toggle span { width: 24px; height: 2px; background: var(--color-light); border-radius: 2px; transition: all 0.3s; }
+
+/* Hero */
+.page-hero { padding: 160px 0 80px; position: relative; }
+.page-hero::before { content: ''; position: absolute; top: 0; left: 0; width: 100%; height: 100%; background: radial-gradient(ellipse 80% 50% at 20% 40%, rgba(245,166,35,0.08) 0%, transparent 60%), radial-gradient(ellipse 60% 40% at 80% 60%, rgba(74,173,255,0.05) 0%, transparent 60%); z-index: 0; }
+.page-hero .container { position: relative; z-index: 1; }
+.page-hero h1 { font-family: var(--font-display); font-size: clamp(2.5rem, 5vw, 3.5rem); line-height: 1.1; color: var(--color-white); margin-bottom: 20px; }
+.page-hero .subhead { font-size: 1.15rem; color: var(--color-muted); max-width: 600px; margin-bottom: 36px; line-height: 1.7; }
+
+/* Section */
+.section { padding: 80px 0; position: relative; z-index: 1; }
+.section + .section { border-top: 1px solid rgba(255,255,255,0.04); }
+.section-label { font-size: 0.75rem; text-transform: uppercase; letter-spacing: 0.2em; font-weight: 700; color: var(--color-hope); margin-bottom: 16px; }
+.section h2 { font-family: var(--font-display); font-size: clamp(1.8rem, 3vw, 2.5rem); color: var(--color-white); line-height: 1.15; margin-bottom: 20px; }
+.section p { font-size: 1rem; color: var(--color-muted); line-height: 1.7; max-width: 700px; }
+
+/* Feature grid */
+.feature-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 20px; margin-top: 36px; }
+.feature-item { padding: 32px 28px; background: linear-gradient(135deg, rgba(255,255,255,0.03), rgba(255,255,255,0.01)); border: 1px solid rgba(255,255,255,0.06); border-radius: 20px; }
+.feature-item h3 { font-family: var(--font-display); font-size: 1.1rem; color: var(--color-white); margin-bottom: 8px; }
+.feature-item p { font-size: 0.9rem; }
+
+/* Status how */
+.status-list { list-style: none; margin-top: 24px; }
+.status-list li { position: relative; padding-left: 28px; margin-bottom: 14px; font-size: 0.95rem; color: var(--color-soft); line-height: 1.6; }
+.status-list li::before { content: '→'; position: absolute; left: 0; color: var(--color-hope); font-weight: 700; }
+
+/* TODO */
+.todo-block { margin-top: 24px; padding: 20px 24px; background: rgba(245,166,35,0.08); border: 1px solid rgba(245,166,35,0.2); border-radius: 12px; font-size: 0.9rem; color: var(--color-hope-glow); }
+
+/* Form */
+.contact-form { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; margin-top: 32px; max-width: 640px; }
+.contact-form input, .contact-form textarea { width: 100%; padding: 14px 18px; background: rgba(255,255,255,0.04); border: 1px solid rgba(255,255,255,0.08); border-radius: 12px; color: var(--color-white); font-family: var(--font-body); font-size: 0.95rem; transition: border-color 0.3s; }
+.contact-form input:focus, .contact-form textarea:focus { outline: none; border-color: rgba(245,166,35,0.4); }
+.contact-form textarea { grid-column: 1 / -1; min-height: 100px; resize: vertical; }
+.contact-form .form-submit { grid-column: 1 / -1; }
+
+.btn-primary { display: inline-flex; align-items: center; gap: 10px; padding: 16px 36px; background: linear-gradient(135deg, var(--color-hope), var(--color-hope-deep)); color: var(--color-night); font-weight: 700; font-size: 1rem; border-radius: 60px; transition: all 0.3s; box-shadow: 0 8px 40px rgba(245,166,35,0.3); text-decoration: none; cursor: pointer; border: none; font-family: var(--font-body); }
+.btn-primary:hover { transform: translateY(-3px); box-shadow: 0 12px 50px rgba(245,166,35,0.45); }
+
+/* City cards */
+.city-cards { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 20px; margin-top: 36px; }
+.city-card { display: flex; flex-direction: column; align-items: center; justify-content: center; padding: 32px 20px; background: linear-gradient(135deg, rgba(255,255,255,0.03), rgba(255,255,255,0.01)); border: 1px solid rgba(255,255,255,0.06); border-radius: 20px; text-align: center; transition: all 0.3s; text-decoration: none; }
+.city-card:hover { border-color: rgba(245,166,35,0.2); transform: translateY(-3px); }
+.city-card h3 { font-family: var(--font-display); font-size: 1.1rem; color: var(--color-white); margin-top: 8px; }
+.city-card span.sub { font-size: 0.8rem; color: var(--color-muted); margin-top: 4px; }
+
+/* Footer */
+.footer { padding: 60px 0 32px; border-top: 1px solid rgba(255,255,255,0.04); position: relative; z-index: 1; }
+.footer-inner { display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 16px; }
+.footer-links { display: flex; gap: 24px; flex-wrap: wrap; }
+.footer-links a { font-size: 0.85rem; color: var(--color-muted); transition: color 0.3s; }
+.footer-links a:hover { color: var(--color-white); }
+.footer-copy { font-size: 0.8rem; color: var(--color-muted); }
+
+@media (max-width: 768px) {
+  .nav-links { display: none; position: fixed; top: 0; left: 0; right: 0; bottom: 0; background: rgba(12,17,23,0.98); flex-direction: column; align-items: center; justify-content: center; gap: 24px; z-index: 999; }
+  .nav-links.open { display: flex; }
+  .mobile-toggle { display: flex; }
+  .contact-form { grid-template-columns: 1fr; }
+}
+</style>
+</head>
+<body>
+
+<nav class="nav">
+  <div class="nav-inner">
+    <a href="/" class="nav-logo">
+      <div class="logo-icon">📍</div>
+      HopeMap
+    </a>
+    <ul class="nav-links" id="navLinks">
+      <li><a href="/">Home</a></li>
+      <li><a href="/cities" style="color:var(--color-hope);">For Cities &amp; Agencies</a></li>
+      <li><a href="/#features">Features</a></li>
+      <li><a href="/#roadmap">Roadmap</a></li>
+      <li><a href="/#contact" class="nav-cta">Get Involved</a></li>
+    </ul>
+    <button class="mobile-toggle" id="mobileToggle" aria-label="Toggle navigation menu" aria-expanded="false">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+</nav>
+
+<main>
+
+<!-- Hero -->
+<section class="page-hero">
+  <div class="container">
+    <div style="display:inline-flex;align-items:center;gap:8px;padding:6px 16px 6px 8px;background:rgba(245,166,35,0.1);border:1px solid rgba(245,166,35,0.2);border-radius:50px;font-size:0.8rem;font-weight:600;color:var(--color-hope);margin-bottom:28px;">
+      <span style="width:8px;height:8px;background:var(--color-hope);border-radius:50%;"></span>
+      Now planning city pilots for 2027
+    </div>
+    <h1>For Cities and <span style="background:linear-gradient(135deg,var(--color-hope),var(--color-warmth));-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;">Agencies</span></h1>
+    <p class="subhead">HopeMap gives your city a free, real-time map of shelter, food and mental-health resources — in four languages, working offline, and built to fit your system.</p>
+  </div>
+</section>
+
+<!-- What your city gets -->
+<section class="section">
+  <div class="container">
+    <div class="section-label">What your city gets</div>
+    <h2>Free tools. Your data. Open code.</h2>
+    <div class="feature-grid">
+      <div class="feature-item">
+        <h3>🖥️ Free Dashboard</h3>
+        <p>A free dashboard for the city and its providers to manage listings, post live status, and see how resources are being found.</p>
+      </div>
+      <div class="feature-item">
+        <h3>🔒 Control Your Listings</h3>
+        <p>Your city and providers control your own listings — hours, capacity, services. No one else edits them.</p>
+      </div>
+      <div class="feature-item">
+        <h3>📂 Open Source</h3>
+        <p>Open-source code for any grant-funded work. Your city's investment is portable, auditable and reusable.</p>
+      </div>
+      <div class="feature-item">
+        <h3>📋 Team Briefing</h3>
+        <p>A short briefing for your team — 20 minutes, no jargon, covering what HopeMap does, how it fits your system, and next steps.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- How status stays current -->
+<section class="section">
+  <div class="container">
+    <div class="section-label">How status stays current</div>
+    <h2>Provider-verified, community-supported, human-reviewed.</h2>
+    <ul class="status-list">
+      <li>Verified providers post open or closed status, bed counts, food supply and wait times</li>
+      <li>Community reports fill gaps and are weighted by each reporter's accuracy history</li>
+      <li>Listings get human review to catch errors and keep data clean</li>
+    </ul>
+  </div>
+</section>
+
+<!-- Privacy -->
+<section class="section">
+  <div class="container">
+    <div class="section-label">Privacy</div>
+    <h2>How we handle data.</h2>
+    <p>HopeMap does not collect personal information when someone searches. No account is needed, no location is stored, and no search history is kept. Status reports posted by providers and community members are visible to everyone using the map.</p>
+  </div>
+</section>
+
+<!-- City pages -->
+<section class="section">
+  <div class="container">
+    <div class="section-label">City Pilots</div>
+    <h2>Cities we're planning with.</h2>
+    <p>We're in conversations with city departments and service providers across LA County. Each city gets its own page with local context.</p>
+    <div class="city-cards">
+      <a href="/long-beach" class="city-card">
+        <span style="font-size:1.8rem;">🏙️</span>
+        <h3>Long Beach</h3>
+        <span class="sub">Pilot in planning</span>
+      </a>
+      <a href="/los-angeles" class="city-card">
+        <span style="font-size:1.8rem;">🌆</span>
+        <h3>Los Angeles</h3>
+        <span class="sub">Pilot in planning</span>
+      </a>
+      <a href="/pasadena" class="city-card">
+        <span style="font-size:1.8rem;">🌹</span>
+        <h3>Pasadena</h3>
+        <span class="sub">Pilot in planning</span>
+      </a>
+      <a href="/santa-monica" class="city-card">
+        <span style="font-size:1.8rem;">🏖️</span>
+        <h3>Santa Monica</h3>
+        <span class="sub">Pilot in planning</span>
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- Bring HopeMap to your city -->
+<section class="section" id="contact">
+  <div class="container">
+    <div class="section-label">Bring HopeMap to your city</div>
+    <h2>Let's talk about a pilot.</h2>
+    <p>Fill out the form or request a 20-minute briefing. We'll follow up within two business days.</p>
+    <form class="contact-form" id="city-form" novalidate>
+      <input name="name" required placeholder="Your name" aria-label="Your name">
+      <input name="title" required placeholder="Title / role" aria-label="Title or role">
+      <input name="city" required placeholder="City or agency" aria-label="City or agency">
+      <input name="email" type="email" required placeholder="Email" aria-label="Email">
+      <textarea name="message" placeholder="Message (optional)" aria-label="Message"></textarea>
+      <!-- Honeypot -->
+      <input type="text" name="website" tabindex="-1" autocomplete="off" aria-hidden="true" style="position:absolute;left:-9999px">
+      <div class="form-submit" style="display:flex;gap:16px;flex-wrap:wrap;">
+        <button type="submit" class="btn-primary">Send message <span>→</span></button>
+        <a href="mailto:info@hopemap.live?subject=HopeMap%20briefing%20request" class="btn-primary" style="background:rgba(255,255,255,0.05);color:var(--color-light);box-shadow:none;border:1px solid rgba(255,255,255,0.1);">Request a 20-minute briefing</a>
+      </div>
+      <p id="form-msg" role="status" style="grid-column:1/-1;margin:0;font-size:.85rem;color:var(--color-muted);">We'll respond within two business days.</p>
+    </form>
+  </div>
+</section>
+
+</main>
+
+<footer class="footer">
+  <div class="container">
+    <div class="footer-inner">
+      <div class="footer-copy">&copy; 2026 HopeMap. All rights reserved.</div>
+      <div class="footer-links">
+        <a href="/">Home</a>
+        <a href="/cities">For Cities &amp; Agencies</a>
+        <a href="/long-beach">Long Beach</a>
+        <a href="/los-angeles">Los Angeles</a>
+        <a href="/pasadena">Pasadena</a>
+        <a href="/santa-monica">Santa Monica</a>
+        <a href="mailto:info@hopemap.live">Contact</a>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<script>
+// Mobile menu
+var mt = document.getElementById('mobileToggle');
+var nl = document.getElementById('navLinks');
+mt.addEventListener('click', function() {
+  nl.classList.toggle('open');
+  mt.setAttribute('aria-expanded', nl.classList.contains('open'));
+});
+nl.querySelectorAll('a').forEach(function(l) { l.addEventListener('click', function() { nl.classList.remove('open'); }); });
+
+// Form: mailto fallback (no backend)
+var form = document.getElementById('city-form');
+form.addEventListener('submit', function(e) {
+  e.preventDefault();
+  var v = function(n) { return String((form.elements[n] || {}).value || '').trim(); };
+  var msg = document.getElementById('form-msg');
+  if (!v('name') || !v('city') || !v('email') || !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(v('email'))) {
+    msg.textContent = 'Please fill in your name, city/agency, and a valid email.';
+    msg.style.color = '#ff6b4a';
+    return;
+  }
+  // No form backend — use mailto
+  var subject = encodeURIComponent('HopeMap city inquiry — ' + v('city'));
+  var body = encodeURIComponent('Name: ' + v('name') + '\nTitle: ' + v('title') + '\nCity/Agency: ' + v('city') + '\nEmail: ' + v('email') + '\n\nMessage:\n' + v('message'));
+  window.location.href = 'mailto:info@hopemap.live?subject=' + subject + '&body=' + body;
+  msg.textContent = 'Opening your email client… If it doesn\'t open, email info@hopemap.live directly.';
+  msg.style.color = 'var(--color-mint)';
+});
+</script>
+</body>
+</html>

@@ -1,4 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url><loc>https://hopemap.live/</loc><changefreq>weekly</changefreq></url>
+  <url><loc>https://hopemap.live/cities</loc><changefreq>weekly</changefreq></url>
+  <url><loc>https://hopemap.live/long-beach</loc><changefreq>weekly</changefreq></url>
+  <url><loc>https://hopemap.live/los-angeles</loc><changefreq>weekly</changefreq></url>
+  <url><loc>https://hopemap.live/pasadena</loc><changefreq>weekly</changefreq></url>
+  <url><loc>https://hopemap.live/santa-monica</loc><changefreq>weekly</changefreq></url>
 </urlset>
