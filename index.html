@@ -1079,6 +1079,29 @@ button { font-family: inherit; cursor: pointer; border: none; }
 }
 
 /* ═══════════════════════════════════════════
+   LANGUAGES
+   ═══════════════════════════════════════════ */
+.lang-chip {
+  display: flex; align-items: center; gap: 8px;
+  padding: 10px 14px;
+  background: rgba(255,255,255,0.03);
+  border: 1px solid rgba(255,255,255,0.06);
+  border-radius: 10px;
+  font-size: 0.85rem;
+  color: var(--color-muted);
+  transition: all 0.25s;
+  white-space: nowrap;
+}
+.lang-chip:hover { border-color: rgba(255,255,255,0.15); color: var(--color-soft); }
+.lang-chip.lang-live {
+  background: linear-gradient(135deg, rgba(245,166,35,0.1), rgba(245,166,35,0.04));
+  border-color: rgba(245,166,35,0.25);
+  color: var(--color-hope-glow);
+  font-weight: 600;
+}
+.lang-flag { font-size: 1.1rem; line-height: 1; }
+
+/* ═══════════════════════════════════════════
    FOOTER
    ═══════════════════════════════════════════ */
 .footer {
@@ -1513,7 +1536,7 @@ button { font-family: inherit; cursor: pointer; border: none; }
           </div>
         </div>
         <div class="floating-stat stat-1">
-          <div class="stat-num" style="color:var(--color-mint);">4</div>
+          <div class="stat-num" style="color:var(--color-mint);">54</div>
           <div class="stat-label">Languages</div>
         </div>
         <div class="floating-stat stat-2">
@@ -1646,7 +1669,7 @@ button { font-family: inherit; cursor: pointer; border: none; }
       <div class="feature-card reveal reveal-delay-1">
         <div class="feature-icon fi-lang">🌐</div>
         <h3>Multilingual Support</h3>
-        <p>Full UI in English, Spanish, French and Haitian Creole, with more coming. Auto-detection based on your device language so help is never lost in translation.</p>
+        <p>Full UI launching in English, Spanish, French and Haitian Creole — with 50 more languages coming, covering the communities of Greater LA and beyond. Auto-detection based on your device language so help is never lost in translation.</p>
       </div>
       <div class="feature-card reveal reveal-delay-2">
         <div class="feature-icon fi-offline">📵</div>
@@ -1663,6 +1686,77 @@ button { font-family: inherit; cursor: pointer; border: none; }
         <h3>Trust & Karma System</h3>
         <p>Community members earn trust points for accurate updates. Higher-trust reporters' updates carry more weight in the algorithm.</p>
       </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════════ LANGUAGES ═══════════════════ -->
+<section class="section-pad" id="languages" style="position:relative;z-index:1;">
+  <div class="container">
+    <div class="problem-header reveal">
+      <div class="section-label">Languages</div>
+      <h2 class="section-title">Help in <span class="text-gradient">your language.</span></h2>
+      <p class="section-desc">Greater LA is one of the most linguistically diverse regions on Earth. HopeMap is built for all of it — launching in 4 languages, with 50 more coming.</p>
+    </div>
+    <div class="lang-grid reveal" style="display:grid;grid-template-columns:repeat(auto-fill,minmax(155px,1fr));gap:10px;margin-top:40px;">
+      <div class="lang-chip lang-live"><span class="lang-flag">🇺🇸</span> English</div>
+      <div class="lang-chip lang-live"><span class="lang-flag">🇲🇽</span> Spanish</div>
+      <div class="lang-chip lang-live"><span class="lang-flag">🇫🇷</span> French</div>
+      <div class="lang-chip lang-live"><span class="lang-flag">🇭🇹</span> Haitian Creole</div>
+      <div class="lang-chip"><span class="lang-flag">🇨🇳</span> Chinese (Simplified)</div>
+      <div class="lang-chip"><span class="lang-flag">🇭🇰</span> Chinese (Traditional)</div>
+      <div class="lang-chip"><span class="lang-flag">🇰🇷</span> Korean</div>
+      <div class="lang-chip"><span class="lang-flag">🇵🇭</span> Tagalog / Filipino</div>
+      <div class="lang-chip"><span class="lang-flag">🇦🇲</span> Armenian</div>
+      <div class="lang-chip"><span class="lang-flag">🇻🇳</span> Vietnamese</div>
+      <div class="lang-chip"><span class="lang-flag">🇯🇵</span> Japanese</div>
+      <div class="lang-chip"><span class="lang-flag">🇮🇷</span> Persian / Farsi</div>
+      <div class="lang-chip"><span class="lang-flag">🇷🇺</span> Russian</div>
+      <div class="lang-chip"><span class="lang-flag">🇹🇭</span> Thai</div>
+      <div class="lang-chip"><span class="lang-flag">🇮🇳</span> Hindi</div>
+      <div class="lang-chip"><span class="lang-flag">🇸🇦</span> Arabic</div>
+      <div class="lang-chip"><span class="lang-flag">🇰🇭</span> Khmer / Cambodian</div>
+      <div class="lang-chip"><span class="lang-flag">🇮🇱</span> Hebrew</div>
+      <div class="lang-chip"><span class="lang-flag">🇧🇷</span> Portuguese</div>
+      <div class="lang-chip"><span class="lang-flag">🇮🇳</span> Gujarati</div>
+      <div class="lang-chip"><span class="lang-flag">🇮🇳</span> Punjabi</div>
+      <div class="lang-chip"><span class="lang-flag">🇧🇩</span> Bengali</div>
+      <div class="lang-chip"><span class="lang-flag">🇮🇩</span> Indonesian</div>
+      <div class="lang-chip"><span class="lang-flag">🇼🇸</span> Samoan</div>
+      <div class="lang-chip"><span class="lang-flag">🇹🇴</span> Tongan</div>
+      <div class="lang-chip"><span class="lang-flag">🇲🇲</span> Burmese</div>
+      <div class="lang-chip"><span class="lang-flag">🇪🇹</span> Amharic</div>
+      <div class="lang-chip"><span class="lang-flag">🇵🇰</span> Urdu</div>
+      <div class="lang-chip"><span class="lang-flag">🇩🇪</span> German</div>
+      <div class="lang-chip"><span class="lang-flag">🇮🇹</span> Italian</div>
+      <div class="lang-chip"><span class="lang-flag">🇵🇱</span> Polish</div>
+      <div class="lang-chip"><span class="lang-flag">🇺🇦</span> Ukrainian</div>
+      <div class="lang-chip"><span class="lang-flag">🇷🇴</span> Romanian</div>
+      <div class="lang-chip"><span class="lang-flag">🇹🇷</span> Turkish</div>
+      <div class="lang-chip"><span class="lang-flag">🇰🇪</span> Swahili</div>
+      <div class="lang-chip"><span class="lang-flag">🇸🇴</span> Somali</div>
+      <div class="lang-chip"><span class="lang-flag">🇪🇷</span> Tigrinya</div>
+      <div class="lang-chip"><span class="lang-flag">🇳🇵</span> Nepali</div>
+      <div class="lang-chip"><span class="lang-flag">🇮🇳</span> Telugu</div>
+      <div class="lang-chip"><span class="lang-flag">🇮🇳</span> Tamil</div>
+      <div class="lang-chip"><span class="lang-flag">🇮🇳</span> Kannada</div>
+      <div class="lang-chip"><span class="lang-flag">🇮🇳</span> Malayalam</div>
+      <div class="lang-chip"><span class="lang-flag">🇲🇭</span> Marshallese</div>
+      <div class="lang-chip"><span class="lang-flag">🇱🇦</span> Hmong</div>
+      <div class="lang-chip"><span class="lang-flag">🇱🇦</span> Lao</div>
+      <div class="lang-chip"><span class="lang-flag">🇲🇽</span> Mixtec</div>
+      <div class="lang-chip"><span class="lang-flag">🇲🇽</span> Zapotec</div>
+      <div class="lang-chip"><span class="lang-flag">🇬🇹</span> K'iche' Maya</div>
+      <div class="lang-chip"><span class="lang-flag">🇪🇹</span> Oromo</div>
+      <div class="lang-chip"><span class="lang-flag">🇬🇭</span> Twi / Akan</div>
+      <div class="lang-chip"><span class="lang-flag">🇳🇬</span> Yoruba</div>
+      <div class="lang-chip"><span class="lang-flag">🇳🇬</span> Igbo</div>
+      <div class="lang-chip"><span class="lang-flag">🇫🇯</span> Fijian</div>
+      <div class="lang-chip"><span class="lang-flag">🇬🇷</span> Greek</div>
+    </div>
+    <div style="display:flex;gap:20px;align-items:center;margin-top:24px;flex-wrap:wrap;" class="reveal">
+      <div style="display:flex;align-items:center;gap:8px;font-size:0.85rem;color:var(--color-soft);"><span style="display:inline-block;width:12px;height:12px;border-radius:4px;background:linear-gradient(135deg,var(--color-hope),var(--color-hope-deep));"></span> Live at launch</div>
+      <div style="display:flex;align-items:center;gap:8px;font-size:0.85rem;color:var(--color-muted);"><span style="display:inline-block;width:12px;height:12px;border-radius:4px;background:rgba(255,255,255,0.08);border:1px solid rgba(255,255,255,0.15);"></span> Coming</div>
     </div>
   </div>
 </section>
