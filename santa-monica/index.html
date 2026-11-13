@@ -152,11 +152,11 @@ button { font-family: inherit; cursor: pointer; border: none; }
 
     <div class="city-actions">
       <a href="mailto:info@hopemap.live?subject=HopeMap%20briefing%20request%20-%20Santa%20Monica" class="btn-primary">Request a briefing <span>→</span></a>
-      <a href="#city-map" class="btn-secondary">See a demo with sample data</a>
+      <a href="#city-map" class="btn-secondary">See public resource map</a>
     </div>
 
     <div class="city-map-wrap" id="city-map">
-      <div class="sample-data-label">⚠️ Sample data — not live</div>
+      <div class="sample-data-label" style="background:rgba(12,60,40,0.92);color:#6ee7b7;border-color:#166534;">📍 Public listings — pending city verification</div>
       <div class="city-map" id="map"></div>
     </div>
   </div>
@@ -197,16 +197,21 @@ L.tileLayer('https://{s}.basemaps.cartocdn.com/dark_all/{z}/{x}/{y}{r}.png', {
   maxZoom: 19
 }).addTo(map);
 
-var samplePins = [
-  { lat: 34.020, lng: -118.490, label: '🏠 Sample Shelter A' },
-  { lat: 34.030, lng: -118.480, label: '🍲 Sample Food Bank B' },
-  { lat: 34.010, lng: -118.500, label: '🧠 Sample Clinic C' },
-  { lat: 34.025, lng: -118.470, label: '🏠 Sample Shelter D' },
-  { lat: 34.015, lng: -118.495, label: '🍲 Sample Pantry E' }
+var realPins = [
+  { lat: 34.003, lng: -118.477, icon: "🏠", name: "SAMOSHEL Emergency Shelter", type: "Emergency Shelter", addr: "1640 5th St" },
+  { lat: 34.014, lng: -118.492, icon: "🏠", name: "The People Concern Access Center", type: "Shelter & Services", addr: "1453 16th St" },
+  { lat: 34.017, lng: -118.466, icon: "🍲", name: "Westside Food Bank", type: "Food Bank", addr: "1710 22nd St" },
+  { lat: 34.0085, lng: -118.4895, icon: "🧠", name: "Didi Hirsch Mental Health Services", type: "Mental Health", addr: "1540 9th St" },
+  { lat: 34.011, lng: -118.4945, icon: "🍲", name: "St. Monica Catholic Church Food Pantry", type: "Food Pantry", addr: "725 California Ave" },
+  { lat: 33.996, lng: -118.481, icon: "🏠", name: "Ocean Park Community Center", type: "Shelter & Services", addr: "1751 Cloverfield Blvd" },
 ];
 
-samplePins.forEach(function(p) {
-  L.marker([p.lat, p.lng]).addTo(map).bindPopup('<strong>' + p.label + '</strong><br><em data-i18n="sample_data">Sample data</em>');
+realPins.forEach(function(p) {
+  L.marker([p.lat, p.lng]).addTo(map).bindPopup(
+    '<strong>' + p.icon + ' ' + p.name + '</strong><br>' +
+    '<span style="color:#8A95A5;font-size:0.85em">' + p.type + '</span><br>' +
+    '<span style="color:#6b7280;font-size:0.8em">' + p.addr + '</span>'
+  );
 });
 </script>
 <script src="/translations.js"></script>

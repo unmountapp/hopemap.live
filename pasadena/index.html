@@ -152,11 +152,11 @@ button { font-family: inherit; cursor: pointer; border: none; }
 
     <div class="city-actions">
       <a href="mailto:info@hopemap.live?subject=HopeMap%20briefing%20request%20-%20Pasadena" class="btn-primary">Request a briefing <span>→</span></a>
-      <a href="#city-map" class="btn-secondary">See a demo with sample data</a>
+      <a href="#city-map" class="btn-secondary">See public resource map</a>
     </div>
 
     <div class="city-map-wrap" id="city-map">
-      <div class="sample-data-label">⚠️ Sample data — not live</div>
+      <div class="sample-data-label" style="background:rgba(12,60,40,0.92);color:#6ee7b7;border-color:#166534;">📍 Public listings — pending city verification</div>
       <div class="city-map" id="map"></div>
     </div>
   </div>
@@ -197,16 +197,21 @@ L.tileLayer('https://{s}.basemaps.cartocdn.com/dark_all/{z}/{x}/{y}{r}.png', {
   maxZoom: 19
 }).addTo(map);
 
-var samplePins = [
-  { lat: 34.150, lng: -118.140, label: '🏠 Sample Shelter A' },
-  { lat: 34.160, lng: -118.130, label: '🍲 Sample Food Bank B' },
-  { lat: 34.140, lng: -118.150, label: '🧠 Sample Clinic C' },
-  { lat: 34.155, lng: -118.120, label: '🏠 Sample Shelter D' },
-  { lat: 34.145, lng: -118.145, label: '🍲 Sample Pantry E' }
+var realPins = [
+  { lat: 34.1565, lng: -118.1295, icon: "🏠", name: "Union Station Homeless Services", type: "Emergency Shelter", addr: "825 E Orange Grove Blvd" },
+  { lat: 34.148, lng: -118.1395, icon: "🍲", name: "Friends In Deed", type: "Food Pantry & Services", addr: "444 E Washington Blvd" },
+  { lat: 34.153, lng: -118.1225, icon: "🏠", name: "Salvation Army Hope Center", type: "Shelter & Services", addr: "1000 E Walnut St" },
+  { lat: 34.147, lng: -118.151, icon: "🍲", name: "Foothill Unity Center", type: "Food & Services", addr: "191 N Oak Ave" },
+  { lat: 34.144, lng: -118.1455, icon: "🍲", name: "Pasadena Senior Center", type: "Food & Services", addr: "85 E Holly St" },
+  { lat: 34.1462, lng: -118.149, icon: "🍲", name: "Saint Andrew Church Food Bank", type: "Food Bank", addr: "140 Chestnut St" },
 ];
 
-samplePins.forEach(function(p) {
-  L.marker([p.lat, p.lng]).addTo(map).bindPopup('<strong>' + p.label + '</strong><br><em data-i18n="sample_data">Sample data</em>');
+realPins.forEach(function(p) {
+  L.marker([p.lat, p.lng]).addTo(map).bindPopup(
+    '<strong>' + p.icon + ' ' + p.name + '</strong><br>' +
+    '<span style="color:#8A95A5;font-size:0.85em">' + p.type + '</span><br>' +
+    '<span style="color:#6b7280;font-size:0.8em">' + p.addr + '</span>'
+  );
 });
 </script>
 <script src="/translations.js"></script>

@@ -152,11 +152,11 @@ button { font-family: inherit; cursor: pointer; border: none; }
 
     <div class="city-actions">
       <a href="mailto:info@hopemap.live?subject=HopeMap%20briefing%20request%20-%20Long%20Beach" class="btn-primary">Request a briefing <span>→</span></a>
-      <a href="#city-map" class="btn-secondary">See a demo with sample data</a>
+      <a href="#city-map" class="btn-secondary">See public resource map</a>
     </div>
 
     <div class="city-map-wrap" id="city-map">
-      <div class="sample-data-label">⚠️ Sample data — not live</div>
+      <div class="sample-data-label" style="background:rgba(12,60,40,0.92);color:#6ee7b7;border-color:#166534;">📍 Public listings — pending city verification</div>
       <div class="city-map" id="map"></div>
     </div>
   </div>
@@ -197,16 +197,23 @@ L.tileLayer('https://{s}.basemaps.cartocdn.com/dark_all/{z}/{x}/{y}{r}.png', {
   maxZoom: 19
 }).addTo(map);
 
-var samplePins = [
-  { lat: 33.770, lng: -118.193, label: '🏠 Sample Shelter A' },
-  { lat: 33.785, lng: -118.175, label: '🍲 Sample Food Bank B' },
-  { lat: 33.760, lng: -118.205, label: '🧠 Sample Clinic C' },
-  { lat: 33.775, lng: -118.155, label: '🏠 Sample Shelter D' },
-  { lat: 33.790, lng: -118.190, label: '🍲 Sample Pantry E' }
+var realPins = [
+  { lat: 33.7701, lng: -118.189, icon: "🏠", name: "Long Beach Rescue Mission", type: "Emergency Shelter", addr: "1430 Pacific Ave" },
+  { lat: 33.787, lng: -118.155, icon: "🏠", name: "Su Casa – Ending Domestic Violence", type: "Shelter & Services", addr: "3750 E Anaheim St" },
+  { lat: 33.7691, lng: -118.1918, icon: "🍲", name: "Christian Outreach in Action", type: "Food & Services", addr: "515 E Third St" },
+  { lat: 33.77, lng: -118.1908, icon: "🍲", name: "St. Luke's Episcopal Church", type: "Food Program", addr: "525 E Seventh St" },
+  { lat: 33.7685, lng: -118.196, icon: "🍲", name: "Urban Community Outreach", type: "Food & Services", addr: "241 Cedar Ave" },
+  { lat: 33.7842, lng: -118.1782, icon: "🍲", name: "Salvation Army Long Beach", type: "Food & Services", addr: "3092 Long Beach Blvd" },
+  { lat: 33.7855, lng: -118.177, icon: "🧠", name: "Behavioral Health Urgent Care Clinic", type: "Mental Health", addr: "3210 Long Beach Blvd" },
+  { lat: 33.793, lng: -118.189, icon: "🍲", name: "Grow2Zero FARMS", type: "Food Program", addr: "2851 Santa Fe Ave" },
 ];
 
-samplePins.forEach(function(p) {
-  L.marker([p.lat, p.lng]).addTo(map).bindPopup('<strong>' + p.label + '</strong><br><em data-i18n="sample_data">Sample data</em>');
+realPins.forEach(function(p) {
+  L.marker([p.lat, p.lng]).addTo(map).bindPopup(
+    '<strong>' + p.icon + ' ' + p.name + '</strong><br>' +
+    '<span style="color:#8A95A5;font-size:0.85em">' + p.type + '</span><br>' +
+    '<span style="color:#6b7280;font-size:0.8em">' + p.addr + '</span>'
+  );
 });
 </script>
 <script src="/translations.js"></script>

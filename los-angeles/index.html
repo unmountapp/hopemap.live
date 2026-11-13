@@ -152,11 +152,11 @@ button { font-family: inherit; cursor: pointer; border: none; }
 
     <div class="city-actions">
       <a href="mailto:info@hopemap.live?subject=HopeMap%20briefing%20request%20-%20Los%20Angeles" class="btn-primary">Request a briefing <span>→</span></a>
-      <a href="#city-map" class="btn-secondary">See a demo with sample data</a>
+      <a href="#city-map" class="btn-secondary">See public resource map</a>
     </div>
 
     <div class="city-map-wrap" id="city-map">
-      <div class="sample-data-label">⚠️ Sample data — not live</div>
+      <div class="sample-data-label" style="background:rgba(12,60,40,0.92);color:#6ee7b7;border-color:#166534;">📍 Public listings — pending city verification</div>
       <div class="city-map" id="map"></div>
     </div>
   </div>
@@ -197,16 +197,23 @@ L.tileLayer('https://{s}.basemaps.cartocdn.com/dark_all/{z}/{x}/{y}{r}.png', {
   maxZoom: 19
 }).addTo(map);
 
-var samplePins = [
-  { lat: 34.050, lng: -118.250, label: '🏠 Sample Shelter A' },
-  { lat: 34.060, lng: -118.240, label: '🍲 Sample Food Bank B' },
-  { lat: 34.040, lng: -118.260, label: '🧠 Sample Clinic C' },
-  { lat: 34.055, lng: -118.230, label: '🏠 Sample Shelter D' },
-  { lat: 34.045, lng: -118.270, label: '🍲 Sample Pantry E' }
+var realPins = [
+  { lat: 34.0445, lng: -118.2439, icon: "🏠", name: "Union Rescue Mission", type: "Emergency Shelter", addr: "545 S San Pedro St" },
+  { lat: 34.0432, lng: -118.2441, icon: "🏠", name: "Midnight Mission", type: "Emergency Shelter", addr: "601 S San Pedro St" },
+  { lat: 34.0482, lng: -118.2405, icon: "🏠", name: "Los Angeles Mission", type: "Emergency Shelter", addr: "303 E 5th St" },
+  { lat: 34.0425, lng: -118.245, icon: "🏠", name: "Weingart Center", type: "Shelter & Services", addr: "566 S San Pedro St" },
+  { lat: 34.037, lng: -118.231, icon: "🍲", name: "LA Regional Food Bank", type: "Food Bank", addr: "1734 E 41st St" },
+  { lat: 34.0588, lng: -118.2381, icon: "🧠", name: "LAMP Community", type: "Mental Health & Housing", addr: "527 S Los Angeles St" },
+  { lat: 34.049, lng: -118.2488, icon: "🧠", name: "People Assisting the Homeless (PATH)", type: "Housing & Mental Health", addr: "340 N Madison Ave" },
+  { lat: 34.054, lng: -118.253, icon: "🍲", name: "Fred Jordan Mission", type: "Food & Services", addr: "101 E 5th St" },
 ];
 
-samplePins.forEach(function(p) {
-  L.marker([p.lat, p.lng]).addTo(map).bindPopup('<strong>' + p.label + '</strong><br><em data-i18n="sample_data">Sample data</em>');
+realPins.forEach(function(p) {
+  L.marker([p.lat, p.lng]).addTo(map).bindPopup(
+    '<strong>' + p.icon + ' ' + p.name + '</strong><br>' +
+    '<span style="color:#8A95A5;font-size:0.85em">' + p.type + '</span><br>' +
+    '<span style="color:#6b7280;font-size:0.8em">' + p.addr + '</span>'
+  );
 });
 </script>
 <script src="/translations.js"></script>
